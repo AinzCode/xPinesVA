@@ -122,7 +122,7 @@ export default function EVAPage() {
             <div>
               <h3 className="text-lg font-semibold text-gray-900 mb-4">Qualifications</h3>
               <ul className="space-y-2 text-gray-600">
-                <li>• Bachelor's degree or higher</li>
+                <li>• Bachelor&apos;s degree or higher</li>
                 <li>• 5+ years executive support experience</li>
                 <li>• Advanced English proficiency</li>
                 <li>• Professional certifications</li>
