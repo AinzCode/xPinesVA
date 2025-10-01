@@ -39,8 +39,8 @@ export default function Navigation() {
   return (
     <nav className="bg-white shadow-lg sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
-          <div className="flex items-center">
+        <div className="flex justify-center items-center h-16 relative">
+          <div className="absolute left-0 flex items-center">
             <Link href="/" className="flex items-center">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3134.92 773.14" className="h-8 w-auto">
                 <defs>
@@ -69,10 +69,10 @@ export default function Navigation() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center justify-center space-x-8">
             <Link
               href="/our-story"
-              className="text-gray-600 hover:text-[#097969] px-3 py-2 rounded-md text-sm font-medium transition-colors"
+              className="text-gray-600 hover:text-[#095028] px-3 py-2 rounded-md text-sm font-medium transition-colors"
             >
               Our Story
             </Link>
@@ -82,7 +82,7 @@ export default function Navigation() {
               <button
                 onClick={() => setExpertiseDropdownOpen(!expertiseDropdownOpen)}
                 onMouseEnter={() => setExpertiseDropdownOpen(true)}
-                className="flex items-center text-black hover:text-[#097969] px-3 py-2 rounded-md text-sm font-medium transition-colors focus:outline-none"
+                className="flex items-center text-black hover:text-[#095028] px-3 py-2 rounded-md text-sm font-medium transition-colors focus:outline-none"
               >
                 Expertise
                 <ChevronDown className={`ml-1 h-4 w-4 transition-transform ${expertiseDropdownOpen ? 'rotate-180' : ''}`} />
@@ -95,7 +95,7 @@ export default function Navigation() {
                 >
                   <Link 
                     href="/expertise" 
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#097969] font-medium"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#095028] font-medium"
                     onClick={() => setExpertiseDropdownOpen(false)}
                   >
                     All Expertise
@@ -105,7 +105,7 @@ export default function Navigation() {
                     <Link
                       key={item.href}
                       href={item.href}
-                      className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#097969] transition-colors"
+                      className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#095028] transition-colors"
                       onClick={() => setExpertiseDropdownOpen(false)}
                     >
                       {item.name}
@@ -115,15 +115,25 @@ export default function Navigation() {
               )}
             </div>
 
-            {navigation.slice(1).map((item) => (
+            {navigation.slice(1, 3).map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-[#097969] px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                className="text-gray-700 hover:text-[#095028] px-3 py-2 rounded-md text-sm font-medium transition-colors"
               >
                 {item.name}
               </Link>
             ))}
+          </div>
+
+          {/* Let's Connect button positioned on the right */}
+          <div className="absolute right-0 hidden md:flex items-center">
+            <Link
+              href="/connect"
+              className="bg-[#095028] text-white hover:bg-[#052814] px-4 py-2 rounded-md text-sm font-medium transition-colors"
+            >
+              Let&apos;s Connect
+            </Link>
           </div>
 
           {/* Mobile menu button */}

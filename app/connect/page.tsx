@@ -1,8 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import CardNav from '../../components/CardNav'
-import { cardNavConfig } from '../../lib/cardNavConfig'
+import Navigation from '../../components/Navigation'
 import Footer from '../../components/Footer'
 import { Mail, Phone, MapPin, Clock, ArrowRight } from 'lucide-react'
 
@@ -33,7 +32,7 @@ export default function Connect() {
 
   return (
     <div className="min-h-screen">
-      <CardNav {...cardNavConfig} />
+      <Navigation />
       
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">

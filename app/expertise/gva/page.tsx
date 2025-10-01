@@ -1,7 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import CardNav from '../../../components/CardNav'
-import { cardNavConfig } from '../../../lib/cardNavConfig'
+import Navigation from '../../../components/Navigation'
 import Footer from '../../../components/Footer'
 import { CheckCircle, Users, Clock, Globe } from 'lucide-react'
 
@@ -42,7 +41,7 @@ export default function GVAPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <CardNav {...cardNavConfig} />
+      <Navigation />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Header */}
