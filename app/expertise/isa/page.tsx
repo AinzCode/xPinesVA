@@ -1,6 +1,9 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowLeft, CheckCircle, Phone, Clock, Target } from 'lucide-react'
+import CardNav from '../../../components/CardNav'
+import { cardNavConfig } from '../../../lib/cardNavConfig'
+import Footer from '../../../components/Footer'
+import { CheckCircle, Phone, Clock, Target } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Inside Sales Agent (ISA) - Pines VA',
@@ -41,29 +44,9 @@ export default function ISAPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Breadcrumb */}
-      <div className="bg-white border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center space-x-2 text-sm">
-            <Link href="/" className="text-green-600 hover:underline">Home</Link>
-            <span className="text-gray-400">/</span>
-            <Link href="/expertise" className="text-green-600 hover:underline">Expertise</Link>
-            <span className="text-gray-400">/</span>
-            <span className="text-gray-600">Inside Sales Agent</span>
-          </div>
-        </div>
-      </div>
+      <CardNav {...cardNavConfig} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Back Button */}
-        <Link 
-          href="/expertise" 
-          className="inline-flex items-center text-green-600 hover:text-green-700 mb-8"
-        >
-          <ArrowLeft className="h-4 w-4 mr-2" />
-          Back to All Expertise
-        </Link>
-
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
@@ -184,6 +167,7 @@ export default function ISAPage() {
           </Link>
         </div>
       </div>
+      <Footer />
     </div>
   )
 }

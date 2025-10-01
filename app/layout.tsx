@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import localFont from 'next/font/local';
+import StyledComponentsRegistry from '../lib/styled-components-registry';
 import "./globals.css";
-import Chatbot from "../components/Chatbot";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -11,6 +12,12 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const colmeak = localFont({
+  src: '../public/fonts/Colmeak.otf',
+  variable: '--font-colmeak',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -26,10 +33,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${colmeak.variable} antialiased`}
       >
-        {children}
-        <Chatbot />
+        <StyledComponentsRegistry>
+          {children}
+        </StyledComponentsRegistry>
       </body>
     </html>
   );

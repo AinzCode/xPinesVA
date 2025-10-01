@@ -1,11 +1,12 @@
-import Navigation from '../../components/Navigation'
+import CardNav from '../../components/CardNav'
+import { cardNavConfig } from '../../lib/cardNavConfig'
 import Footer from '../../components/Footer'
 import { Users, Target, Heart, Award } from 'lucide-react'
 
 export default function OurStory() {
   return (
     <div className="min-h-screen">
-      <Navigation />
+      <CardNav {...cardNavConfig} />
       
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">

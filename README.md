@@ -1,12 +1,11 @@
 # Pines VA - Premium Virtual Assistant Services Website
 
-A comprehensive website for Pines VA, built with Next.js 15, TypeScript, Tailwind CSS, and Supabase. Features include service showcases, contact forms, AI chatbot, and social media integration.
+A comprehensive website for Pines VA, built with Next.js 15, TypeScript, Tailwind CSS, and Supabase. Features include service showcases, contact forms, and social media integration.
 
 ## 🚀 Features
 
 - **Modern Design**: Clean, professional UI with responsive design
 - **Service Pages**: Detailed information about GVA, EVA, ISA, and VMA services
-- **AI Chatbot**: Interactive chatbot for customer support and inquiries
 - **Contact Forms**: Comprehensive contact and consultation request forms
 - **Social Integration**: Links to LinkedIn, Facebook, and Twitter
 - **SEO Optimized**: Meta tags and structured content for search engines
@@ -17,7 +16,6 @@ A comprehensive website for Pines VA, built with Next.js 15, TypeScript, Tailwin
 - **Frontend**: Next.js 15, React 19, TypeScript
 - **Styling**: Tailwind CSS 4
 - **Backend**: Supabase (Database, Auth, Storage)
-- **AI Chatbot**: Vercel AI SDK with OpenAI/Anthropic
 - **Icons**: Lucide React
 - **Animations**: Framer Motion
 - **UI Components**: Radix UI
@@ -46,9 +44,6 @@ A comprehensive website for Pines VA, built with Next.js 15, TypeScript, Tailwin
    NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
    NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
    
-   # AI Chatbot (optional - for advanced AI responses)
-   OPENAI_API_KEY=your_openai_api_key
-   
    # Email Service (optional - for contact forms)
    RESEND_API_KEY=your_resend_api_key
    FROM_EMAIL=noreply@pinesva.com
@@ -76,20 +71,7 @@ A comprehensive website for Pines VA, built with Next.js 15, TypeScript, Tailwin
 - **Easy Guides** - Step-by-step process (coming soon)
 - **Social Spaces** - Social media integration (coming soon)
 
-## 🤖 AI Chatbot Features
 
-The chatbot currently includes:
-- **Predefined Responses**: Smart keyword detection for common queries
-- **Service Information**: Details about GVA, EVA, ISA, VMA services
-- **Contact Information**: Business hours, phone, email
-- **Pricing Inquiries**: Directs to consultation booking
-
-### Upgrading to AI-Powered Responses
-
-To enable AI-powered responses:
-1. Add your OpenAI or Anthropic API key to `.env.local`
-2. The chatbot can be enhanced with dynamic AI responses
-3. Consider implementing conversation context and memory
 
 ## 📱 Responsive Design
 
@@ -104,9 +86,6 @@ The website is fully responsive and optimized for:
 1. Update the services array in relevant components
 2. Add new service pages under `/app/expertise/[service]/`
 3. Update navigation and links
-
-### Modifying Chatbot Responses
-Edit the `predefinedResponses` object in `components/Chatbot.tsx`
 
 ### Styling Changes
 All styling uses Tailwind CSS classes. Key color scheme:
