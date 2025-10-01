@@ -95,27 +95,6 @@ export default function GVAPage() {
           </div>
         </div>
 
-        {/* Pricing */}
-        <div className="bg-white rounded-lg shadow-md p-8 mb-16">
-          <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">Flexible Pricing Plans</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="text-center p-6 border border-gray-200 rounded-lg">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Part-Time</h3>
-              <p className="text-3xl font-bold text-blue-600 mb-4">$8-12/hr</p>
-              <p className="text-gray-600">20 hours per week</p>
-            </div>
-            <div className="text-center p-6 border-2 border-blue-600 rounded-lg bg-blue-50">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Full-Time</h3>
-              <p className="text-3xl font-bold text-blue-600 mb-4">$6-10/hr</p>
-              <p className="text-gray-600">40 hours per week</p>
-            </div>
-            <div className="text-center p-6 border border-gray-200 rounded-lg">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Project-Based</h3>
-              <p className="text-3xl font-bold text-blue-600 mb-4">Custom</p>
-              <p className="text-gray-600">Flexible timeline</p>
-            </div>
-          </div>
-        </div>
 
         {/* CTA */}
         <div className="bg-blue-600 rounded-lg p-8 text-center text-white">

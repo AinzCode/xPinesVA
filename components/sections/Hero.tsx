@@ -11,41 +11,50 @@ export default function Hero() {
         <div className="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
           <div className="mb-16 lg:mb-0">
             <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              <SplitText
-                text="Welcome to Pines VA"
-                tag="span"
-                className="text-4xl lg:text-6xl font-bold text-gray-900"
-                delay={100}
-                duration={0.6}
-                ease="power3.out"
-                splitType="chars"
-                from={{ opacity: 0, y: 40 }}
-                to={{ opacity: 1, y: 0 }}
-                threshold={0.1}
-                rootMargin="-100px"
-                textAlign="left"
-              />
+              <div className="flex flex-col">
+                <SplitText
+                  text="Welcome to"
+                  tag="span"
+                  className="text-4xl lg:text-6xl font-bold text-gray-900 block"
+                  delay={110}
+                  duration={0.6}
+                  ease="power3.out"
+                  splitType="chars"
+                  from={{ opacity: 0, y: 40 }}
+                  to={{ opacity: 1, y: 0 }}
+                  threshold={0.1}
+                  rootMargin="-110px"
+                  textAlign="center"
+                />
+                <SplitText
+                  text="PinesVA"
+                  tag="span"
+                  className="text-4xl lg:text-6xl font-bold text-green-600 transition-colors duration-500 hover:text-green-700 block"
+                  delay={250}
+                  duration={0.6}
+                  ease="power3.out"
+                  splitType="chars"
+                  from={{ opacity: 0, y: 40 }}
+                  to={{ opacity: 1, y: 0 }}
+                  threshold={0.1}
+                  rootMargin="-110px"
+                  textAlign="center"
+                />
+              </div>
             </h1>
 
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              Transform your business with our expert Virtual Assistants. From
-              general admin to specialized healthcare support, we provide
-              top-tier professionals to scale your operations efficiently.
+              Strengthen your organization with professional Virtual Assistance. 
+              Our team delivers consistent, high-quality support to optimize performance across all levels.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/connect"
-                className="bg-[#095028] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#052814] transition-colors flex items-center justify-center gap-2"
+                className="bg-green-700 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-800 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
               >
                 Get Started Today
                 <ArrowRight className="w-5 h-5" />
-              </Link>
-              <Link
-                href="/expertise"
-                className="border-2 border-[#1B402A] text-[#1B402A] px-8 py-4 rounded-lg font-semibold hover:bg-[#1B402A] hover:text-white transition-colors text-center"
-              >
-                View Our Services
               </Link>
             </div>
           </div>
@@ -57,23 +66,23 @@ export default function Hero() {
               </h3>
               <ul className="space-y-3">
                 <li className="flex items-center">
-                  <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
+                  <div className="w-2 h-2 bg-green-600 rounded-full mr-3"></div>
                   <span className="text-gray-700">
                     Highly skilled professionals
                   </span>
                 </li>
                 <li className="flex items-center">
-                  <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
+                  <div className="w-2 h-2 bg-green-600 rounded-full mr-3"></div>
                   <span className="text-gray-700">24/7 dedicated support</span>
                 </li>
                 <li className="flex items-center">
-                  <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
+                  <div className="w-2 h-2 bg-green-600 rounded-full mr-3"></div>
                   <span className="text-gray-700">
                     Cost-effective solutions
                   </span>
                 </li>
                 <li className="flex items-center">
-                  <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
+                  <div className="w-2 h-2 bg-green-600 rounded-full mr-3"></div>
                   <span className="text-gray-700">
                     Rapid scaling capabilities
                   </span>

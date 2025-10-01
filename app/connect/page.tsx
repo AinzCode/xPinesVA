@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useState } from 'react'
 import Navigation from '../../components/Navigation'
@@ -18,9 +18,7 @@ export default function Connect() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Here you would integrate with Supabase or your preferred form handling
     console.log('Form submitted:', formData)
-    // Show success message or redirect
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -33,108 +31,58 @@ export default function Connect() {
   return (
     <div className="min-h-screen">
       <Navigation />
-      
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
+
+      <section className="bg-gradient-to-br from-green-50 to-emerald-100 py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">Let&apos;s Connect</h1>
           <p className="text-xl text-gray-600 leading-relaxed">
-            Ready to transform your business with premium virtual assistant services? 
-            Get in touch with our team and discover how we can help you scale efficiently.
+            Ready to transform your business with exceptional virtual assistant services? 
+            Get in touch with our team today and discover how we can help you achieve your goals.
           </p>
         </div>
       </section>
 
-      {/* Contact Information & Form */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Information */}
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-12">
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-8">Get in Touch</h2>
-              
-              <div className="space-y-8">
-                <div className="flex items-start">
-                  <div className="bg-blue-100 p-3 rounded-lg mr-4">
-                    <Mail className="w-6 h-6 text-blue-600" />
-                  </div>
+              <div className="space-y-6">
+                <div className="flex items-center">
+                  <Mail className="h-6 w-6 text-green-600 mr-4" />
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Email Us</h3>
-                    <p className="text-gray-600 mb-1">General inquiries:</p>
-                    <a href="mailto:hello@pinesva.com" className="text-blue-600 hover:text-blue-700 font-medium">
-                      hello@pinesva.com
-                    </a>
-                    <p className="text-gray-600 mt-2 mb-1">Sales inquiries:</p>
-                    <a href="mailto:sales@pinesva.com" className="text-blue-600 hover:text-blue-700 font-medium">
-                      sales@pinesva.com
-                    </a>
+                    <h3 className="font-semibold text-gray-900">Email</h3>
+                    <p className="text-gray-600">hello@xpinesva.com</p>
                   </div>
                 </div>
-
-                <div className="flex items-start">
-                  <div className="bg-green-100 p-3 rounded-lg mr-4">
-                    <Phone className="w-6 h-6 text-green-600" />
-                  </div>
+                <div className="flex items-center">
+                  <Phone className="h-6 w-6 text-green-600 mr-4" />
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Call Us</h3>
-                    <p className="text-gray-600 mb-1">Main line:</p>
-                    <a href="tel:+1234567890" className="text-blue-600 hover:text-blue-700 font-medium">
-                      +1 (234) 567-8900
-                    </a>
-                    <p className="text-gray-600 mt-2 mb-1">Sales hotline:</p>
-                    <a href="tel:+1234567891" className="text-blue-600 hover:text-blue-700 font-medium">
-                      +1 (234) 567-8901
-                    </a>
+                    <h3 className="font-semibold text-gray-900">Phone</h3>
+                    <p className="text-gray-600">+1 (555) 123-4567</p>
                   </div>
                 </div>
-
-                <div className="flex items-start">
-                  <div className="bg-purple-100 p-3 rounded-lg mr-4">
-                    <Clock className="w-6 h-6 text-purple-600" />
-                  </div>
+                <div className="flex items-center">
+                  <MapPin className="h-6 w-6 text-green-600 mr-4" />
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Business Hours</h3>
-                    <div className="text-gray-600 space-y-1">
-                      <p>Monday - Friday: 8:00 AM - 8:00 PM (EST)</p>
-                      <p>Saturday: 9:00 AM - 5:00 PM (EST)</p>
-                      <p>Sunday: Emergency support only</p>
-                    </div>
+                    <h3 className="font-semibold text-gray-900">Location</h3>
+                    <p className="text-gray-600">Global Remote Operations</p>
                   </div>
                 </div>
-
-                <div className="flex items-start">
-                  <div className="bg-orange-100 p-3 rounded-lg mr-4">
-                    <MapPin className="w-6 h-6 text-orange-600" />
-                  </div>
+                <div className="flex items-center">
+                  <Clock className="h-6 w-6 text-green-600 mr-4" />
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Our Reach</h3>
-                    <p className="text-gray-600">
-                      We operate globally with team members across multiple time zones 
-                      to provide 24/7 support for our clients.
-                    </p>
+                    <h3 className="font-semibold text-gray-900">Business Hours</h3>
+                    <p className="text-gray-600">Monday - Friday: 9AM - 6PM EST</p>
                   </div>
-                </div>
-              </div>
-
-              <div className="mt-12 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Quick Response Guarantee</h3>
-                <p className="text-gray-600 mb-4">
-                  We typically respond to all inquiries within 2 hours during business hours 
-                  and within 24 hours on weekends.
-                </p>
-                <div className="flex items-center text-blue-600 font-medium">
-                  <Clock className="w-4 h-4 mr-2" />
-                  Average response time: 1.5 hours
                 </div>
               </div>
             </div>
 
-            {/* Contact Form */}
-            <div className="bg-white rounded-xl shadow-lg p-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
-              
+            <div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-8">Send us a Message</h2>
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                       Full Name *
@@ -146,8 +94,7 @@ export default function Connect() {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      placeholder="John Doe"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
                     />
                   </div>
                   <div>
@@ -160,108 +107,100 @@ export default function Connect() {
                       name="age"
                       value={formData.age}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      placeholder="30"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                      Email Address *
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                      Phone Number
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="expertise" className="block text-sm font-medium text-gray-700 mb-2">
+                      Area of Expertise Needed
+                    </label>
+                    <select
+                      id="expertise"
+                      name="expertise"
+                      value={formData.expertise}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                    >
+                      <option value="">Select an area</option>
+                      <option value="real-estate">Real Estate</option>
+                      <option value="property-management">Property Management</option>
+                      <option value="medical-assistance">Medical Assistance</option>
+                      <option value="general-admin">General Administration</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
+                      Company Name
+                    </label>
+                    <input
+                      type="text"
+                      id="company"
+                      name="company"
+                      value={formData.company}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="john@company.com"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                    Contact Number *
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    required
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="+1 (234) 567-8900"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="expertise" className="block text-sm font-medium text-gray-700 mb-2">
-                    Expertise Needed *
-                  </label>
-                  <select
-                    id="expertise"
-                    name="expertise"
-                    required
-                    value={formData.expertise}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  >
-                    <option value="">Select a service</option>
-                    <option value="gva">General Virtual Assistant (GVA)</option>
-                    <option value="eva">Executive Virtual Assistant (EVA)</option>
-                    <option value="isa">Inside Sales Agent (ISA)</option>
-                    <option value="vma">Virtual Medical Assistant (VMA)</option>
-                    <option value="multiple">Multiple Services</option>
-                    <option value="consultation">Not sure - Need Consultation</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
-                    Company Name (Current/Previous)
-                  </label>
-                  <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Your Company Inc."
-                  />
-                </div>
-
-                <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    Message
+                    Message *
                   </label>
                   <textarea
                     id="message"
                     name="message"
                     rows={4}
+                    required
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Tell us about your specific needs, current challenges, or any questions you have..."
-                  ></textarea>
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                    placeholder="Tell us about your project and how we can help..."
+                  />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-blue-600 text-white py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
+                  className="w-full bg-gradient-to-r from-green-600 to-emerald-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-green-700 hover:to-emerald-700 transition-all duration-300 flex items-center justify-center group"
                 >
                   Send Message
-                  <ArrowRight className="w-5 h-5" />
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </form>
-
-              <p className="text-sm text-gray-600 mt-4 text-center">
-                By submitting this form, you agree to our Privacy Policy and Terms of Service.
-              </p>
             </div>
           </div>
         </div>

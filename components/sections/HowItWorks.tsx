@@ -7,25 +7,25 @@ const steps = [
     icon: MessageSquare,
     title: '1. Initial Consultation',
     description: 'Tell us about your business needs, goals, and the type of virtual assistant you require.',
-    color: 'bg-blue-500',
+    color: 'bg-green-500',
   },
   {
     icon: UserPlus,
     title: '2. Perfect Match',
     description: 'We carefully select and introduce you to the ideal VA based on your specific requirements.',
-    color: 'bg-green-500',
+    color: 'bg-brown-500',
   },
   {
     icon: CheckCircle,
     title: '3. Seamless Integration',
     description: 'Your VA integrates with your team and processes, ensuring smooth workflow from day one.',
-    color: 'bg-purple-500',
+    color: 'bg-green-600',
   },
   {
     icon: Rocket,
     title: '4. Scale & Succeed',
     description: 'Watch your business grow as your VA handles tasks efficiently, freeing you to focus on strategy.',
-    color: 'bg-orange-500',
+    color: 'bg-brown-600',
   },
 ]
 
@@ -64,16 +64,16 @@ export default function HowItWorks() {
         </div>
 
         <div className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-blue-50 to-indigo-100 rounded-2xl p-8 lg:p-12">
+          <div className="bg-gradient-to-r from-green-50 to-brown-50 rounded-2xl p-8 lg:p-12 border border-green-200">
             <h3 className="text-3xl font-bold text-gray-900 mb-4">Ready to Get Started?</h3>
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
               The process takes less than 48 hours from consultation to having your dedicated VA ready to work.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+              <button className="bg-green-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700 transition-all duration-300 transform hover:scale-105">
                 Schedule Free Consultation
               </button>
-              <button className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-colors">
+              <button className="border-2 border-green-600 text-green-600 px-8 py-4 rounded-lg font-semibold hover:bg-green-600 hover:text-white transition-all duration-300 transform hover:scale-105">
                 Learn More About Our Process
               </button>
             </div>

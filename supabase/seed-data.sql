@@ -90,7 +90,7 @@ INSERT INTO services (name, slug, description, short_description, pricing_min, p
 INSERT INTO team_members (name, email, role, specialization, bio, skills, experience_years, is_active) VALUES
 (
   'Sarah Johnson',
-  'sarah@pinesva.com',
+  'hrteam@pinesva.com',
   'Senior Executive Assistant',
   'EVA',
   'Experienced executive assistant with over 8 years supporting C-level executives in Fortune 500 companies.',
@@ -100,7 +100,7 @@ INSERT INTO team_members (name, email, role, specialization, bio, skills, experi
 ),
 (
   'Michael Chen',
-  'michael@pinesva.com',
+  'hrteam@pinesva.com',
   'Sales Specialist',
   'ISA',
   'Results-driven sales professional with expertise in lead generation and conversion optimization.',
@@ -110,7 +110,7 @@ INSERT INTO team_members (name, email, role, specialization, bio, skills, experi
 ),
 (
   'Emily Rodriguez',
-  'emily@pinesva.com',
+  'hrteam@pinesva.com',
   'Medical Assistant',
   'VMA',
   'HIPAA-certified medical assistant with extensive experience in healthcare administration.',
@@ -120,7 +120,7 @@ INSERT INTO team_members (name, email, role, specialization, bio, skills, experi
 ),
 (
   'David Thompson',
-  'david@pinesva.com',
+  'hrteam@pinesva.com',
   'General Assistant',
   'GVA',
   'Versatile virtual assistant skilled in various administrative tasks and customer service.',

@@ -6,8 +6,9 @@ import { Menu, X, ChevronDown } from 'lucide-react'
 
 const navigation = [
   { name: 'Our Story', href: '/our-story' },
+  { name: 'Services', href: '/services' },
   { name: 'Easy Guides', href: '/guides' },
-  { name: 'Social Spaces', href: '/social' },
+  { name: 'Social Spaces', href: '/social-spaces' },
   { name: 'Let\'s Connect', href: '/connect' },
 ]
 
@@ -39,10 +40,14 @@ export default function Navigation() {
   return (
     <nav className="bg-white shadow-lg sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-center items-center h-16 relative">
+        <div className="flex justify-center items-center h-20 relative">
           <div className="absolute left-0 flex items-center">
-            <Link href="/" className="flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3134.92 773.14" className="h-8 w-auto">
+            <Link 
+              href="/" 
+              className="flex items-center"
+              onMouseEnter={() => setExpertiseDropdownOpen(false)}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3134.92 773.14" className="h-10 w-auto">
                 <defs>
                   <style>{`.cls-1{font-size:549.27px;fill:#27423b;font-family:Colmeak;}.cls-2,.cls-3{fill:#c2b59b;}.cls-2{letter-spacing:-0.12em;}.cls-4{fill:#28443b;}`}</style>
                 </defs>
@@ -72,9 +77,18 @@ export default function Navigation() {
           <div className="hidden md:flex items-center justify-center space-x-8">
             <Link
               href="/our-story"
-              className="text-gray-600 hover:text-[#095028] px-3 py-2 rounded-md text-sm font-medium transition-colors"
+              className="text-gray-600 hover:text-[#095028] px-4 py-3 rounded-md text-base font-semibold transition-colors"
+              onMouseEnter={() => setExpertiseDropdownOpen(false)}
             >
               Our Story
+            </Link>
+
+            <Link
+              href="/services"
+              className="text-gray-700 hover:text-[#095028] px-4 py-3 rounded-md text-base font-semibold transition-colors"
+              onMouseEnter={() => setExpertiseDropdownOpen(false)}
+            >
+              Services
             </Link>
             
             {/* Expertise Dropdown */}
@@ -82,10 +96,10 @@ export default function Navigation() {
               <button
                 onClick={() => setExpertiseDropdownOpen(!expertiseDropdownOpen)}
                 onMouseEnter={() => setExpertiseDropdownOpen(true)}
-                className="flex items-center text-black hover:text-[#095028] px-3 py-2 rounded-md text-sm font-medium transition-colors focus:outline-none"
+                className="flex items-center text-black hover:text-[#095028] px-4 py-3 rounded-md text-base font-semibold transition-colors focus:outline-none"
               >
                 Expertise
-                <ChevronDown className={`ml-1 h-4 w-4 transition-transform ${expertiseDropdownOpen ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`ml-1 h-5 w-5 transition-transform ${expertiseDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
               
               {expertiseDropdownOpen && (
@@ -95,7 +109,7 @@ export default function Navigation() {
                 >
                   <Link 
                     href="/expertise" 
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#095028] font-medium"
+                    className="block px-4 py-3 text-base text-gray-700 hover:bg-gray-50 hover:text-[#095028] font-semibold"
                     onClick={() => setExpertiseDropdownOpen(false)}
                   >
                     All Expertise
@@ -105,7 +119,7 @@ export default function Navigation() {
                     <Link
                       key={item.href}
                       href={item.href}
-                      className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#095028] transition-colors"
+                      className="block px-4 py-3 text-base text-gray-600 hover:bg-gray-50 hover:text-[#095028] font-semibold transition-colors"
                       onClick={() => setExpertiseDropdownOpen(false)}
                     >
                       {item.name}
@@ -115,11 +129,12 @@ export default function Navigation() {
               )}
             </div>
 
-            {navigation.slice(1, 3).map((item) => (
+            {navigation.slice(2, 4).map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-[#095028] px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                className="text-gray-700 hover:text-[#095028] px-4 py-3 rounded-md text-base font-semibold transition-colors"
+                onMouseEnter={() => setExpertiseDropdownOpen(false)}
               >
                 {item.name}
               </Link>
@@ -130,7 +145,8 @@ export default function Navigation() {
           <div className="absolute right-0 hidden md:flex items-center">
             <Link
               href="/connect"
-              className="bg-[#095028] text-white hover:bg-[#052814] px-4 py-2 rounded-md text-sm font-medium transition-colors"
+              className="bg-green-700 text-white hover:bg-green-800 px-6 py-3 rounded-md text-base font-semibold transition-all duration-300 transform hover:scale-105"
+              onMouseEnter={() => setExpertiseDropdownOpen(false)}
             >
               Let&apos;s Connect
             </Link>
@@ -140,7 +156,7 @@ export default function Navigation() {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 hover:text-blue-600 focus:outline-none focus:text-blue-600"
+              className="text-gray-700 hover:text-green-600 focus:outline-none focus:text-green-600 transition-colors duration-300"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -153,17 +169,25 @@ export default function Navigation() {
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               <Link
                 href="/our-story"
-                className="text-gray-700 hover:text-[#BFBF99] block px-3 py-2 rounded-md text-base font-medium"
+                className="text-gray-700 hover:text-green-600 block px-4 py-3 rounded-md text-lg font-semibold transition-colors duration-300"
                 onClick={() => setIsOpen(false)}
               >
                 Our Story
+              </Link>
+
+              <Link
+                href="/services"
+                className="text-gray-700 hover:text-green-600 block px-4 py-3 rounded-md text-lg font-semibold transition-colors duration-300"
+                onClick={() => setIsOpen(false)}
+              >
+                Services
               </Link>
               
               {/* Mobile Expertise Menu */}
               <div className="space-y-1">
                 <Link
                   href="/expertise"
-                  className="text-gray-700 hover:text-[#BFBF99] block px-3 py-2 rounded-md text-base font-medium"
+                  className="text-gray-700 hover:text-green-600 block px-4 py-3 rounded-md text-lg font-semibold transition-colors duration-300"
                   onClick={() => setIsOpen(false)}
                 >
                   All Expertise
@@ -172,7 +196,7 @@ export default function Navigation() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="text-gray-600 hover:text-blue-600 block px-6 py-2 rounded-md text-sm font-medium"
+                    className="text-gray-600 hover:text-green-600 block px-8 py-3 rounded-md text-base font-semibold transition-colors duration-300"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.name}
@@ -180,11 +204,11 @@ export default function Navigation() {
                 ))}
               </div>
 
-              {navigation.slice(1).map((item) => (
+              {navigation.slice(2, 4).map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium"
+                  className="text-gray-700 hover:text-green-600 block px-4 py-3 rounded-md text-lg font-semibold transition-colors duration-300"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}

@@ -11,16 +11,14 @@ export const metadata: Metadata = {
 
 export default function ISAPage() {
   const features = [
-    'Lead Qualification & Nurturing',
-    'Cold Calling & Outreach',
-    'CRM Management',
-    'Sales Pipeline Development',
-    'Appointment Setting',
-    'Follow-up Campaigns',
-    'Sales Reporting & Analytics',
+    'Lead Outreach & Cold Calling',
+    'Warm Calling & Follow-Ups',
+    'Client Qualification',
+    'Sales Presentations',
+    'Pipeline Management',
+    'Target Achievement',
     'Customer Relationship Building',
-    'Market Research',
-    'Competitor Analysis'
+    'Collaboration with Sales Team'
   ]
 
   const benefits = [
@@ -51,16 +49,19 @@ export default function ISAPage() {
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Inside Sales Agent (ISA)
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Boost your sales performance with our skilled Inside Sales Agents. 
-            Professional lead generation, qualification, and conversion specialists.
+          <p className="text-xl text-justify text-gray-600 max-w-3xl mx-auto">
+            An Inside Sales Associate at PinesVA is focused on driving growth through client outreach 
+            and sales. The role involves making outbound calls, following up with leads, qualifying 
+            prospects, and nurturing relationships to generate new business opportunities. With strong 
+            communication skills and a results-driven mindset, the SA turns conversations into conversions 
+            while keeping the sales pipeline active and thriving.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 mb-16">
           {/* Services Overview */}
           <div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Sales Services We Provide</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Key Responsibilities</h2>
             <div className="grid grid-cols-1 gap-3">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-center space-x-3">
@@ -128,28 +129,6 @@ export default function ISAPage() {
               </div>
               <h3 className="font-semibold text-gray-900 mb-2">Conversion</h3>
               <p className="text-gray-600 text-sm">Close deals and schedule appointments</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Pricing */}
-        <div className="bg-white rounded-lg shadow-md p-8 mb-16">
-          <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">Flexible Pricing Options</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="text-center p-6 border border-gray-200 rounded-lg">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Hourly Rate</h3>
-              <p className="text-3xl font-bold text-green-600 mb-4">$10-15/hr</p>
-              <p className="text-gray-600">Pay for actual hours worked</p>
-            </div>
-            <div className="text-center p-6 border-2 border-green-600 rounded-lg bg-green-50">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Commission Based</h3>
-              <p className="text-3xl font-bold text-green-600 mb-4">15-25%</p>
-              <p className="text-gray-600">Pay only for closed deals</p>
-            </div>
-            <div className="text-center p-6 border border-gray-200 rounded-lg">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Hybrid Model</h3>
-              <p className="text-3xl font-bold text-green-600 mb-4">Custom</p>
-              <p className="text-gray-600">Base + commission structure</p>
             </div>
           </div>
         </div>
