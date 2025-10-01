@@ -1,6 +1,6 @@
 'use client'
 
-import { TrendingUp, Clock, Users, Target, Star, ArrowRight } from 'lucide-react'
+import { TrendingUp, Clock, Target, ArrowRight } from 'lucide-react'
 
 const results = [
   {

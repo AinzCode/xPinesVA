@@ -28,7 +28,7 @@ export default function FAQPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Need More Information?</h2>
           <p className="text-xl text-gray-600 mb-8">
-            Can't find what you're looking for? Our team is here to help answer any specific questions about your needs.
+            Can&apos;t find what you&apos;re looking for? Our team is here to help answer any specific questions about your needs.
           </p>
           
           <div className="grid md:grid-cols-3 gap-8">
