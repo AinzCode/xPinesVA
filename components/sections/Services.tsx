@@ -58,12 +58,12 @@ export default function Services() {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We understand that every business has unique needs, and that's why our services are designed to be flexible, professional, and impactful.
+            We understand that every business has unique needs, and that&apos;s why our services are designed to be flexible, professional, and impactful.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
+          {services.map((service) => (
             <div 
               key={service.id} 
               className={`bg-white rounded-xl p-8 shadow-sm border-2 ${service.borderColor} hover:bg-gradient-to-br ${service.hoverColor} ${service.hoverBorderColor} transition-all duration-300 transform hover:scale-105 group`}

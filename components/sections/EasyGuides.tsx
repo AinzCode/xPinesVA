@@ -6,13 +6,13 @@ const steps = [
   {
     icon: MessageSquare,
     title: 'Share What You Need',
-    description: 'Tell us about your business, your goals, and the tasks you\'d love to take off your plate. Whether it\'s real estate, medical, executive, or general support - we listen first.',
+    description: 'Tell us about your business, your goals, and the tasks you&apos;d love to take off your plate. Whether it&apos;s real estate, medical, executive, or general support - we listen first.',
     color: 'bg-green-500',
   },
   {
     icon: UserCheck,
     title: 'Meet Your Perfect Match',
-    description: 'We\'ll connect you with a skilled VA who fits your industry and working style. Think of it as finding your right-hand partner, not just an assistant.',
+    description: 'We&apos;ll connect you with a skilled VA who fits your industry and working style. Think of it as finding your right-hand partner, not just an assistant.',
     color: 'bg-brown-500',
   },
   {

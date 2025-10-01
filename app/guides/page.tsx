@@ -15,7 +15,7 @@ export default function GuidesPage() {
           <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">Easy Guides</h1>
           <p className="text-xl text-gray-600 leading-relaxed">
             Your step-by-step roadmap to working with virtual assistants. 
-            We've made the process simple, transparent, and designed around your success.
+            We&apos;ve made the process simple, transparent, and designed around your success.
           </p>
         </div>
       </section>
@@ -29,7 +29,7 @@ export default function GuidesPage() {
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Our Process Works</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              We've refined our approach based on years of experience and client feedback.
+              We&apos;ve refined our approach based on years of experience and client feedback.
             </p>
           </div>
 
@@ -66,7 +66,7 @@ export default function GuidesPage() {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">Ongoing Support</h3>
               <p className="text-gray-600 leading-relaxed">
-                We don't just match you and disappear. Our team provides continuous support to ensure long-term success.
+                We don&apos;t just match you and disappear. Our team provides continuous support to ensure long-term success.
               </p>
             </div>
           </div>
@@ -93,10 +93,10 @@ export default function GuidesPage() {
             </div>
 
             <div className="bg-gray-50 rounded-lg p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">What if my VA isn't the right fit?</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">What if my VA isn&apos;t the right fit?</h3>
               <p className="text-gray-600">
-                We offer a satisfaction guarantee. If within the first two weeks you feel the match isn't right, 
-                we'll work with you to find a better fit at no additional cost.
+                We offer a satisfaction guarantee. If within the first two weeks you feel the match isn&apos;t right, 
+                we&apos;ll work with you to find a better fit at no additional cost.
               </p>
             </div>
 
