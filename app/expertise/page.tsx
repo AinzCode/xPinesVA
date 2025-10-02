@@ -165,7 +165,7 @@ export default function Expertise() {
                     </div>
 
                     <Link
-                      href="/connect"
+                      href={`/fill-up/${service.id}`}
                       className={`inline-flex items-center ${service.color} text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity`}
                     >
                       Get Started with {service.id.toUpperCase()}
@@ -220,7 +220,7 @@ export default function Expertise() {
               href="/connect"
               className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
             >
-              Schedule Free Consultation
+              Get Started Now
             </Link>
             <Link
               href="/guides"

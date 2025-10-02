@@ -2,6 +2,7 @@
 
 import { Star, Quote } from 'lucide-react'
 
+
 interface Testimonial {
   id: string
   client_name: string
@@ -106,18 +107,14 @@ export default function Testimonials() {
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Don&apos;t just take our word for it. Here&apos;s what our satisfied clients have to say about our services.
-          </p>
-        </div>
-
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Don&apos;t just take our word for it. Here&apos;s what our satisfied clients have to say about our services.
+            </p>
+          </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.slice(0, 6).map((testimonial) => (
-            <div
-              key={testimonial.id}
-              className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
-            >
+          {testimonials.slice(0, 6).map((testimonial, index) => (
+            <div key={index} className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
               <div className="flex items-center mb-4">
                 <Quote className="w-8 h-8 text-green-600 mr-3" />
                 {testimonial.rating && (
@@ -145,16 +142,16 @@ export default function Testimonials() {
                 )}
               </div>
             </div>
-          ))}
+            ))}
         </div>
 
         {testimonials.length > 6 && (
           <div className="text-center mt-12">
-            <button className="text-green-600 font-semibold hover:text-green-700 transition-colors">
-              View More Reviews →
-            </button>
-          </div>
-        )}
+              <button className="text-green-600 font-semibold hover:text-green-700 transition-colors">
+                View More Reviews →
+              </button>
+            </div>
+          )}
       </div>
     </section>
   )

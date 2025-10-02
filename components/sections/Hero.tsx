@@ -1,21 +1,40 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import SplitText from "../SplitText";
+import { useEffect, useState } from "react";
+
+// Lazy load SparklesText to improve initial load
+const SparklesText = dynamic(() => 
+  import("../ui/sparkles-text").then((mod) => ({ default: mod.SparklesText })),
+  { ssr: false }
+);
 
 export default function Hero() {
+  const [showSparkles, setShowSparkles] = useState(false);
+
+  useEffect(() => {
+    // Wait for SplitText animation to complete, then show sparkles
+    const timer = setTimeout(() => {
+      setShowSparkles(true);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section className="bg-[#097969]/20 py-20 lg:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
           <div className="mb-16 lg:mb-0">
-            <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+            <h1 className="text-4xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
               <div className="flex flex-col">
                 <SplitText
                   text="Welcome to"
                   tag="span"
-                  className="text-4xl lg:text-6xl font-bold text-gray-900 block"
+                  className="text-4xl lg:text-7xl font-bold text-gray-900 block"
                   delay={110}
                   duration={0.6}
                   ease="power3.out"
@@ -24,22 +43,35 @@ export default function Hero() {
                   to={{ opacity: 1, y: 0 }}
                   threshold={0.1}
                   rootMargin="-110px"
-                  textAlign="center"
+                  textAlign="left"
                 />
-                <SplitText
-                  text="PinesVA"
-                  tag="span"
-                  className="text-4xl lg:text-6xl font-bold text-green-600 transition-colors duration-500 hover:text-green-700 block"
-                  delay={250}
-                  duration={0.6}
-                  ease="power3.out"
-                  splitType="chars"
-                  from={{ opacity: 0, y: 40 }}
-                  to={{ opacity: 1, y: 0 }}
-                  threshold={0.1}
-                  rootMargin="-110px"
-                  textAlign="center"
-                />
+                <div className="relative">
+                  <SplitText
+                    text="PinesVA"
+                    tag="span"
+                    className="text-5xl lg:text-8xl font-bold text-green-600 block"
+                    delay={250}
+                    duration={0.6}
+                    ease="power3.out"
+                    splitType="chars"
+                    from={{ opacity: 0, y: 40 }}
+                    to={{ opacity: 1, y: 0 }}
+                    threshold={0.1}
+                    rootMargin="-110px"
+                    textAlign="left"
+                  />
+                  {showSparkles && (
+                    <div className="absolute inset-0 pointer-events-none">
+                      <SparklesText 
+                        className="text-5xl lg:text-8xl font-bold text-transparent block"
+                        colors={{ first: "#059669", second: "#f59e0b" }}
+                        sparklesCount={12}
+                      >
+                        PinesVA
+                      </SparklesText>
+                    </div>
+                  )}
+                </div>
               </div>
             </h1>
 

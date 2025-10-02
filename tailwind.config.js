@@ -66,6 +66,19 @@ module.exports = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      animation: {
+        shimmer: "shimmer 3s ease-in-out infinite",
+      },
+      keyframes: {
+        shimmer: {
+          from: {
+            "background-position": "0 0",
+          },
+          to: {
+            "background-position": "-200% 0",
+          },
+        },
+      },
     },
   },
   plugins: [],

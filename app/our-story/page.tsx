@@ -23,7 +23,7 @@ export default function OurStory() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="prose prose-lg mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">How We Started</h2>
-            <p className="text-gray-600 leading-relaxed mb-8">
+            <p className="text-gray-600 text-justify leading-relaxed mb-8">
               At PinesVA, we believe in more than just assistance, we believe in partnership. Founded during the pandemic by Erwin Olivas,
               Ejay Licuanan, and Jim Patrick Ipak in the Philippines, our journey began with providing essential support to the real estate 
               and property management industries. Over time, our commitment to excellence and the trust of our clients led us to expand into 
@@ -33,14 +33,14 @@ export default function OurStory() {
               relationships rooted in trust, reliability, and results.
             </p>
             
-            <p className="text-gray-600 leading-relaxed mb-8">
+            <p className="text-gray-600 text-justify  leading-relaxed mb-8">
               Starting with just three dedicated professionals, we focused on quality over quantity. 
               Every virtual assistant we onboard goes through rigorous screening, training, and 
               continuous development to ensure they meet our high standards.
             </p>
             
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Where We Are Today</h2>
-            <p className="text-gray-600 leading-relaxed mb-8">
+            <p className="text-gray-600 text-justify leading-relaxed mb-8">
               Today, Pines VA serves over 500 businesses across various industries, from startups 
               to established enterprises. Our team of specialized virtual assistants has helped 
               our clients save millions of hours and countless resources while scaling their operations efficiently.

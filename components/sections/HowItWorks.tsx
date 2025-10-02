@@ -1,5 +1,6 @@
 'use client'
 
+
 import { MessageSquare, UserPlus, CheckCircle, Rocket } from 'lucide-react'
 
 const steps = [
