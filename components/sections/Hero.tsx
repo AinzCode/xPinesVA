@@ -6,7 +6,7 @@ import SplitText from "../SplitText";
 
 export default function Hero() {
   return (
-    <section className="bg-[#097969]/20 py-20 lg:py-32">
+    <section className="bg-[#D1F4E0] py-20 lg:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
           <div className="mb-16 lg:mb-0">

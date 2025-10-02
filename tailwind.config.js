@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       fontFamily: {
         'colmeak': ['Colmeak', 'sans-serif'],
+        'poppins': ['var(--font-poppins)', 'sans-serif'],
       },
       colors: {
         background: "hsl(var(--background))",

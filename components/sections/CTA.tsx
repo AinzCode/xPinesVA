@@ -2,9 +2,11 @@
 
 import { ArrowRight, Phone, Mail } from 'lucide-react'
 
+import Link from 'next/link'
+
 export default function CTA() {
   return (
-    <section className="py-20 bg-gradient-to-br from-green-800 to-brown-800">
+    <section className="py-20 bg-[#095028]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
@@ -133,6 +135,16 @@ export default function CTA() {
             <p className="text-sm text-gray-600 mt-4 text-center">
               We&apos;ll respond within 2 hours during business hours
             </p>
+
+            <div className="mt-6 pt-6 border-t border-gray-200 text-center">
+              <p className="text-sm text-gray-600 mb-3">Already a client?</p>
+              <Link
+                href="/testimonials/submit"
+                className="text-green-600 font-semibold hover:text-green-700 transition-colors text-sm"
+              >
+                Share Your Experience →
+              </Link>
+            </div>
           </div>
         </div>
       </div>

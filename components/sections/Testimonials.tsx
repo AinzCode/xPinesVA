@@ -155,6 +155,16 @@ export default function Testimonials() {
             </button>
           </div>
         )}
+
+        <div className="text-center mt-12">
+          <p className="text-gray-600 mb-4">Had a great experience with Pines VA?</p>
+          <a
+            href="/testimonials/submit"
+            className="inline-block bg-green-700 text-white hover:bg-green-800 px-8 py-3 rounded-full text-base font-semibold transition-all duration-300 shadow-md hover:shadow-lg"
+          >
+            Share Your Experience
+          </a>
+        </div>
       </div>
     </section>
   )

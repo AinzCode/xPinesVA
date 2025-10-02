@@ -2,6 +2,35 @@
 export interface Database {
   public: {
     Tables: {
+      admin_users: {
+        Row: {
+          id: string
+          user_id: string | null
+          name: string
+          role: 'admin' | 'super_admin'
+          created_at: string
+          updated_at: string
+          email: string
+        }
+        Insert: {
+          id?: string
+          user_id?: string | null
+          name: string
+          role?: 'admin' | 'super_admin'
+          created_at?: string
+          updated_at?: string
+          email: string
+        }
+        Update: {
+          id?: string
+          user_id?: string | null
+          name?: string
+          role?: 'admin' | 'super_admin'
+          created_at?: string
+          updated_at?: string
+          email?: string
+        }
+      }
       contact_inquiries: {
         Row: {
           id: string
@@ -239,6 +268,9 @@ export interface Database {
 }
 
 // Helper types
+export type AdminUser = Database['public']['Tables']['admin_users']['Row']
+export type AdminUserInsert = Database['public']['Tables']['admin_users']['Insert']
+
 export type ContactInquiry = Database['public']['Tables']['contact_inquiries']['Row']
 export type ContactInquiryInsert = Database['public']['Tables']['contact_inquiries']['Insert']
 export type ContactInquiryUpdate = Database['public']['Tables']['contact_inquiries']['Update']

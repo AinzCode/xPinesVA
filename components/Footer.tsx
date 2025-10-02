@@ -19,6 +19,7 @@ const company = [
 const support = [
   { name: 'Contact Us', href: '/connect' },
   { name: 'FAQ', href: '/faq' },
+  { name: 'Share Your Feedback', href: '/testimonials/submit' },
   { name: 'Privacy Policy', href: '/privacy' },
   { name: 'Terms of Service', href: '/terms' },
 ]

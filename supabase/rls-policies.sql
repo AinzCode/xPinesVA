@@ -66,6 +66,11 @@ CREATE POLICY "Allow everyone to read approved testimonials" ON testimonials
   FOR SELECT TO anon, authenticated
   USING (is_approved = true);
 
+-- Allow anonymous users to submit testimonials (public form)
+CREATE POLICY "Allow anonymous testimonial submissions" ON testimonials
+  FOR INSERT TO anon
+  WITH CHECK (true);
+
 -- Allow authenticated users full access (admin)
 CREATE POLICY "Allow authenticated users full testimonial access" ON testimonials
   FOR ALL TO authenticated

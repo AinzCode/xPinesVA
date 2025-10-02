@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { Menu, X, ChevronDown } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const navigation = [
   { name: 'Our Story', href: '/our-story' },
@@ -22,7 +23,16 @@ const expertiseItems = [
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const [expertiseDropdownOpen, setExpertiseDropdownOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -37,17 +47,41 @@ export default function Navigation() {
     }
   }, [])
 
+  const dropdownVariants = {
+    hidden: { opacity: 0, y: -10, scale: 0.95 },
+    visible: { opacity: 1, y: 0, scale: 1 },
+  }
+
+  const mobileMenuVariants = {
+    closed: { opacity: 0, height: 0 },
+    open: { opacity: 1, height: 'auto' },
+  }
+
   return (
-    <nav className="bg-white shadow-lg sticky top-0 z-50">
+    <motion.nav 
+      className="sticky top-0 z-50 transition-all duration-300"
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.3, ease: 'easeInOut' }}
+      style={{
+        backdropFilter: isScrolled ? 'blur(20px)' : 'none',
+        backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.9)' : 'rgba(255, 255, 255, 1)',
+        boxShadow: isScrolled ? '0 8px 32px rgba(0, 0, 0, 0.1)' : '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+      }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-center items-center h-20 relative">
           <div className="absolute left-0 flex items-center">
-            <Link 
-              href="/" 
-              className="flex items-center"
-              onMouseEnter={() => setExpertiseDropdownOpen(false)}
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 10 }}
             >
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3134.92 773.14" className="h-10 w-auto">
+              <Link 
+                href="/" 
+                className="flex items-center"
+                onMouseEnter={() => setExpertiseDropdownOpen(false)}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3134.92 773.14" className="h-10 w-auto">
                 <defs>
                   <style>{`.cls-1{font-size:549.27px;fill:#27423b;font-family:Colmeak;}.cls-2,.cls-3{fill:#c2b59b;}.cls-2{letter-spacing:-0.12em;}.cls-4{fill:#28443b;}`}</style>
                 </defs>
@@ -71,6 +105,7 @@ export default function Navigation() {
                 </g>
               </svg>
             </Link>
+            </motion.div>
           </div>
 
           {/* Desktop Navigation */}
@@ -99,34 +134,41 @@ export default function Navigation() {
                 className="flex items-center text-black hover:text-[#095028] px-4 py-3 rounded-md text-base font-semibold transition-colors focus:outline-none"
               >
                 Expertise
-                <ChevronDown className={`ml-1 h-5 w-5 transition-transform ${expertiseDropdownOpen ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`ml-1 h-5 w-5 transition-transform duration-200 ${expertiseDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
               
-              {expertiseDropdownOpen && (
-                <div 
-                  className="absolute top-full left-0 mt-2 w-80 bg-white rounded-md shadow-lg py-2 z-50 border border-gray-200"
-                  onMouseLeave={() => setExpertiseDropdownOpen(false)}
-                >
-                  <Link 
-                    href="/expertise" 
-                    className="block px-4 py-3 text-base text-gray-700 hover:bg-gray-50 hover:text-[#095028] font-semibold"
-                    onClick={() => setExpertiseDropdownOpen(false)}
+              <AnimatePresence>
+                {expertiseDropdownOpen && (
+                  <motion.div 
+                    className="absolute top-full left-0 mt-2 w-80 bg-white/95 backdrop-blur-lg rounded-xl shadow-xl py-2 z-50 border border-gray-200 overflow-hidden"
+                    onMouseLeave={() => setExpertiseDropdownOpen(false)}
+                    variants={dropdownVariants}
+                    initial="hidden"
+                    animate="visible"
+                    exit="hidden"
+                    transition={{ duration: 0.2 }}
                   >
-                    All Expertise
-                  </Link>
-                  <div className="border-t border-gray-100 my-1"></div>
-                  {expertiseItems.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className="block px-4 py-3 text-base text-gray-600 hover:bg-gray-50 hover:text-[#095028] font-semibold transition-colors"
+                    <Link 
+                      href="/expertise" 
+                      className="block px-4 py-3 text-base text-gray-700 hover:bg-gray-50 hover:text-[#095028] font-semibold transition-colors duration-200"
                       onClick={() => setExpertiseDropdownOpen(false)}
                     >
-                      {item.name}
+                      All Expertise
                     </Link>
-                  ))}
-                </div>
-              )}
+                    <div className="border-t border-gray-100 my-1"></div>
+                    {expertiseItems.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className="block px-4 py-3 text-base text-gray-600 hover:bg-gray-50 hover:text-[#095028] font-semibold transition-colors duration-200"
+                        onClick={() => setExpertiseDropdownOpen(false)}
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
 
             {navigation.slice(2, 4).map((item) => (
@@ -143,81 +185,106 @@ export default function Navigation() {
 
           {/* Let's Connect button positioned on the right */}
           <div className="absolute right-0 hidden md:flex items-center">
-            <Link
-              href="/connect"
-              className="bg-green-700 text-white hover:bg-green-800 px-6 py-3 rounded-md text-base font-semibold transition-all duration-300 transform hover:scale-105"
-              onMouseEnter={() => setExpertiseDropdownOpen(false)}
+            <motion.div 
+              whileHover={{ scale: 1.05 }} 
+              whileTap={{ scale: 0.95 }}
             >
-              Let&apos;s Connect
-            </Link>
+              <Link
+                href="/connect"
+                className="bg-green-700 text-white hover:bg-green-800 px-6 py-3 rounded-full text-base font-semibold transition-all duration-300 shadow-md hover:shadow-lg"
+                onMouseEnter={() => setExpertiseDropdownOpen(false)}
+              >
+                Let&apos;s Connect
+              </Link>
+            </motion.div>
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
-            <button
+            <motion.button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 hover:text-green-600 focus:outline-none focus:text-green-600 transition-colors duration-300"
+              className="text-gray-700 hover:text-green-600 focus:outline-none focus:text-green-600 transition-colors duration-300 p-2 rounded-lg hover:bg-gray-100"
+              whileTap={{ scale: 0.95 }}
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+            </motion.button>
           </div>
         </div>
 
         {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              <Link
-                href="/our-story"
-                className="text-gray-700 hover:text-green-600 block px-4 py-3 rounded-md text-lg font-semibold transition-colors duration-300"
-                onClick={() => setIsOpen(false)}
-              >
-                Our Story
-              </Link>
-
-              <Link
-                href="/services"
-                className="text-gray-700 hover:text-green-600 block px-4 py-3 rounded-md text-lg font-semibold transition-colors duration-300"
-                onClick={() => setIsOpen(false)}
-              >
-                Services
-              </Link>
-              
-              {/* Mobile Expertise Menu */}
-              <div className="space-y-1">
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div 
+              className="md:hidden overflow-hidden"
+              variants={mobileMenuVariants}
+              initial="closed"
+              animate="open"
+              exit="closed"
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+            >
+              <div className="mt-4 space-y-2 bg-white/95 backdrop-blur-lg rounded-xl border border-gray-200 py-4 shadow-xl">
                 <Link
-                  href="/expertise"
-                  className="text-gray-700 hover:text-green-600 block px-4 py-3 rounded-md text-lg font-semibold transition-colors duration-300"
+                  href="/our-story"
+                  className="text-gray-700 hover:text-green-600 hover:bg-gray-50 block px-4 py-3 rounded-lg mx-2 text-lg font-semibold transition-colors duration-200"
                   onClick={() => setIsOpen(false)}
                 >
-                  All Expertise
+                  Our Story
                 </Link>
-                {expertiseItems.map((item) => (
+
+                <Link
+                  href="/services"
+                  className="text-gray-700 hover:text-green-600 hover:bg-gray-50 block px-4 py-3 rounded-lg mx-2 text-lg font-semibold transition-colors duration-200"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Services
+                </Link>
+                
+                {/* Mobile Expertise Menu */}
+                <div className="space-y-1">
                   <Link
-                    key={item.href}
+                    href="/expertise"
+                    className="text-gray-700 hover:text-green-600 hover:bg-gray-50 block px-4 py-3 rounded-lg mx-2 text-lg font-semibold transition-colors duration-200"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    All Expertise
+                  </Link>
+                  {expertiseItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="text-gray-600 hover:text-green-600 hover:bg-gray-50 block px-8 py-3 rounded-lg mx-2 text-base font-semibold transition-colors duration-200"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+
+                {navigation.slice(2, 4).map((item) => (
+                  <Link
+                    key={item.name}
                     href={item.href}
-                    className="text-gray-600 hover:text-green-600 block px-8 py-3 rounded-md text-base font-semibold transition-colors duration-300"
+                    className="text-gray-700 hover:text-green-600 hover:bg-gray-50 block px-4 py-3 rounded-lg mx-2 text-lg font-semibold transition-colors duration-200"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.name}
                   </Link>
                 ))}
-              </div>
 
-              {navigation.slice(2, 4).map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="text-gray-700 hover:text-green-600 block px-4 py-3 rounded-md text-lg font-semibold transition-colors duration-300"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-        )}
+                <div className="px-4 py-2">
+                  <Link
+                    href="/connect"
+                    className="block w-full text-center bg-green-700 text-white hover:bg-green-800 px-6 py-3 rounded-full text-base font-semibold transition-all duration-200 shadow-md hover:shadow-lg"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Let&apos;s Connect
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
-    </nav>
+    </motion.nav>
   )
 }
