@@ -1,6 +1,6 @@
 'use client'
 
-import { Home, Building, Stethoscope, ArrowRight } from 'lucide-react'
+import { Home, Stethoscope, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
 const services = [

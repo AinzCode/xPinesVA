@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Navigation from '../../../components/Navigation'
 import Footer from '../../../components/Footer'
-import { Stethoscope, CheckCircle, Users, Clock, Shield, Heart } from 'lucide-react'
+import { Stethoscope, CheckCircle, Clock, Shield, Heart } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Healthcare Services - Pines VA',

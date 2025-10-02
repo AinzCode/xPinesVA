@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Navigation from '../../../components/Navigation'
 import Footer from '../../../components/Footer'
-import { Home, CheckCircle, Users, Clock, Globe, UserCheck, Building2, Phone } from 'lucide-react'
+import { CheckCircle, Users, Clock, Globe, UserCheck, Building2, Phone } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Real Estate Services - Pines VA',

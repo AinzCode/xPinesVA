@@ -53,7 +53,7 @@ export default function FAQ() {
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Get answers to the most common questions about working with Pines VA. 
-              Have a specific question? We'd love to help.
+              Have a specific question? We&apos;d love to help.
             </p>
           </div>
 
@@ -89,7 +89,7 @@ export default function FAQ() {
             <div className="bg-green-50 rounded-lg p-6 border border-green-200">
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Still have questions?</h3>
               <p className="text-gray-600 mb-4">
-                We're here to help. Schedule a free consultation to discuss your specific needs.
+                We&apos;re here to help. Schedule a free consultation to discuss your specific needs.
               </p>
               <a
                 href="/connect"
