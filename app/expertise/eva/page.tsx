@@ -52,7 +52,7 @@ export default function EVAPage() {
             Executive Virtual Assistant (EVA)
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Elite virtual assistant services designed for executives and senior leadership. 
+            Elite virtual assistant services designed for executives and senior leadership.
             Get professional support that matches your high standards and confidentiality requirements.
           </p>
         </div>
@@ -122,34 +122,14 @@ export default function EVAPage() {
           </div>
         </div>
 
-        {/* Pricing */}
-        <div className="bg-white rounded-lg shadow-md p-8 mb-16">
-          <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">Premium Pricing</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="text-center p-6 border border-gray-200 rounded-lg">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Part-Time</h3>
-              <p className="text-3xl font-bold text-purple-600 mb-4">$15-20/hr</p>
-              <p className="text-gray-600">20 hours per week</p>
-            </div>
-            <div className="text-center p-6 border-2 border-purple-600 rounded-lg bg-purple-50">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Full-Time</h3>
-              <p className="text-3xl font-bold text-purple-600 mb-4">$12-18/hr</p>
-              <p className="text-gray-600">40 hours per week</p>
-            </div>
-            <div className="text-center p-6 border border-gray-200 rounded-lg">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Retainer</h3>
-              <p className="text-3xl font-bold text-purple-600 mb-4">Custom</p>
-              <p className="text-gray-600">Monthly retainer</p>
-            </div>
-          </div>
-        </div>
+
 
         {/* CTA */}
         <div className="bg-purple-600 rounded-lg p-8 text-center text-white">
           <h2 className="text-2xl font-bold mb-4">Ready for Executive-Level Support?</h2>
           <p className="text-lg mb-6">Connect with us today and elevate your business operations</p>
-          <Link 
-            href="/connect" 
+          <Link
+            href="/connect"
             className="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block"
           >
             Get Started Now

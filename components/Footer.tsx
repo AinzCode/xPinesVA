@@ -14,7 +14,6 @@ const company = [
   { name: 'Our Story', href: '/our-story' },
   { name: 'Mission & Vision', href: '/our-story#mission' },
   { name: 'How It Works', href: '/guides' },
-  { name: 'Success Stories', href: '/success-stories' },
 ]
 
 const support = [
@@ -25,14 +24,14 @@ const support = [
 ]
 
 const socialLinks = [
-  { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/company/pines-va' },
-  { name: 'Facebook', icon: Facebook, href: 'https://facebook.com/pinesva' },
-  { name: 'Twitter', icon: Twitter, href: 'https://twitter.com/pinesva' },
+  { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/company/pines-va/' },
+  { name: 'Facebook', icon: Facebook, href: 'https://www.facebook.com/PinesVAStaffing' },
+  { name: 'Twitter', icon: Twitter, href: 'https://x.com/PinesVA' },
 ]
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-[#052814] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid lg:grid-cols-5 gap-8">
           {/* Brand Section */}
@@ -41,17 +40,17 @@ export default function Footer() {
               Pines VA
             </Link>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              Leave as blank
+              Rooted in Trust. Branching into Success.
             </p>
             
             <div className="space-y-3">
-              <a href="mailto:hello@pinesva.com" className="flex items-center text-gray-300 hover:text-white transition-colors">
+              <a href="mailto:hrteam@pinesva.com" className="flex items-center text-gray-300 hover:text-green-400 transition-colors duration-300">
                 <Mail className="w-5 h-5 mr-3" />
-                hello@pinesva.com
+                hrteam@pinesva.com
               </a>
-              <a href="tel:+1234567890" className="flex items-center text-gray-300 hover:text-white transition-colors">
+              <a href="tel:+1234567890" className="flex items-center text-gray-300 hover:text-green-400 transition-colors duration-300">
                 <Phone className="w-5 h-5 mr-3" />
-                +63 000 000 0000
+                +(074) 661 4195
               </a>
               <div className="flex items-center text-gray-300">
                 <MapPin className="w-5 h-5 mr-3" />
@@ -66,7 +65,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service.name}>
-                  <Link href={service.href} className="text-gray-300 hover:text-white transition-colors">
+                  <Link href={service.href} className="text-gray-300 hover:text-green-400 transition-colors duration-300">
                     {service.name}
                   </Link>
                 </li>
@@ -80,7 +79,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {company.map((item) => (
                 <li key={item.name}>
-                  <Link href={item.href} className="text-gray-300 hover:text-white transition-colors">
+                  <Link href={item.href} className="text-gray-300 hover:text-green-400 transition-colors duration-300">
                     {item.name}
                   </Link>
                 </li>
@@ -94,7 +93,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {support.map((item) => (
                 <li key={item.name}>
-                  <Link href={item.href} className="text-gray-300 hover:text-white transition-colors">
+                  <Link href={item.href} className="text-gray-300 hover:text-green-400 transition-colors duration-300">
                     {item.name}
                   </Link>
                 </li>
@@ -116,7 +115,7 @@ export default function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-green-400 transition-colors duration-300 transform hover:scale-110"
                 >
                   <social.icon className="w-6 h-6" />
                   <span className="sr-only">{social.name}</span>

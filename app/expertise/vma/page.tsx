@@ -160,27 +160,6 @@ export default function VMAPage() {
           </div>
         </div>
 
-        {/* Pricing */}
-        <div className="bg-white rounded-lg shadow-md p-8 mb-16">
-          <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">Healthcare Pricing</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="text-center p-6 border border-gray-200 rounded-lg">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Part-Time</h3>
-              <p className="text-3xl font-bold text-red-600 mb-4">$12-16/hr</p>
-              <p className="text-gray-600">20 hours per week</p>
-            </div>
-            <div className="text-center p-6 border-2 border-red-600 rounded-lg bg-red-50">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Full-Time</h3>
-              <p className="text-3xl font-bold text-red-600 mb-4">$10-14/hr</p>
-              <p className="text-gray-600">40 hours per week</p>
-            </div>
-            <div className="text-center p-6 border border-gray-200 rounded-lg">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Specialized</h3>
-              <p className="text-3xl font-bold text-red-600 mb-4">Custom</p>
-              <p className="text-gray-600">Specialized medical tasks</p>
-            </div>
-          </div>
-        </div>
 
         {/* CTA */}
         <div className="bg-red-600 rounded-lg p-8 text-center text-white">

@@ -120,8 +120,12 @@ export default function Expertise() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">Our Expertise</h1>
           <p className="text-xl text-gray-600 leading-relaxed">
-            Specialized Virtual Assistant services tailored to meet the unique needs of different industries and business functions. 
-            Choose the perfect solution for your business growth.
+            At Pines VA, we provide more than just virtual assistance, we deliver partnership, reliability, and peace of mind. 
+            Our team specializes in supporting professionals in the real estate and medical industries, helping them focus on 
+            what matters most: their clients and patients. We understand that both fields move fast and demand precision. 
+            Whether it’s coordinating with clients and prospects in real estate or managing sensitive medical tasks with 
+            accuracy, we bring the skills and dedication needed to keep your operations seamless.
+
           </p>
         </div>
       </section>

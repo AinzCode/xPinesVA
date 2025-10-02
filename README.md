@@ -46,7 +46,7 @@ A comprehensive website for Pines VA, built with Next.js 15, TypeScript, Tailwin
    
    # Email Service (optional - for contact forms)
    RESEND_API_KEY=your_resend_api_key
-   FROM_EMAIL=noreply@pinesva.com
+   FROM_EMAIL=hrteam@pinesva.com
    ```
 
 4. **Set up Supabase** (Optional for enhanced features)
@@ -137,7 +137,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## 📞 Support
 
 For support or questions about this website:
-- Email: hello@pinesva.com
+- Email: hrteam@pinesva.com
 - Phone: +1 (234) 567-8900
 
 ## 🔗 Links
