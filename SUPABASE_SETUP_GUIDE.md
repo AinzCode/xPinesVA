@@ -249,7 +249,7 @@ VALUES
   ('General Virtual Assistant', 'gva', 'General administrative and operational support', true),
   ('Executive Virtual Assistant', 'eva', 'High-level executive and strategic support', true),
   ('Instagram Social Assistant', 'isa', 'Social media management and Instagram growth', true),
-  ('Virtual Marketing Assistant', 'vma', 'Marketing support and campaign management', true);
+  ('Medical Virtual Assistant', 'mva', 'Medical support and healthcare assistance', true);
 
 -- Add sample blog posts
 INSERT INTO blog_posts (title, slug, content, excerpt, is_published)

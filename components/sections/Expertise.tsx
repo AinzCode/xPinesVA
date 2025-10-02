@@ -9,7 +9,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   gva: UserCheck,
   eva: Building2,
   isa: Phone,
-  vma: Stethoscope
+  mva: Stethoscope
 }
 
 // Color mapping for services - Green and Brown theme
@@ -17,7 +17,7 @@ const colorMap: Record<string, string> = {
   gva: 'bg-green-600',
   eva: 'bg-stone-700',
   isa: 'bg-green-700',
-  vma: 'bg-stone-600'
+  mva: 'bg-stone-600'
 }
 
 interface Service {
@@ -66,8 +66,8 @@ export default function Expertise() {
     },
     {
       id: '4',
-      name: 'Virtual Medical Assistant (VMA)',
-      slug: 'vma',
+      name: 'Medical Virtual Assistant (MVA)',
+      slug: 'mva',
       description: 'Specialized healthcare support to manage patient communications and administrative tasks.',
       short_description: 'Healthcare-focused administrative and patient support',
       features: ['Patient Scheduling', 'Insurance Verification', 'Medical Records Management', 'Appointment Reminders', 'HIPAA Compliance', 'Provider Communications'],

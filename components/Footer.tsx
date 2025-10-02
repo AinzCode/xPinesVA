@@ -8,7 +8,7 @@ const services = [
   { name: 'General Virtual Assistant', href: '/expertise/gva' },
   { name: 'Executive Virtual Assistant', href: '/expertise/eva' },
   { name: 'Inside Sales Agent', href: '/expertise/isa' },
-  { name: 'Virtual Medical Assistant', href: '/expertise/vma' },
+  { name: 'Medical Virtual Assistant', href: '/expertise/mva' },
 ]
 
 const company = [
@@ -104,11 +104,22 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 mt-12 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center">
-              <div className="text-gray-400 text-sm mb-4 md:mb-0">
-                © 2025 Pines VA. All rights reserved. | Built with passion for business growth.
+              <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
+                <div className="text-gray-400 text-sm">
+                  © 2025 Pines VA. All rights reserved. | Built with passion for business growth.
+                </div>
+                <div className="flex space-x-4 text-xs">
+                  <Link href="/privacy" className="text-gray-400 hover:text-green-400 transition-colors duration-300">
+                    Privacy Policy
+                  </Link>
+                  <span className="text-gray-600">|</span>
+                  <Link href="/terms" className="text-gray-400 hover:text-green-400 transition-colors duration-300">
+                    Terms of Service
+                  </Link>
+                </div>
               </div>
               
-              <div className="flex space-x-4">
+              <div className="flex space-x-4 mt-4 md:mt-0">
                 {socialLinks.map((social) => (
                   <a
                     key={social.name}

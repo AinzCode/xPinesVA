@@ -25,7 +25,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="bg-[#097969]/20 py-12 lg:py-20">
+    <section className="bg-[#097969]/20 pt-24 pb-12 lg:pt-32 lg:pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
           <div className="mb-10 lg:mb-0">
@@ -49,7 +49,7 @@ export default function Hero() {
                   <SplitText
                     text="PinesVA"
                     tag="span"
-                    className="text-4xl lg:text-6xl font-bold text-green-600 block"
+                    className="text-6xl lg:text-8xl font-bold text-green-600 block"
                     delay={250}
                     duration={0.6}
                     ease="power3.out"
@@ -63,7 +63,7 @@ export default function Hero() {
                   {showSparkles && (
                     <div className="absolute inset-0 pointer-events-none">
                       <SparklesText 
-                        className="text-4xl lg:text-6xl font-bold text-transparent block"
+                        className="text-6xl lg:text-8xl font-bold text-transparent block"
                         colors={{ first: "#059669", second: "#f59e0b" }}
                         sparklesCount={12}
                       >

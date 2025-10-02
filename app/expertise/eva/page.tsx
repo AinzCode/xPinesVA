@@ -11,16 +11,14 @@ export const metadata: Metadata = {
 
 export default function EVAPage() {
   const features = [
-    'Executive Calendar Management',
-    'C-Level Communications',
-    'Board Meeting Preparation',
-    'Strategic Research & Analysis',
-    'Confidential Document Handling',
-    'Executive Travel Coordination',
-    'Stakeholder Communication',
-    'Project Management Support',
-    'Financial Reporting Assistance',
-    'Meeting Minutes & Follow-ups'
+    'Calendar & Schedule Management',
+    'Email & Communication Management',
+    'Travel Planning & Coordination',
+    'Meeting Preparation & Documentation',
+    'Project & Task Management',
+    'Research & Data Gathering',
+    'Document & File Management',
+    'Confidential Support'
   ]
 
   const benefits = [
@@ -45,15 +43,18 @@ export default function EVAPage() {
     <div className="min-h-screen bg-gray-50">
       <Navigation />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 lg:pt-32 pb-12">
         {/* Header */}
         <div className="text-center mb-10">
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">
+          <h1 className="text-3xl lg:text-6xl font-bold text-gray-900 mb-4">
             Executive Virtual Assistant (EVA)
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Elite virtual assistant services designed for executives and senior leadership.
-            Get professional support that matches your high standards and confidentiality requirements.
+          <p className="text-xl text-justify-centered text-gray-600 max-w-3xl mx-auto">
+            At PinesVA, Executive Virtual Assistance isn’t just about managing tasks, it's about making your life easier. 
+            We take care of the behind-the-scenes details like scheduling, emails, travel plans, and project coordination 
+            so you can focus on leading, creating, and growing your business. Think of us as your right hand, always ready 
+            to step in with reliability, discretion, and a personal touch. Our goal is simple: to free up your time, reduce 
+            your stress, and give you the confidence that everything is being handled with care.
           </p>
         </div>
 

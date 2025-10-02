@@ -43,15 +43,17 @@ export default function GVAPage() {
     <div className="min-h-screen bg-gray-50">
       <Navigation />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 lg:pt-32 pb-12">
         {/* Header */}
         <div className="text-center mb-10">
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">
+          <h1 className="text-3xl lg:text-6xl font-bold text-gray-900 mb-4">
             General Virtual Assistant (GVA)
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Streamline your business operations with our skilled General Virtual Assistants. 
-            Handle day-to-day tasks efficiently while you focus on growing your business.
+          <p className="text-xl text-justify-centered text-gray-600 max-w-3xl mx-auto">
+            General Virtual Assistance at PinesVA is all about keeping your business organized and running smoothly. 
+            From managing emails, data, and documents to handling research, reporting, and everyday admin tasks, we 
+            take care of the details so you can focus on the bigger picture. Reliable, flexible, and efficient, your 
+            GVA is the extra set of hands you can count on.
           </p>
         </div>
 

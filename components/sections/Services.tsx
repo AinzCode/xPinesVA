@@ -1,6 +1,6 @@
 'use client'
 
-import { Home, Stethoscope, ArrowRight } from 'lucide-react'
+import { Home, Stethoscope, ArrowRight, FileText } from 'lucide-react'
 import Link from 'next/link'
 
 const services = [
@@ -8,7 +8,7 @@ const services = [
     id: 'real-estate',
     icon: Home,
     title: 'Real Estate Services',
-    description: 'Comprehensive virtual assistant support for real estate professionals including GVA, EVA, and ISA services to help maximize efficiency and close more deals.',
+    description: ' Success in real estate is all about speed, organization, and relationships. From managing listings and scheduling showings to handling client follow-ups and updating CRMs, we make sure you stay ahead of the competition. With us taking care of the details, you can focus on closing deals and building stronger client connections.',
     color: 'bg-blue-500',
     hoverColor: 'hover:from-blue-500 hover:to-blue-600',
     borderColor: 'border-blue-200',
@@ -20,10 +20,25 @@ const services = [
     textHoverColor: 'group-hover:text-blue-50'
   },
   {
+    id: 'administrative-excellence',
+    icon: FileText,
+    title: 'Administrative Excellence',
+    description: 'Every successful professional has a strong backbone of support. We streamline your daily operations by managing emails, calendars, reports, and communications bringing structure and balance to your day so you can work smarter, not harder.',
+    color: 'bg-green-500',
+    hoverColor: 'hover:from-green-500 hover:to-green-600',
+    borderColor: 'border-green-200',
+    hoverBorderColor: 'hover:border-green-600',
+    iconBgColor: 'bg-green-100',
+    iconHoverBgColor: 'group-hover:bg-green-200',
+    iconColor: 'text-green-600',
+    iconHoverColor: 'group-hover:text-green-800',
+    textHoverColor: 'group-hover:text-green-50'
+  },
+  {
     id: 'medical-assistance',
     icon: Stethoscope,
     title: 'Healthcare Services',
-    description: 'Specialized Virtual Medical Assistant (VMA) services for clinics, healthcare providers, and medical businesses. Our trained assistants handle administrative tasks, patient coordination, and back-office support with professionalism and compassion.',
+    description: 'In healthcare, every second matters. We provide reliable, detail-oriented support for healthcare professionals, clinics, and medical teams. Our services include appointment scheduling, patient follow-ups, billing assistance, and insurance coordination always carried out with accuracy, confidentiality, and genuine care.',
     color: 'bg-red-500',
     hoverColor: 'hover:from-red-500 hover:to-red-600',
     borderColor: 'border-red-200',
@@ -43,16 +58,16 @@ export default function Services() {
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Services</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We understand that every business has unique needs, and that&apos;s why our services are designed to be flexible, professional, and impactful.
+              From administrative excellence to specialized healthcare and real estate support, we provide comprehensive virtual assistant services tailored to your industry and business needs.
             </p>
           </div>
 
         <div className="flex justify-center">
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl">
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl w-full px-4">
             {services.map((service, index) => (
             <div 
                 key={index}
-                className={`bg-white rounded-xl p-8 shadow-sm border-2 ${service.borderColor} hover:bg-gradient-to-br ${service.hoverColor} ${service.hoverBorderColor} transition-all duration-300 transform hover:scale-105 group`}
+                className={`bg-white rounded-xl p-8 shadow-sm border-2 ${service.borderColor} hover:bg-gradient-to-br ${service.hoverColor} ${service.hoverBorderColor} transition-all duration-300 transform hover:scale-105 group flex flex-col h-full`}
               >
               <div className={`${service.iconBgColor} ${service.iconHoverBgColor} w-16 h-16 rounded-full flex items-center justify-center mb-6 transition-colors duration-300`}>
                 <service.icon className={`w-8 h-8 ${service.iconColor} ${service.iconHoverColor} transition-colors duration-300`} />
@@ -62,13 +77,13 @@ export default function Services() {
                 {service.title}
               </h3>
               
-              <p className={`text-gray-600 ${service.textHoverColor} leading-relaxed text-base mb-6 transition-colors duration-300`}>
+              <p className={`text-gray-600 ${service.textHoverColor} leading-relaxed text-base mb-6 flex-grow transition-colors duration-300`}>
                 {service.description}
               </p>
 
                 <Link
                   href={`/services/${service.id}`}
-                  className="inline-flex items-center text-gray-700 group-hover:text-white font-semibold hover:underline transition-colors duration-300"
+                  className="inline-flex items-center text-gray-700 group-hover:text-white font-semibold hover:underline transition-colors duration-300 mt-auto"
                 >
                   Learn More
                   <ArrowRight className="w-5 h-5 ml-2" />
@@ -84,7 +99,7 @@ export default function Services() {
               href="/expertise"
               className="inline-flex items-center bg-green-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700 transition-all duration-300 transform hover:scale-105"
             >
-              View All Services
+              View All Expetise
               <ArrowRight className="w-5 h-5 ml-2" />
             </Link>
           </div>

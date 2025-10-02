@@ -27,7 +27,7 @@ const colmeak = localFont({
 
 export const metadata: Metadata = {
   title: "Pines VA - Pines Virtual Assistant Services",
-  description: "Professional Virtual Assistant services including General VA, Executive VA, Inside Sales Agents, and Virtual Medical Assistants. Transform your business with our expert VA solutions.",
+  description: "Professional Virtual Assistant services including General VA, Executive VA, Inside Sales Agents, and Medical Virtual Assistants. Transform your business with our expert VA solutions.",
 };
 
 export default function RootLayout({

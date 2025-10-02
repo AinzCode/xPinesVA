@@ -37,14 +37,14 @@ const services = [
     subtitle: 'High-Level Executive Support',
     description: 'Specialized support for executives and business leaders who need sophisticated, confidential assistance.',
     features: [
-      'Executive Calendar Management',
+       'Calendar & Schedule Management',
+      'Email & Communication Management',
       'Travel Planning & Coordination',
-      'Meeting Preparation & Follow-up',
-      'Strategic Planning Support',
-      'Confidential Document Handling',
-      'Stakeholder Communication',
-      'Project Management',
-      'Personal Task Management'
+      'Meeting Preparation & Documentation',
+      'Project & Task Management',
+      'Research & Data Gathering',
+      'Document & File Management',
+      'Confidential Support'
     ],
     benefits: [
       'Focus on strategic decisions',
@@ -83,9 +83,9 @@ const services = [
     bgColor: 'bg-green-50'
   },
   {
-    id: 'vma',
+    id: 'mva',
     icon: Stethoscope,
-    title: 'Virtual Medical Assistant (VMA)',
+    title: 'Medical Virtual Assistant (MVA)',
     subtitle: 'Specialized Healthcare Support',
     description: 'HIPAA-compliant virtual assistants specialized in healthcare administration and patient communication.',
     features: [
@@ -116,7 +116,7 @@ export default function Expertise() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-12">
+      <section className="bg-gradient-to-br from-blue-50 to-indigo-100 pt-24 lg:pt-32 pb-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-3xl lg:text-6xl font-bold text-gray-900 mb-6">Our Expertise</h1>
           <p className="text-xl text-gray-600 leading-relaxed">

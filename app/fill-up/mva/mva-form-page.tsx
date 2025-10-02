@@ -6,7 +6,7 @@ import Navigation from '../../../components/Navigation'
 import Footer from '../../../components/Footer'
 import { Stethoscope, Mail, Phone, MapPin, Clock, ArrowRight } from 'lucide-react'
 
-export default function VMAFillUp() {
+export default function MVAFillUp() {
   const [formData, setFormData] = useState({
     name: '',
     title: '',
@@ -30,7 +30,7 @@ export default function VMAFillUp() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('VMA Form submitted:', formData)
+    console.log('MVA Form submitted:', formData)
     // Add form submission logic here
   }
 
@@ -46,17 +46,17 @@ export default function VMAFillUp() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-red-50 to-red-100 py-12">
+      <section className="bg-gradient-to-br from-red-50 to-red-100 pt-24 lg:pt-32 pb-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex items-center justify-center mb-6">
             <div className="bg-red-600 p-4 rounded-lg text-white mr-4">
               <Stethoscope className="w-8 h-8" />
             </div>
-            <h1 className="text-2xl lg:text-3xl font-bold text-gray-900">Virtual Medical Assistant</h1>
+            <h1 className="text-3xl lg:text-6xl font-bold text-gray-900">Medical Virtual Assistant</h1>
           </div>
           <p className="text-xl text-gray-600 leading-relaxed">
             Ready to streamline your medical practice? Fill out this form to get matched with 
-            a Virtual Medical Assistant who can handle HIPAA-compliant administrative tasks.
+            a Medical Virtual Assistant who can handle HIPAA-compliant administrative tasks.
           </p>
         </div>
       </section>
@@ -220,7 +220,7 @@ export default function VMAFillUp() {
                   value={formData.currentChallenges}
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-stone-600 focus:border-stone-600"
-                  placeholder="What administrative challenges are you facing that a VMA could help solve?"
+                  placeholder="What administrative challenges are you facing that a MVA could help solve?"
                 />
               </div>
 

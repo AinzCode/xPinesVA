@@ -44,9 +44,9 @@ export default function Testimonials() {
       client_name: 'Dr. Emily Rodriguez',
       client_company: 'Wellness Medical Center',
       client_role: 'Medical Director',
-      testimonial: 'Our VMA seamlessly integrated into our practice. Patient scheduling, insurance verification, and medical records management became so much more efficient. Highly recommend Pines VA!',
+      testimonial: 'Our MVA seamlessly integrated into our practice. Patient scheduling, insurance verification, and medical records management became so much more efficient. Highly recommend Pines VA!',
       rating: 5,
-      service_type: 'VMA',
+      service_type: 'MVA',
       is_featured: true,
       is_approved: true
     },

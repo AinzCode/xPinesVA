@@ -17,22 +17,60 @@ const expertiseItems = [
   { name: 'General Virtual Assistant (GVA)', href: '/expertise/gva' },
   { name: 'Executive Virtual Assistant (EVA)', href: '/expertise/eva' },
   { name: 'Inside Sales Agent (ISA)', href: '/expertise/isa' },
-  { name: 'Virtual Medical Assistant (VMA)', href: '/expertise/vma' },
+  { name: 'Medical Virtual Assistant (MVA)', href: '/expertise/mva' },
 ]
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const [expertiseDropdownOpen, setExpertiseDropdownOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isVisible, setIsVisible] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
   const dropdownRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
+      const currentScrollY = window.scrollY
+
+      // Always show nav when at the top
+      if (currentScrollY < 50) {
+        setIsVisible(true)
+        setIsScrolled(false)
+      } else {
+        setIsScrolled(true)
+        
+        // Hide nav when scrolling down, show when scrolling up
+        if (currentScrollY > lastScrollY && currentScrollY > 100) {
+          // Scrolling down
+          setIsVisible(false)
+          setExpertiseDropdownOpen(false)
+          setIsOpen(false)
+        } else if (currentScrollY < lastScrollY) {
+          // Scrolling up
+          setIsVisible(true)
+        }
+      }
+      
+      setLastScrollY(currentScrollY)
     }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+
+    // Throttle scroll events for performance
+    let ticking = false
+    const throttledHandleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          handleScroll()
+          ticking = false
+        })
+        ticking = true
+      }
+    }
+
+    window.addEventListener('scroll', throttledHandleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', throttledHandleScroll)
+  }, [lastScrollY])
+
+
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -59,10 +97,17 @@ export default function Navigation() {
 
   return (
     <motion.nav 
-      className="sticky top-0 z-50 transition-all duration-300"
+      className="fixed top-0 w-full z-50"
       initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.3, ease: 'easeInOut' }}
+      animate={{ 
+        y: isVisible ? 0 : -100, 
+        opacity: isVisible ? 1 : 0
+      }}
+      transition={{ 
+        type: "tween",
+        duration: 0.5,
+        ease: [0.25, 0.46, 0.45, 0.94]
+      }}
       style={{
         backdropFilter: isScrolled ? 'blur(20px)' : 'none',
         backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.9)' : 'rgba(255, 255, 255, 1)',
@@ -77,7 +122,7 @@ export default function Navigation() {
               transition={{ type: 'spring', stiffness: 400, damping: 10 }}
             >
               <Link 
-                href="/" 
+                href="/homepage" 
                 className="flex items-center"
                 onMouseEnter={() => setExpertiseDropdownOpen(false)}
               >
@@ -112,7 +157,7 @@ export default function Navigation() {
           <div className="hidden md:flex items-center justify-center space-x-8">
             <Link
               href="/our-story"
-              className="text-gray-600 hover:text-[#095028] px-4 py-3 rounded-md text-base font-semibold transition-colors"
+              className="text-gray-600 hover:text-[#095028] px-4 py-3 rounded-md text-base font-semibold transition-all duration-200 hover:scale-110"
               onMouseEnter={() => setExpertiseDropdownOpen(false)}
             >
               Our Story
@@ -120,7 +165,7 @@ export default function Navigation() {
 
             <Link
               href="/services"
-              className="text-gray-700 hover:text-[#095028] px-4 py-3 rounded-md text-base font-semibold transition-colors"
+              className="text-gray-700 hover:text-[#095028] px-4 py-3 rounded-md text-base font-semibold transition-all duration-200 hover:scale-110"
               onMouseEnter={() => setExpertiseDropdownOpen(false)}
             >
               Services
@@ -131,7 +176,7 @@ export default function Navigation() {
               <button
                 onClick={() => setExpertiseDropdownOpen(!expertiseDropdownOpen)}
                 onMouseEnter={() => setExpertiseDropdownOpen(true)}
-                className="flex items-center text-black hover:text-[#095028] px-4 py-3 rounded-md text-base font-semibold transition-colors focus:outline-none"
+                className="flex items-center text-black hover:text-[#095028] px-4 py-3 rounded-md text-base font-semibold transition-all duration-200 hover:scale-110 focus:outline-none"
               >
                 Expertise
                 <ChevronDown className={`ml-1 h-5 w-5 transition-transform duration-200 ${expertiseDropdownOpen ? 'rotate-180' : ''}`} />
@@ -175,7 +220,7 @@ export default function Navigation() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-[#095028] px-4 py-3 rounded-md text-base font-semibold transition-colors"
+                className="text-gray-700 hover:text-[#095028] px-4 py-3 rounded-md text-base font-semibold transition-all duration-200 hover:scale-110"
                 onMouseEnter={() => setExpertiseDropdownOpen(false)}
               >
                 {item.name}
@@ -194,7 +239,7 @@ export default function Navigation() {
                 className="bg-green-700 text-white hover:bg-green-800 px-6 py-3 rounded-full text-base font-semibold transition-all duration-300 shadow-md hover:shadow-lg"
                 onMouseEnter={() => setExpertiseDropdownOpen(false)}
               >
-                Let&apos;s Connect
+                Let's Connect
               </Link>
             </motion.div>
           </div>
@@ -225,7 +270,7 @@ export default function Navigation() {
               <div className="mt-4 space-y-2 bg-white/95 backdrop-blur-lg rounded-xl border border-gray-200 py-4 shadow-xl">
                 <Link
                   href="/our-story"
-                  className="text-gray-700 hover:text-green-600 hover:bg-gray-50 block px-4 py-3 rounded-lg mx-2 text-lg font-semibold transition-colors duration-200"
+                  className="text-gray-700 hover:text-green-600 hover:bg-gray-50 block px-4 py-3 rounded-lg mx-2 text-lg font-semibold transition-all duration-200 hover:scale-105"
                   onClick={() => setIsOpen(false)}
                 >
                   Our Story
@@ -233,7 +278,7 @@ export default function Navigation() {
 
                 <Link
                   href="/services"
-                  className="text-gray-700 hover:text-green-600 hover:bg-gray-50 block px-4 py-3 rounded-lg mx-2 text-lg font-semibold transition-colors duration-200"
+                  className="text-gray-700 hover:text-green-600 hover:bg-gray-50 block px-4 py-3 rounded-lg mx-2 text-lg font-semibold transition-all duration-200 hover:scale-105"
                   onClick={() => setIsOpen(false)}
                 >
                   Services
@@ -264,7 +309,7 @@ export default function Navigation() {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="text-gray-700 hover:text-green-600 hover:bg-gray-50 block px-4 py-3 rounded-lg mx-2 text-lg font-semibold transition-colors duration-200"
+                    className="text-gray-700 hover:text-green-600 hover:bg-gray-50 block px-4 py-3 rounded-lg mx-2 text-lg font-semibold transition-all duration-200 hover:scale-105"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.name}
@@ -277,7 +322,7 @@ export default function Navigation() {
                     className="block w-full text-center bg-green-700 text-white hover:bg-green-800 px-6 py-3 rounded-full text-base font-semibold transition-all duration-200 shadow-md hover:shadow-lg"
                     onClick={() => setIsOpen(false)}
                   >
-                    Let&apos;s Connect
+                    Let's Connect
                   </Link>
                 </div>
               </div>

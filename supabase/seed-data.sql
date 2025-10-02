@@ -31,16 +31,14 @@ INSERT INTO services (name, slug, description, short_description, pricing_min, p
   20.00,
   'hourly',
   ARRAY[
-    'Executive Calendar Management',
-    'C-Level Communications',
-    'Board Meeting Preparation',
-    'Strategic Research & Analysis',
-    'Confidential Document Handling',
-    'Executive Travel Coordination',
-    'Stakeholder Communication',
-    'Project Management Support',
-    'Financial Reporting Assistance',
-    'Meeting Minutes & Follow-ups'
+    'Calendar & Schedule Management',
+    'Email & Communication Management',
+    'Travel Planning & Coordination',
+    'Meeting Preparation & Documentation',
+    'Project & Task Management',
+    'Research & Data Gathering',
+    'Document & File Management',
+    'Confidential Support'
   ]
 ),
 (
@@ -65,24 +63,23 @@ INSERT INTO services (name, slug, description, short_description, pricing_min, p
   ]
 ),
 (
-  'Virtual Medical Assistant (VMA)',
-  'vma',
+  'Medical Virtual Assistant (MVA)',
+  'mva',
   'HIPAA-compliant healthcare support services for medical practices and healthcare providers.',
   'Healthcare specialists with HIPAA compliance training',
   10.00,
   16.00,
   'hourly',
   ARRAY[
-    'Patient Appointment Scheduling',
-    'Medical Records Management',
-    'Insurance Verification',
-    'Medical Billing Support',
-    'Patient Communication',
-    'Prescription Management',
+    'Patient Records Management',
     'Medical Transcription',
-    'Healthcare Analytics',
-    'Compliance Documentation',
-    'Telehealth Support'
+    'Billing & Insurance Support',
+    'Medical Documentation ',
+    'Prescription & Referral Coordination ',
+    'Lab & Test Coordination ',
+    'Compliance & Confidentiality',
+    'Research & Medical Data Support',
+    'Administrative Support '
   ]
 );
 
@@ -112,7 +109,7 @@ INSERT INTO team_members (name, email, role, specialization, bio, skills, experi
   'Emily Rodriguez',
   'hrteam@pinesva.com',
   'Medical Assistant',
-  'VMA',
+  'MVA',
   'HIPAA-certified medical assistant with extensive experience in healthcare administration.',
   ARRAY['Medical Administration', 'HIPAA Compliance', 'Patient Care', 'Medical Billing'],
   6,
@@ -145,9 +142,9 @@ INSERT INTO testimonials (client_name, client_company, client_role, testimonial,
   'Maria Garcia',
   'HealthFirst Clinic',
   'Practice Manager',
-  'Our virtual medical assistant has streamlined our patient scheduling and billing processes. HIPAA compliance was seamless and professional.',
+  'Our medical virtual assistant has streamlined our patient scheduling and billing processes. HIPAA compliance was seamless and professional.',
   5,
-  'VMA',
+  'MVA',
   true,
   true
 ),
@@ -176,4 +173,4 @@ INSERT INTO testimonials (client_name, client_company, client_role, testimonial,
 UPDATE services SET sort_order = 1 WHERE slug = 'gva';
 UPDATE services SET sort_order = 2 WHERE slug = 'eva';
 UPDATE services SET sort_order = 3 WHERE slug = 'isa';
-UPDATE services SET sort_order = 4 WHERE slug = 'vma';
+UPDATE services SET sort_order = 4 WHERE slug = 'mva';
