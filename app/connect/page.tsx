@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useState } from 'react'
 import Navigation from '../../components/Navigation'
@@ -32,9 +32,9 @@ export default function Connect() {
     <div className="min-h-screen">
       <Navigation />
 
-      <section className="bg-gradient-to-br from-green-50 to-emerald-100 py-20">
+      <section className="bg-gradient-to-br from-green-50 to-emerald-100 py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">Let&apos;s Connect</h1>
+          <h1 className="text-3xl lg:text-3xl font-bold text-gray-900 mb-6">Let&apos;s Connect</h1>
           <p className="text-xl text-gray-600 leading-relaxed">
             Ready to transform your business with exceptional virtual assistant services? 
             Get in touch with our team today and discover how we can help you achieve your goals.
@@ -42,7 +42,7 @@ export default function Connect() {
         </div>
       </section>
 
-      <section className="py-16 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12">
             <div>

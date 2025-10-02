@@ -3,6 +3,7 @@
 import { Building2, UserCheck, Phone, Stethoscope } from 'lucide-react'
 import Link from 'next/link'
 
+
 // Icon mapping for services
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   gva: UserCheck,
@@ -14,9 +15,9 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 // Color mapping for services - Green and Brown theme
 const colorMap: Record<string, string> = {
   gva: 'bg-green-600',
-  eva: 'bg-brown-700',
+  eva: 'bg-stone-700',
   isa: 'bg-green-700',
-  vma: 'bg-brown-600'
+  vma: 'bg-stone-600'
 }
 
 interface Service {
@@ -76,23 +77,23 @@ export default function Expertise() {
   ]
 
   return (
-    <section id="expertise" className="py-20 bg-white">
+    <section id="expertise" className="py-12 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Expertise</h2>
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Expertise</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We provide specialized Virtual Assistant services across different industries, 
-            each tailored to meet specific business needs and requirements.
-          </p>
-        </div>
+              We provide specialized Virtual Assistant services across different industries, 
+              each tailored to meet specific business needs and requirements.
+            </p>
+          </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-          {services.map((service) => {
+          {services.map((service, index) => {
               const IconComponent = iconMap[service.slug] || UserCheck
               const colorClass = colorMap[service.slug] || 'bg-green-600'
               
               return (
-                <div key={service.id} className="group bg-gray-50 rounded-xl p-8 hover:bg-white hover:shadow-xl transition-all duration-300 border border-transparent hover:border-gray-200">
+                <div key={index} className="group bg-gray-50 rounded-xl p-8 hover:bg-white hover:shadow-xl transition-all duration-300 border border-transparent hover:border-gray-200">
                   <div className="flex items-center mb-6">
                     <div className={`${colorClass} p-3 rounded-lg text-white mr-4`}>
                       <IconComponent className="w-6 h-6" />
@@ -118,26 +119,26 @@ export default function Expertise() {
                     </div>
                   )}
                 
-                  <Link
-                    href={`/expertise/${service.slug}`}
-                    className="inline-flex items-center text-green-600 font-semibold hover:text-green-700 transition-colors"
-                  >
-                    Learn More →
-                  </Link>
-                </div>
-              )
-            })}
+                    <Link
+                      href={`/expertise/${service.slug}`}
+                      className="inline-flex items-center text-green-600 font-semibold hover:text-green-700 transition-colors"
+                    >
+                      Learn More →
+                    </Link>
+                  </div>
+                )
+          })}
         </div>
 
         <div className="text-center mt-12">
-          <Link
-            href="/expertise"
-            className="bg-green-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700 transition-colors"
-          >
-            View All Services
-          </Link>
+            <Link
+              href="/expertise"
+              className="bg-green-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700 transition-colors"
+            >
+              View All Services
+            </Link>
+          </div>
         </div>
-      </div>
     </section>
   )
 }

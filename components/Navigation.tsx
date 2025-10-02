@@ -10,7 +10,7 @@ const navigation = [
   { name: 'Services', href: '/services' },
   { name: 'Easy Guides', href: '/guides' },
   { name: 'Social Spaces', href: '/social-spaces' },
-  { name: 'Let\'s Connect', href: '/connect' },
+  { name: 'Let&apos;s Connect', href: '/connect' },
 ]
 
 const expertiseItems = [

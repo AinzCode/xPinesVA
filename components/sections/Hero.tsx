@@ -6,16 +6,16 @@ import SplitText from "../SplitText";
 
 export default function Hero() {
   return (
-    <section className="bg-[#D1F4E0] py-20 lg:py-32">
+    <section className="bg-[#D1F4E0] py-12 lg:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
-          <div className="mb-16 lg:mb-0">
-            <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+          <div className="mb-10 lg:mb-0">
+            <h1 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
               <div className="flex flex-col">
                 <SplitText
                   text="Welcome to"
                   tag="span"
-                  className="text-4xl lg:text-6xl font-bold text-gray-900 block"
+                  className="text-3xl lg:text-5xl font-bold text-gray-900 block"
                   delay={110}
                   duration={0.6}
                   ease="power3.out"
