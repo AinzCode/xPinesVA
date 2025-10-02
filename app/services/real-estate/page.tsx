@@ -55,8 +55,8 @@ export default function RealEstateServicesPage() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-10">
+          <h1 className="text-3xl font-bold text-gray-900 mb-4">
             Real Estate Support Services
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -66,7 +66,7 @@ export default function RealEstateServicesPage() {
         </div>
 
         {/* Services Overview */}
-        <div className="grid lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid lg:grid-cols-3 gap-6 mb-10">
           {services.map((service, index) => (
             <div key={index} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="flex items-center mb-4">
@@ -89,9 +89,9 @@ export default function RealEstateServicesPage() {
         </div>
 
         {/* Benefits */}
-        <div className="mb-16">
-          <h2 className="text-2xl font-bold text-gray-900 text-center mb-12">Why Choose Our Real Estate Support</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+        <div className="mb-10">
+          <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">Why Choose Our Real Estate Support</h2>
+          <div className="grid md:grid-cols-3 gap-6">
             {benefits.map((benefit, index) => (
               <div key={index} className="bg-white p-6 rounded-lg shadow-md">
                 <div className="flex items-center mb-4">

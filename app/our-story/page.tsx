@@ -8,9 +8,9 @@ export default function OurStory() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-green-50 to-emerald-100 py-20">
+      <section className="bg-gradient-to-br from-green-50 to-emerald-100 py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">Our Story</h1>
+          <h1 className="text-3xl lg:text-6xl font-bold text-gray-900 mb-6">Our Story</h1>
           <p className="text-xl text-gray-600 leading-relaxed">
             Discover the journey behind Pines VA and how we&apos;ve grown to become a trusted partner for businesses worldwide. 
             Learn about our mission, values, and commitment to providing exceptional virtual assistant services.
@@ -19,7 +19,7 @@ export default function OurStory() {
       </section>
 
       {/* Story Content */}
-      <section className="py-20">
+      <section className="py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="prose prose-lg mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">How We Started</h2>
@@ -50,10 +50,10 @@ export default function OurStory() {
       </section>
 
       {/* Mission & Vision */}
-      <section id="mission" className="py-20 bg-gray-50">
+      <section id="mission" className="py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Mission & Vision</h2>
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Mission & Vision</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Our guiding principles that drive everything we do at Pines VA.
             </p>
@@ -86,16 +86,16 @@ export default function OurStory() {
       </section>
 
       {/* Values */}
-      <section className="py-20">
+      <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Core Values</h2>
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Core Values</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               The principles that guide our team and define our company culture.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="text-center p-6 border-2 border-blue-200 rounded-xl hover:bg-gradient-to-br hover:from-blue-500 hover:to-blue-600 hover:border-blue-600 transition-all duration-300 transform hover:scale-105 group">
               <div className="bg-blue-100 group-hover:bg-blue-200 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 transition-colors duration-300">
                 <Award className="w-8 h-8 text-blue-600 group-hover:text-blue-800" />

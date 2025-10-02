@@ -57,10 +57,10 @@ const trustMetrics = [
 
 export default function SecurityTrust() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-12 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Security & Trust</h2>
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">Security & Trust</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Your business data and confidential information are protected by industry-leading 
             security measures and strict confidentiality protocols.
@@ -68,10 +68,10 @@ export default function SecurityTrust() {
         </div>
 
         {/* Trust Metrics */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
           {trustMetrics.map((metric, index) => (
             <div key={index} className="text-center">
-              <div className="text-3xl lg:text-4xl font-bold text-green-600 mb-2">
+              <div className="text-2xl lg:text-3xl font-bold text-green-600 mb-2">
                 {metric.number}
               </div>
               <div className="text-gray-600 font-medium">
@@ -82,7 +82,7 @@ export default function SecurityTrust() {
         </div>
 
         {/* Security Features */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {securityFeatures.map((feature, index) => (
             <div key={index} className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300">
               <div className={`${feature.color} w-12 h-12 rounded-lg flex items-center justify-center mb-4`}>

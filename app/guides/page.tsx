@@ -11,9 +11,9 @@ export default function GuidesPage() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-green-50 to-emerald-100 py-20">
+      <section className="bg-gradient-to-br from-green-50 to-emerald-100 py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">Easy Guides</h1>
+          <h1 className="text-3xl lg:text-3xl font-bold text-gray-900 mb-6">Easy Guides</h1>
           <p className="text-xl text-gray-600 leading-relaxed">
             Your step-by-step roadmap to working with virtual assistants. 
             We've made the process simple, transparent, and designed around your success.
@@ -25,10 +25,10 @@ export default function GuidesPage() {
       <EasyGuides />
 
       {/* Additional Benefits Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-            <div className="text-center mb-16">
+            <div className="text-center mb-10">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Our Process Works</h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                 We've refined our approach based on years of experience and client feedback.
@@ -36,7 +36,7 @@ export default function GuidesPage() {
             </div>
           
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6">
             
               <div className="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow duration-300">
               <div className="bg-green-100 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
@@ -83,16 +83,16 @@ export default function GuidesPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-white">
+      <section className="py-12 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Common Questions</h2>
             <p className="text-xl text-gray-600">
               Here are answers to the most frequently asked questions about our process.
             </p>
           </div>
 
-          <div className="space-y-8">
+          <div className="space-y-6">
             <div className="bg-gray-50 rounded-lg p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-3">How long does it take to get started?</h3>
               <p className="text-gray-600">

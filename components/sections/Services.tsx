@@ -38,17 +38,17 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-12 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Services</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We understand that every business has unique needs, and that&apos;s why our services are designed to be flexible, professional, and impactful.
             </p>
           </div>
 
         <div className="flex justify-center">
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl">
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl">
             {services.map((service, index) => (
             <div 
                 key={index}
@@ -58,11 +58,11 @@ export default function Services() {
                 <service.icon className={`w-8 h-8 ${service.iconColor} ${service.iconHoverColor} transition-colors duration-300`} />
               </div>
               
-              <h3 className="text-2xl font-bold text-gray-900 group-hover:text-white mb-4 transition-colors duration-300">
+              <h3 className="text-xl font-bold text-gray-900 group-hover:text-white mb-4 transition-colors duration-300">
                 {service.title}
               </h3>
               
-              <p className={`text-gray-600 ${service.textHoverColor} leading-relaxed text-lg mb-6 transition-colors duration-300`}>
+              <p className={`text-gray-600 ${service.textHoverColor} leading-relaxed text-base mb-6 transition-colors duration-300`}>
                 {service.description}
               </p>
 

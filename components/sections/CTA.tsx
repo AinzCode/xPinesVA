@@ -5,10 +5,10 @@ import { ArrowRight, Phone, Mail } from 'lucide-react'
 
 export default function CTA() {
   return (
-    <section className="py-20 bg-gradient-to-br from-green-800 to-brown-800">
+    <section className="py-12 bg-gradient-to-br from-green-800 to-brown-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
               Let&apos;s Connect and Transform Your Business
             </h2>
           <p className="text-xl text-green-100 max-w-3xl mx-auto leading-relaxed">
@@ -18,7 +18,7 @@ export default function CTA() {
           </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
+          <div className="space-y-6">
               <div className="bg-white/10 backdrop-blur rounded-xl p-6">
                 <h3 className="text-2xl font-bold text-white mb-4">Why Start Today?</h3>
                 <ul className="space-y-3 text-green-100">

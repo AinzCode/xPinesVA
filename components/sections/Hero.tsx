@@ -25,16 +25,16 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="bg-[#097969]/20 py-20 lg:py-32">
+    <section className="bg-[#097969]/20 py-12 lg:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
-          <div className="mb-16 lg:mb-0">
-            <h1 className="text-4xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+        <div className="lg:grid lg:grid-cols-2 lg:gap-6 items-center">
+          <div className="mb-10 lg:mb-0">
+            <h1 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
               <div className="flex flex-col">
                 <SplitText
                   text="Welcome to"
                   tag="span"
-                  className="text-4xl lg:text-7xl font-bold text-gray-900 block"
+                  className="text-3xl lg:text-5xl font-bold text-gray-900 block"
                   delay={110}
                   duration={0.6}
                   ease="power3.out"
@@ -49,7 +49,7 @@ export default function Hero() {
                   <SplitText
                     text="PinesVA"
                     tag="span"
-                    className="text-5xl lg:text-8xl font-bold text-green-600 block"
+                    className="text-3xl lg:text-6xl font-bold text-green-600 block"
                     delay={250}
                     duration={0.6}
                     ease="power3.out"
@@ -63,7 +63,7 @@ export default function Hero() {
                   {showSparkles && (
                     <div className="absolute inset-0 pointer-events-none">
                       <SparklesText 
-                        className="text-5xl lg:text-8xl font-bold text-transparent block"
+                        className="text-3xl lg:text-6xl font-bold text-transparent block"
                         colors={{ first: "#059669", second: "#f59e0b" }}
                         sparklesCount={12}
                       >
@@ -75,7 +75,7 @@ export default function Hero() {
               </div>
             </h1>
 
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+            <p className="text-lg text-gray-600 mb-6 leading-relaxed">
               Strengthen your organization with professional Virtual Assistance. 
               Our team delivers consistent, high-quality support to optimize performance across all levels.
             </p>

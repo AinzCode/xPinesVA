@@ -45,13 +45,13 @@ export default function ISAFillUp() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-green-50 to-emerald-100 py-20">
+      <section className="bg-gradient-to-br from-green-50 to-emerald-100 py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex items-center justify-center mb-6">
             <div className="bg-green-600 p-4 rounded-lg text-white mr-4">
               <Phone className="w-8 h-8" />
             </div>
-            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900">Inside Sales Agent</h1>
+            <h1 className="text-2xl lg:text-3xl font-bold text-gray-900">Inside Sales Agent</h1>
           </div>
           <p className="text-xl text-gray-600 leading-relaxed">
             Ready to boost your sales performance? Fill out this form to get matched with 
@@ -61,7 +61,7 @@ export default function ISAFillUp() {
       </section>
 
       {/* Form Section */}
-      <section className="py-16 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-xl shadow-lg p-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Sales Support Requirements</h2>
@@ -391,9 +391,9 @@ export default function ISAFillUp() {
       </section>
 
       {/* Contact Info */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-10 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Sales Team Support</h2>
             <p className="text-xl text-gray-600">Our sales specialists are ready to help you grow your revenue.</p>
           </div>

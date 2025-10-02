@@ -77,10 +77,10 @@ export default function Expertise() {
   ]
 
   return (
-    <section id="expertise" className="py-20 bg-white">
+    <section id="expertise" className="py-12 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Expertise</h2>
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Expertise</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We provide specialized Virtual Assistant services across different industries, 
               each tailored to meet specific business needs and requirements.

@@ -56,16 +56,16 @@ const benefits = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-12 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose Pines VA?</h2>
+        <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Choose Pines VA?</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We&apos;re not just another VA service. We&apos;re your strategic partner committed to 
               helping your business thrive with premium virtual assistance.
             </p>
           </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {benefits.map((benefit, index) => (
             <div key={index} className={`bg-white rounded-xl p-8 shadow-sm hover:shadow-xl border-2 ${benefit.borderColor} transition-all duration-300 transform hover:scale-105`}>
               <div className={`${benefit.bgColor} w-12 h-12 rounded-lg flex items-center justify-center mb-6`}>
@@ -78,7 +78,7 @@ export default function WhyChooseUs() {
         </div>
 
         <div className="mt-16 bg-gradient-to-r from-green-600 to-brown-600 rounded-2xl p-8 lg:p-12 text-center">
-            <h3 className="text-3xl font-bold text-white mb-4">Ready to Transform Your Business?</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">Ready to Transform Your Business?</h3>
             <p className="text-xl text-green-100 mb-8 max-w-2xl mx-auto">
               Join hundreds of satisfied clients who have already experienced the power of premium virtual assistance.
             </p>

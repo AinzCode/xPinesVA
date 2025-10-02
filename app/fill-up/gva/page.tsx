@@ -39,13 +39,13 @@ export default function GVAFillUp() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-blue-100 py-20">
+      <section className="bg-gradient-to-br from-blue-50 to-blue-100 py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex items-center justify-center mb-6">
             <div className="bg-blue-600 p-4 rounded-lg text-white mr-4">
               <UserCheck className="w-8 h-8" />
             </div>
-            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900">General Virtual Assistant</h1>
+            <h1 className="text-2xl lg:text-3xl font-bold text-gray-900">General Virtual Assistant</h1>
           </div>
           <p className="text-xl text-gray-600 leading-relaxed">
             Ready to streamline your business operations? Fill out this form to get matched with 
@@ -55,7 +55,7 @@ export default function GVAFillUp() {
       </section>
 
       {/* Form Section */}
-      <section className="py-16 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-xl shadow-lg p-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Tell Us About Your Needs</h2>
@@ -269,9 +269,9 @@ export default function GVAFillUp() {
       </section>
 
       {/* Contact Info */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-10 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Need Help?</h2>
             <p className="text-xl text-gray-600">Our team is here to assist you with any questions.</p>
           </div>

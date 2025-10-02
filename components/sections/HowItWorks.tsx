@@ -32,17 +32,17 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-12 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Easy Guides - How It Works</h2>
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">Easy Guides - How It Works</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Getting started with Pines VA is simple and straightforward. 
             Follow these easy steps to transform your business operations.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {steps.map((step, index) => (
             <div key={index} className="relative">
               {/* Connector Line */}

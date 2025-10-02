@@ -10,9 +10,9 @@ export default function SocialSpacesPage() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-green-50 to-emerald-100 py-20">
+      <section className="bg-gradient-to-br from-green-50 to-emerald-100 py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">Social Spaces</h1>
+          <h1 className="text-3xl lg:text-6xl font-bold text-gray-900 mb-6">Social Spaces</h1>
           <p className="text-xl text-gray-600 leading-relaxed">
             Connect with us across all social media platforms. Stay updated with the latest 
             virtual assistance trends, business tips, and success stories from our community.
@@ -24,16 +24,16 @@ export default function SocialSpacesPage() {
       <SocialSpaces />
 
       {/* Additional Social Media Benefits */}
-      <section className="py-20 bg-white">
+      <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Follow Us?</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Join our growing community and get exclusive content, insights, and opportunities.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6">
             <div className="text-center p-6">
               <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                 <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -74,7 +74,7 @@ export default function SocialSpacesPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Ready to Connect?</h2>
           <p className="text-xl text-gray-600 mb-8">
