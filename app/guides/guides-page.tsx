@@ -74,7 +74,7 @@ export default function GuidesPage() {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-green-700 transition-colors duration-300">Ongoing Support</h3>
               <p className="text-gray-600 leading-relaxed">
-                We don't just match you and disappear. Our team provides continuous support to ensure long-term success.
+                We don&apos;t just match you and disappear. Our team provides continuous support to ensure long-term success.
               </p>
             </div>
             
@@ -102,9 +102,9 @@ export default function GuidesPage() {
             </div>
 
             <div className="bg-gray-50 rounded-lg p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">What if my VA isn't the right fit?</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">What if my VA isn&apos;t the right fit?</h3>
               <p className="text-gray-600">
-                We offer a satisfaction guarantee. If within the first two weeks you feel the match isn't right, 
+                We offer a satisfaction guarantee. If within the first two weeks you feel the match isn&apos;t right, 
                 we'll work with you to find a better fit at no additional cost.
               </p>
             </div>

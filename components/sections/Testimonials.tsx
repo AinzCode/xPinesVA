@@ -99,7 +99,7 @@ export default function Testimonials() {
 
 
   if (testimonials.length === 0) {
-    return null // Don't render if no testimonials
+    return null // don&apos;t render if no testimonials
   }
 
   return (

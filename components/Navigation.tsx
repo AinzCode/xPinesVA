@@ -228,7 +228,7 @@ export default function Navigation() {
             ))}
           </div>
 
-          {/* Let's Connect button positioned on the right */}
+          {/* Let&apos;s Connect button positioned on the right */}
           <div className="absolute right-0 hidden md:flex items-center">
             <motion.div 
               whileHover={{ scale: 1.05 }} 
@@ -239,7 +239,7 @@ export default function Navigation() {
                 className="bg-green-700 text-white hover:bg-green-800 px-6 py-3 rounded-full text-base font-semibold transition-all duration-300 shadow-md hover:shadow-lg"
                 onMouseEnter={() => setExpertiseDropdownOpen(false)}
               >
-                Let's Connect
+                Let&apos;s Connect
               </Link>
             </motion.div>
           </div>
@@ -322,7 +322,7 @@ export default function Navigation() {
                     className="block w-full text-center bg-green-700 text-white hover:bg-green-800 px-6 py-3 rounded-full text-base font-semibold transition-all duration-200 shadow-md hover:shadow-lg"
                     onClick={() => setIsOpen(false)}
                   >
-                    Let's Connect
+                    Let&apos;s Connect
                   </Link>
                 </div>
               </div>

@@ -40,7 +40,7 @@ export default function PrivacyPolicy() {
               Introduction
             </h2>
             <p className="text-gray-700 leading-relaxed">
-              At Pines VA, we are committed to protecting the privacy and security of our clients' information. 
+              At Pines VA, we are committed to protecting the privacy and security of our clients&apos; information. 
               As a provider of virtual assistant services specializing in administrative excellence, healthcare support, 
               and real estate assistance, we understand the sensitive nature of the data we handle. This Privacy Policy 
               explains how we collect, use, protect, and share information when you use our services.
@@ -243,7 +243,7 @@ export default function PrivacyPolicy() {
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Policy Updates</h2>
             <p className="text-gray-700 leading-relaxed">
               We may update this Privacy Policy from time to time. We will notify you of any material changes by 
-              posting the new Privacy Policy on this page and updating the "Last updated" date. We encourage you 
+              posting the new Privacy Policy on this page and updating the &ldquo;Last updated&rdquo; date. We encourage you 
               to review this Privacy Policy periodically for any changes.
             </p>
           </section>

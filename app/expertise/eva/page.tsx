@@ -49,12 +49,13 @@ export default function EVAPage() {
           <h1 className="text-3xl lg:text-6xl font-bold text-gray-900 mb-4">
             Executive Virtual Assistant (EVA)
           </h1>
-          <p className="text-xl text-justify-centered text-gray-600 max-w-3xl mx-auto">
-            At PinesVA, Executive Virtual Assistance isn’t just about managing tasks, it's about making your life easier. 
+          <p className="text-xl text-justify text-gray-600 max-w-3xl mx-auto">
+            Executive Virtual Assistance at PinesVA isn’t just about managing tasks, it&apos;s about making your life easier. 
             We take care of the behind-the-scenes details like scheduling, emails, travel plans, and project coordination 
             so you can focus on leading, creating, and growing your business. Think of us as your right hand, always ready 
             to step in with reliability, discretion, and a personal touch. Our goal is simple: to free up your time, reduce 
             your stress, and give you the confidence that everything is being handled with care.
+
           </p>
         </div>
 

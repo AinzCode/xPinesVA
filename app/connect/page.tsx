@@ -34,11 +34,10 @@ export default function Connect() {
 
       <section className="bg-gradient-to-br from-green-50 to-emerald-100 pt-24 lg:pt-32 pb-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl lg:text-6xl font-bold text-gray-900 mb-6">Let's Connect</h1>
+          <h1 className="text-3xl lg:text-6xl font-bold text-gray-900 mb-6">Let&apos;s Connect</h1>
           <p className="text-xl text-gray-600 leading-relaxed">
-            We’d love to hear from you! Whether you have a question, need more details about our services, 
-            or simply want to start a conversation, we’re just a message away.
-
+            Ready to transform your business with exceptional virtual assistant services? 
+            Get in touch with our team today and discover how we can help you achieve your goals.
           </p>
         </div>
       </section>

@@ -18,7 +18,7 @@ const faqs = [
     answer: "We provide ongoing training, regular performance reviews, and dedicated account management. Each VA has backup support, and we maintain quality standards through continuous monitoring and client feedback."
   },
   {
-    question: "What if my VA isn't the right fit?",
+    question: "What if my VA isn&apos;t the right fit?",
     answer: "We offer a satisfaction guarantee. If you're not completely satisfied within the first two weeks, we&apos;ll find you a better match at no additional cost. Your success is our priority."
   },
   {

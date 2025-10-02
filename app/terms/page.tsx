@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Navigation from '../../components/Navigation'
 import Footer from '../../components/Footer'
-import { FileText, Handshake, AlertTriangle, Scale, Clock, Shield, Users, CheckCircle } from 'lucide-react'
+import { Handshake, AlertTriangle, Scale, Clock, Shield, Users, CheckCircle } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Terms of Service - Pines VA',
@@ -40,7 +40,7 @@ export default function TermsOfService() {
               Agreement Overview
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Welcome to Pines VA. These Terms of Service ("Terms") govern your use of our virtual assistant services, 
+              Welcome to Pines VA. These Terms of Service (&ldquo;Terms&rdquo;) govern your use of our virtual assistant services, 
               including Administrative Excellence, Healthcare Services (Medical Virtual Assistant - MVA), and Real Estate 
               Support services. By engaging our services, you agree to be bound by these Terms.
             </p>
@@ -209,7 +209,7 @@ export default function TermsOfService() {
                   and compliance with industry regulations.
                 </p>
                 <p>
-                  Pines VA's liability is limited to the amount paid for services in the preceding 12 months. We are 
+                  Pines VA&apos;s liability is limited to the amount paid for services in the preceding 12 months. We are 
                   not liable for indirect, consequential, or incidental damages arising from service use.
                 </p>
               </div>
