@@ -3,7 +3,7 @@ import { createClient } from '@supabase/supabase-js';
 
 export async function PATCH(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     // Use service role to bypass RLS for admin operations
@@ -11,7 +11,7 @@ export async function PATCH(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,
       process.env.SUPABASE_SERVICE_ROLE_KEY!
     );
-    const { id } = params;
+    const { id } = await params;
     const body = await request.json();
 
     // Validate status value
@@ -53,7 +53,7 @@ export async function PATCH(
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     // Use service role to bypass RLS for admin operations
@@ -61,7 +61,7 @@ export async function DELETE(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,
       process.env.SUPABASE_SERVICE_ROLE_KEY!
     );
-    const { id } = params;
+    const { id } = await params;
 
     const { error } = await supabase
       .from('contact_inquiries')
