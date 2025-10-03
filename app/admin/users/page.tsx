@@ -1,8 +1,12 @@
-import { createClient } from '@/lib/supabase/server';
+import { createClient } from '@supabase/supabase-js';
 import UsersClient from './client';
 
 async function getUsersData() {
-  const supabase = await createClient();
+  // Use service role to bypass RLS for admin pages
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!
+  );
 
   // Get all team members
   const { data: teamMembers } = await supabase

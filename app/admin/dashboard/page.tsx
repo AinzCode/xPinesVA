@@ -1,9 +1,13 @@
-import { createClient } from '@/lib/supabase/server';
+import { createClient } from '@supabase/supabase-js';
 import DashboardClient from './client';
 
 // Dashboard stats calculation
 async function getDashboardStats() {
-  const supabase = await createClient();
+  // Use service role to bypass RLS for admin pages
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!
+  );
 
   // Fetch all necessary data in parallel
   const [
@@ -38,11 +42,23 @@ async function getDashboardStats() {
     .limit(10);
 
   // Get inquiry trend data (last 7 days)
-  const { data: inquiryTrend } = await supabase
+  const { data: rawInquiryTrend } = await supabase
     .from('contact_inquiries')
     .select('created_at')
     .gte('created_at', new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString())
     .order('created_at', { ascending: true });
+
+  // Transform inquiry trend data to match expected format
+  const inquiryTrend = (rawInquiryTrend || []).reduce((acc: { date: string; count: number }[], item: { created_at: string }) => {
+    const date = item.created_at.split('T')[0]; // Get YYYY-MM-DD
+    const existing = acc.find(entry => entry.date === date);
+    if (existing) {
+      existing.count++;
+    } else {
+      acc.push({ date, count: 1 });
+    }
+    return acc;
+  }, []);
 
   return {
     totalInquiries: totalInquiries || 0,
@@ -56,7 +72,7 @@ async function getDashboardStats() {
     totalServices: totalServices || 0,
     activeServices: activeServices || 0,
     recentInquiries: recentInquiries || [],
-    inquiryTrend: inquiryTrend || [],
+    inquiryTrend: inquiryTrend,
   };
 }
 

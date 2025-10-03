@@ -39,10 +39,9 @@ interface UsersClientProps {
 }
 
 export default function UsersClient({ initialData }: UsersClientProps) {
-  const [data, setData] = useState(initialData);
+  const [data] = useState(initialData);
   const [searchQuery, setSearchQuery] = useState('');
   const [activeTab, setActiveTab] = useState<'team' | 'admins'>('team');
-  const [selectedUser, setSelectedUser] = useState<TeamMember | AdminUser | null>(null);
 
   const handleRefresh = async () => {
     window.location.reload();
@@ -307,7 +306,7 @@ export default function UsersClient({ initialData }: UsersClientProps) {
                               <div className="flex items-center gap-2">
                                 <Calendar className="h-4 w-4 text-gray-400" />
                                 <span className="text-sm text-gray-500">
-                                  {new Date(admin.created_at).toLocaleDateString()}
+                                  {admin.created_at.split('T')[0]}
                                 </span>
                               </div>
                             </td>

@@ -51,8 +51,9 @@ export default function TestimonialsClient({ initialData }: TestimonialsClientPr
           )
         }));
       } else {
-        console.error('Failed to approve testimonial');
-        alert('Failed to approve testimonial. Please try again.');
+        const errorData = await response.json();
+        console.error('Failed to approve testimonial:', response.status, errorData);
+        alert(`Failed to approve testimonial: ${errorData.error || 'Please try again.'}`);
       }
     } catch (error) {
       console.error('Error approving testimonial:', error);
@@ -75,8 +76,9 @@ export default function TestimonialsClient({ initialData }: TestimonialsClientPr
           )
         }));
       } else {
-        console.error('Failed to reject testimonial');
-        alert('Failed to reject testimonial. Please try again.');
+        const errorData = await response.json();
+        console.error('Failed to reject testimonial:', response.status, errorData);
+        alert(`Failed to reject testimonial: ${errorData.error || 'Please try again.'}`);
       }
     } catch (error) {
       console.error('Error rejecting testimonial:', error);
@@ -102,8 +104,9 @@ export default function TestimonialsClient({ initialData }: TestimonialsClientPr
           )
         }));
       } else {
-        console.error('Failed to toggle featured status');
-        alert('Failed to toggle featured status. Please try again.');
+        const errorData = await response.json();
+        console.error('Failed to toggle featured status:', response.status, errorData);
+        alert(`Failed to toggle featured status: ${errorData.error || 'Please try again.'}`);
       }
     } catch (error) {
       console.error('Error toggling featured status:', error);
@@ -302,8 +305,8 @@ export default function TestimonialsClient({ initialData }: TestimonialsClientPr
                     <p className="text-gray-600 mb-4 italic">&quot;{testimonial.testimonial}&quot;</p>
 
                     <div className="flex items-center justify-between text-xs text-muted-foreground mb-4">
-                      <span>Submitted: {new Date(testimonial.created_at).toLocaleDateString()}</span>
-                      <span>Updated: {new Date(testimonial.updated_at).toLocaleDateString()}</span>
+                      <span>Submitted: {testimonial.created_at.split('T')[0]}</span>
+                      <span>Updated: {testimonial.updated_at.split('T')[0]}</span>
                     </div>
 
                     {/* Actions */}

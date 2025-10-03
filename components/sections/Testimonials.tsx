@@ -1,6 +1,7 @@
 'use client'
 
 import { Star, Quote } from 'lucide-react'
+import { useEffect, useState } from 'react'
 
 interface Testimonial {
   id: string
@@ -14,9 +15,8 @@ interface Testimonial {
   is_approved: boolean
 }
 
-export default function Testimonials() {
-  // Static testimonials data
-  const testimonials: Testimonial[] = [
+// Fallback testimonials data (used if database fetch fails)
+const fallbackTestimonials: Testimonial[] = [
     {
       id: '1',
       client_name: 'Sarah Johnson',
@@ -83,7 +83,35 @@ export default function Testimonials() {
       is_featured: true,
       is_approved: true
     }
-  ]
+  ];
+
+export default function Testimonials() {
+  const [testimonials, setTestimonials] = useState<Testimonial[]>(fallbackTestimonials);
+
+  useEffect(() => {
+    // Fetch testimonials from database
+    async function fetchTestimonials() {
+      try {
+        // Fetch featured testimonials first, fallback to all approved
+        const featuredResponse = await fetch('/api/testimonials?featured=true');
+        const featuredData = await featuredResponse.json();
+        
+        if (featuredData.testimonials && featuredData.testimonials.length > 0) {
+          setTestimonials(featuredData.testimonials);
+        } else {
+          // If no featured testimonials, get all approved ones
+          const allResponse = await fetch('/api/testimonials');
+          const allData = await allResponse.json();
+          setTestimonials(allData.testimonials || fallbackTestimonials);
+        }
+      } catch (error) {
+        console.error('Error fetching testimonials:', error);
+        // Keep fallback data if fetch fails
+      }
+    }
+
+    fetchTestimonials();
+  }, []);
 
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, index) => (
@@ -95,8 +123,6 @@ export default function Testimonials() {
       />
     ))
   }
-
-
 
   if (testimonials.length === 0) {
     return null // Don't render if no testimonials

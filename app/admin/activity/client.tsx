@@ -8,20 +8,14 @@ import { Activity, Mail, Phone, User, Calendar, MessageSquare, CheckCircle, Cloc
 
 // Utility functions to format dates consistently (avoids hydration mismatch)
 const formatDate = (dateString: string) => {
-  const date = new Date(dateString);
-  return date.toLocaleDateString('en-US', { 
-    year: 'numeric', 
-    month: 'short', 
-    day: 'numeric' 
-  });
+  // Use ISO date format to avoid hydration mismatch
+  return dateString.split('T')[0];
 };
 
 const formatTime = (dateString: string) => {
-  const date = new Date(dateString);
-  return date.toLocaleTimeString('en-US', { 
-    hour: '2-digit', 
-    minute: '2-digit'
-  });
+  // Extract time from ISO string (HH:MM)
+  const timePart = dateString.split('T')[1];
+  return timePart ? timePart.substring(0, 5) : '';
 };
 
 interface ContactInquiry {
@@ -301,14 +295,14 @@ export default function ActivityClient({ initialData }: ActivityClientProps) {
                             <div>
                               <label className="text-xs font-medium text-muted-foreground uppercase">Created</label>
                               <p className="mt-1 text-sm">
-                                {new Date(selectedInquiry.created_at).toLocaleString()}
+                                {formatDate(selectedInquiry.created_at)} {formatTime(selectedInquiry.created_at)}
                               </p>
                             </div>
 
                             <div>
                               <label className="text-xs font-medium text-muted-foreground uppercase">Last Updated</label>
                               <p className="mt-1 text-sm">
-                                {new Date(selectedInquiry.updated_at).toLocaleString()}
+                                {formatDate(selectedInquiry.updated_at)} {formatTime(selectedInquiry.updated_at)}
                               </p>
                             </div>
                           </div>

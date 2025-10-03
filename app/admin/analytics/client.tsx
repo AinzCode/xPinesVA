@@ -46,7 +46,7 @@ export default function AnalyticsClient({ initialData }: AnalyticsClientProps) {
 
   // Group inquiries by day for trend chart
   const dailyInquiries = data.inquiryTrend.reduce((acc, item) => {
-    const date = new Date(item.created_at).toLocaleDateString();
+    const date = item.created_at.split('T')[0];
     acc[date] = (acc[date] || 0) + 1;
     return acc;
   }, {} as Record<string, number>);

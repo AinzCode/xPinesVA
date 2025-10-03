@@ -310,7 +310,7 @@ export default function BlogClient({ initialData }: BlogClientProps) {
                         {post.published_at && (
                           <div className="flex items-center gap-2 text-sm text-muted-foreground">
                             <Calendar className="h-3 w-3" />
-                            {new Date(post.published_at).toLocaleDateString()}
+                            {post.published_at.split('T')[0]}
                           </div>
                         )}
                         {post.views_count !== null && (
