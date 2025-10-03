@@ -29,7 +29,7 @@ interface ServicesClientProps {
 }
 
 export default function ServicesClient({ initialData }: ServicesClientProps) {
-  const [data] = useState(initialData);
+  const [data, setData] = useState(initialData);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedService, setSelectedService] = useState<Service | null>(null);
 
