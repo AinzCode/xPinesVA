@@ -43,13 +43,13 @@ export default function ISAPage() {
     <div className="min-h-screen bg-gray-50">
       <Navigation />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 lg:pt-32 pb-12">
         {/* Header */}
         <div className="text-center mb-10">
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">
+          <h1 className="text-3xl lg:text-6xl font-bold text-gray-900 mb-4">
             Inside Sales Agent (ISA)
           </h1>
-          <p className="text-xl text-justify text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-justify-centered text-gray-600 max-w-3xl mx-auto">
             An Inside Sales Associate at PinesVA is focused on driving growth through client outreach 
             and sales. The role involves making outbound calls, following up with leads, qualifying 
             prospects, and nurturing relationships to generate new business opportunities. With strong 

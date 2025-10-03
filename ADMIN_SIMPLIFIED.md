@@ -56,7 +56,7 @@ Pines VA Admin
 |----------------|-----------|---------|
 | Contact Form | **Inquiries** | Manage leads and inquiries |
 | Team Section | **Team Members** | Manage VA profiles |
-| Services (GVA, EVA, ISA, VMA) | **Services** | Manage service offerings |
+| Services (GVA, EVA, ISA, MVA) | **Services** | Manage service offerings |
 | Testimonials | **Testimonials** | Approve and feature reviews |
 | Blog/Guides | **Blog Posts** | Create and publish content |
 | Site Config | **Settings** | General configuration |
@@ -154,7 +154,7 @@ New Inquiry → In Progress → Completed/Archived
 **Purpose**: Manage service offerings
 
 **Should Include**:
-- List all services (GVA, EVA, ISA, VMA)
+- List all services (GVA, EVA, ISA, MVA)
 - Edit service details:
   - Name and slug
   - Description

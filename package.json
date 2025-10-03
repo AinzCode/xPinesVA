@@ -22,6 +22,7 @@
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.22",
     "gsap": "^3.13.0",
+    "lottie-react": "^2.4.1",
     "lucide-react": "^0.544.0",
     "mathjs": "^14.8.1",
     "motion": "^12.23.22",

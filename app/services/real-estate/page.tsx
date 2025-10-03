@@ -2,11 +2,11 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Navigation from '../../../components/Navigation'
 import Footer from '../../../components/Footer'
-import { CheckCircle, Users, Clock, Globe, UserCheck, Building2, Phone } from 'lucide-react'
+import { CheckCircle, Users, Clock, Globe, UserCheck, Building2 } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Real Estate Services - Pines VA',
-  description: 'Professional Real Estate Virtual Assistant services including GVA, EVA, and ISA to help maximize efficiency and close more deals.',
+  description: ' Success in real estate is all about speed, organization, and relationships. From managing listings and scheduling showings to handling client follow-ups and updating CRMs, we make sure you stay ahead of the competition. With us taking care of the details, you can focus on closing deals and building stronger client connections.',
 }
 
 export default function RealEstateServicesPage() {
@@ -22,12 +22,6 @@ export default function RealEstateServicesPage() {
       icon: <Building2 className="w-8 h-8 text-purple-600" />,
       description: 'High-level executive support for real estate leaders, including strategic planning and complex task management.',
       features: ['Strategic Planning Support', 'Executive Communication', 'Project Management', 'Stakeholder Coordination', 'Financial Reporting', 'Meeting Management']
-    },
-    {
-      title: 'Inside Sales Agent (ISA)',
-      icon: <Phone className="w-8 h-8 text-green-600" />,
-      description: 'Dedicated sales professionals to help convert real estate leads into clients and grow your business.',
-      features: ['Lead Qualification', 'Cold Calling', 'Follow-up Management', 'CRM Management', 'Appointment Setting', 'Sales Reporting']
     }
   ]
 
@@ -53,10 +47,10 @@ export default function RealEstateServicesPage() {
     <div className="min-h-screen bg-gray-50">
       <Navigation />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 lg:pt-32 pb-12">
         {/* Header */}
         <div className="text-center mb-10">
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">
+          <h1 className="text-3xl lg:text-6xl font-bold text-gray-900 mb-4">
             Real Estate Support Services
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -66,7 +60,7 @@ export default function RealEstateServicesPage() {
         </div>
 
         {/* Services Overview */}
-        <div className="grid lg:grid-cols-3 gap-6 mb-10">
+        <div className="grid lg:grid-cols-2 gap-6 mb-10 max-w-4xl mx-auto">
           {services.map((service, index) => (
             <div key={index} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="flex items-center mb-4">

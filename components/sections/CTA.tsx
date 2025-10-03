@@ -110,7 +110,7 @@ export default function CTA() {
                   <option value="gva">General Virtual Assistant</option>
                   <option value="eva">Executive Virtual Assistant</option>
                   <option value="isa">Inside Sales Agent</option>
-                  <option value="vma">Virtual Medical Assistant</option>
+                  <option value="mva">Medical Virtual Assistant</option>
                 </select>
               </div>
 
