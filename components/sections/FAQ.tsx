@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { ChevronDown, ChevronUp } from 'lucide-react'
 
+
 const faqs = [
   {
     question: "How quickly can we get started?",
@@ -18,7 +19,7 @@ const faqs = [
   },
   {
     question: "What if my VA isn&apos;t the right fit?",
-    answer: "We offer a satisfaction guarantee. If you&apos;re not completely satisfied within the first two weeks, we&apos;ll find you a better match at no additional cost. Your success is our priority."
+    answer: "We offer a satisfaction guarantee. If you're not completely satisfied within the first two weeks, we&apos;ll find you a better match at no additional cost. Your success is our priority."
   },
   {
     question: "How do you handle confidentiality and data security?",
@@ -46,15 +47,15 @@ export default function FAQ() {
   }
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-12 bg-gray-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Get answers to the most common questions about working with Pines VA. 
-            Have a specific question? We&apos;d love to help.
-          </p>
-        </div>
+              Get answers to the most common questions about working with Pines VA. 
+              Have a specific question? We&apos;d love to help.
+            </p>
+          </div>
 
         <div className="space-y-4">
           {faqs.map((faq, index) => (
@@ -73,32 +74,32 @@ export default function FAQ() {
                 )}
               </button>
               
-              {openIndex === index && (
-                <div className="px-6 pb-4">
-                  <p className="text-gray-600 leading-relaxed">
-                    {faq.answer}
-                  </p>
-                </div>
-              )}
-            </div>
-          ))}
+                {openIndex === index && (
+                  <div className="px-6 pb-4">
+                    <p className="text-gray-600 leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </div>
+                )}
+              </div>
+            ))}
         </div>
 
         <div className="mt-12 text-center">
-          <div className="bg-green-50 rounded-lg p-6 border border-green-200">
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Still have questions?</h3>
-            <p className="text-gray-600 mb-4">
-              We&apos;re here to help. Schedule a free consultation to discuss your specific needs.
-            </p>
-            <a
-              href="/connect"
-              className="inline-block bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
-            >
-              Contact Us
-            </a>
+            <div className="bg-green-50 rounded-lg p-6 border border-green-200">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Still have questions?</h3>
+              <p className="text-gray-600 mb-4">
+                We&apos;re here to help. Schedule a free consultation to discuss your specific needs.
+              </p>
+              <a
+                href="/connect"
+                className="inline-block bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
+              >
+                Contact Us
+              </a>
+            </div>
           </div>
         </div>
-      </div>
     </section>
   )
 }

@@ -6,10 +6,10 @@ import Link from 'next/link'
 
 export default function CTA() {
   return (
-    <section className="py-20 bg-[#095028]">
+    <section className="py-12 bg-[#095028]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
             Let&apos;s Connect and Transform Your Business
           </h2>
           <p className="text-xl text-green-100 max-w-3xl mx-auto leading-relaxed">
@@ -110,7 +110,7 @@ export default function CTA() {
                   <option value="gva">General Virtual Assistant</option>
                   <option value="eva">Executive Virtual Assistant</option>
                   <option value="isa">Inside Sales Agent</option>
-                  <option value="vma">Virtual Medical Assistant</option>
+                  <option value="mva">Medical Virtual Assistant</option>
                 </select>
               </div>
 

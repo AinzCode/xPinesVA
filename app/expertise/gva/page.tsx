@@ -43,19 +43,21 @@ export default function GVAPage() {
     <div className="min-h-screen bg-gray-50">
       <Navigation />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 lg:pt-32 pb-12">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-10">
+          <h1 className="text-3xl lg:text-6xl font-bold text-gray-900 mb-4">
             General Virtual Assistant (GVA)
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Streamline your business operations with our skilled General Virtual Assistants. 
-            Handle day-to-day tasks efficiently while you focus on growing your business.
+          <p className="text-xl text-justify-centered text-gray-600 max-w-3xl mx-auto">
+            General Virtual Assistance at PinesVA is all about keeping your business organized and running smoothly. 
+            From managing emails, data, and documents to handling research, reporting, and everyday admin tasks, we 
+            take care of the details so you can focus on the bigger picture. Reliable, flexible, and efficient, your 
+            GVA is the extra set of hands you can count on.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
+        <div className="grid lg:grid-cols-2 gap-12 mb-10">
           {/* Services Overview */}
           <div>
             <h2 className="text-2xl font-bold text-gray-900 mb-6">What Our GVAs Can Do</h2>
@@ -80,9 +82,9 @@ export default function GVAPage() {
         </div>
 
         {/* Benefits */}
-        <div className="mb-16">
-          <h2 className="text-2xl font-bold text-gray-900 text-center mb-12">Why Choose Our GVA Services</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+        <div className="mb-10">
+          <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">Why Choose Our GVA Services</h2>
+          <div className="grid md:grid-cols-3 gap-6">
             {benefits.map((benefit, index) => (
               <div key={index} className="bg-white p-6 rounded-lg shadow-md">
                 <div className="flex items-center mb-4">
@@ -101,7 +103,7 @@ export default function GVAPage() {
           <h2 className="text-2xl font-bold mb-4">Ready to Get Started?</h2>
           <p className="text-lg mb-6">Connect with us today and find your perfect General Virtual Assistant</p>
           <Link 
-            href="/connect" 
+            href="/fill-up/gva" 
             className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block"
           >
             Get Started Now

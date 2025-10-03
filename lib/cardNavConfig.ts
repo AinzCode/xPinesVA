@@ -7,7 +7,7 @@ export const cardNavItems = [
       { label: "General Virtual Assistant", href: "/expertise/gva", ariaLabel: "Learn about General Virtual Assistant services" },
       { label: "Executive Virtual Assistant", href: "/expertise/eva", ariaLabel: "Learn about Executive Virtual Assistant services" },
       { label: "Inside Sales Agent", href: "/expertise/isa", ariaLabel: "Learn about Inside Sales Agent services" },
-      { label: "Virtual Medical Assistant", href: "/expertise/vma", ariaLabel: "Learn about Virtual Medical Assistant services" }
+      { label: "Medical Virtual Assistant", href: "/expertise/mva", ariaLabel: "Learn about Medical Virtual Assistant services" }
     ]
   },
   {

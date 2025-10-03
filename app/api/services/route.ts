@@ -75,8 +75,8 @@ export async function GET() {
         },
         {
           id: '4',
-          name: 'Virtual Medical Assistant (VMA)',
-          slug: 'vma',
+          name: 'Medical Virtual Assistant (MVA)',
+          slug: 'mva',
           description: 'HIPAA-compliant healthcare support services for medical practices and healthcare providers.',
           short_description: 'Healthcare specialists with HIPAA compliance training',
           pricing_min: 10.00,

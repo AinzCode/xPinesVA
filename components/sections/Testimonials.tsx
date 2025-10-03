@@ -44,9 +44,9 @@ const fallbackTestimonials: Testimonial[] = [
       client_name: 'Dr. Emily Rodriguez',
       client_company: 'Wellness Medical Center',
       client_role: 'Medical Director',
-      testimonial: 'Our VMA seamlessly integrated into our practice. Patient scheduling, insurance verification, and medical records management became so much more efficient. Highly recommend Pines VA!',
+      testimonial: 'Our MVA seamlessly integrated into our practice. Patient scheduling, insurance verification, and medical records management became so much more efficient. Highly recommend Pines VA!',
       rating: 5,
-      service_type: 'VMA',
+      service_type: 'MVA',
       is_featured: true,
       is_approved: true
     },
@@ -125,11 +125,11 @@ export default function Testimonials() {
   }
 
   if (testimonials.length === 0) {
-    return null // Don't render if no testimonials
+    return null // don&apos;t render if no testimonials
   }
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-12 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>

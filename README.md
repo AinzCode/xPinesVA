@@ -5,7 +5,7 @@ A comprehensive website for Pines VA, built with Next.js 15, TypeScript, Tailwin
 ## 🚀 Features
 
 - **Modern Design**: Clean, professional UI with responsive design
-- **Service Pages**: Detailed information about GVA, EVA, ISA, and VMA services
+- **Service Pages**: Detailed information about GVA, EVA, ISA, and MVA services
 - **Contact Forms**: Comprehensive contact and consultation request forms
 - **Social Integration**: Links to LinkedIn, Facebook, and Twitter
 - **SEO Optimized**: Meta tags and structured content for search engines

@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom gradient for light rays */
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--tw-gradient-stops));
+}
+
 @font-face {
   font-family: 'Colmeak';
   src: url('/fonts/Colmeak.otf') format('opentype');
@@ -70,3 +75,5 @@
     font-family: var(--font-poppins), sans-serif;
   }
 }
+
+

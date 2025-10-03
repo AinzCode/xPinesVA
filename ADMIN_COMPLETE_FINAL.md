@@ -52,7 +52,7 @@ Successfully created **ALL 7 admin dashboard pages** with complete functionality
 **Status**: ✅ Complete - JUST CREATED!
 
 **Features**:
-- View all services (GVA, EVA, ISA, VMA)
+- View all services (GVA, EVA, ISA, MVA)
 - Service cards with pricing
 - Active/inactive toggle
 - Edit service details
@@ -166,7 +166,7 @@ Successfully created **ALL 7 admin dashboard pages** with complete functionality
   - ✅ Email address (required, not displayed publicly)
   - ✅ Company name (optional)
   - ✅ Client role (optional)
-  - ✅ Service used (dropdown: GVA, EVA, ISA, VMA, Other)
+  - ✅ Service used (dropdown: GVA, EVA, ISA, MVA, Other)
   - ✅ Star rating (interactive 1-5 stars)
   - ✅ Testimonial text (required)
 

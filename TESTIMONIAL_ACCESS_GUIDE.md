@@ -219,7 +219,7 @@ Link in bio 🌲✨ #PinesVA"
    - Email (required, not public)
    - Company (optional)
    - Role (optional)
-   - Service Type dropdown (GVA, EVA, ISA, VMA, Other)
+   - Service Type dropdown (GVA, EVA, ISA, MVA, Other)
    - Star Rating (1-5, interactive)
    - Testimonial text (required)
 

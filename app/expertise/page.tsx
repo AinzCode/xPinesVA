@@ -37,14 +37,14 @@ const services = [
     subtitle: 'High-Level Executive Support',
     description: 'Specialized support for executives and business leaders who need sophisticated, confidential assistance.',
     features: [
-      'Executive Calendar Management',
+       'Calendar & Schedule Management',
+      'Email & Communication Management',
       'Travel Planning & Coordination',
-      'Meeting Preparation & Follow-up',
-      'Strategic Planning Support',
-      'Confidential Document Handling',
-      'Stakeholder Communication',
-      'Project Management',
-      'Personal Task Management'
+      'Meeting Preparation & Documentation',
+      'Project & Task Management',
+      'Research & Data Gathering',
+      'Document & File Management',
+      'Confidential Support'
     ],
     benefits: [
       'Focus on strategic decisions',
@@ -83,9 +83,9 @@ const services = [
     bgColor: 'bg-green-50'
   },
   {
-    id: 'vma',
+    id: 'mva',
     icon: Stethoscope,
-    title: 'Virtual Medical Assistant (VMA)',
+    title: 'Medical Virtual Assistant (MVA)',
     subtitle: 'Specialized Healthcare Support',
     description: 'HIPAA-compliant virtual assistants specialized in healthcare administration and patient communication.',
     features: [
@@ -116,9 +116,9 @@ export default function Expertise() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
+      <section className="bg-gradient-to-br from-blue-50 to-indigo-100 pt-24 lg:pt-32 pb-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">Our Expertise</h1>
+          <h1 className="text-3xl lg:text-6xl font-bold text-gray-900 mb-6">Our Expertise</h1>
           <p className="text-xl text-gray-600 leading-relaxed">
             At Pines VA, we provide more than just virtual assistance, we deliver partnership, reliability, and peace of mind. 
             Our team specializes in supporting professionals in the real estate and medical industries, helping them focus on 
@@ -131,7 +131,7 @@ export default function Expertise() {
       </section>
 
       {/* Services Detail */}
-      <section className="py-20">
+      <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-20">
             {services.map((service, index) => (
@@ -165,7 +165,7 @@ export default function Expertise() {
                     </div>
 
                     <Link
-                      href="/connect"
+                      href={`/fill-up/${service.id}`}
                       className={`inline-flex items-center ${service.color} text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity`}
                     >
                       Get Started with {service.id.toUpperCase()}
@@ -208,9 +208,9 @@ export default function Expertise() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-900 to-indigo-900">
+      <section className="py-12 bg-gradient-to-br from-blue-900 to-indigo-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">Not Sure Which Service is Right for You?</h2>
+          <h2 className="text-3xl font-bold text-white mb-6">Not Sure Which Service is Right for You?</h2>
           <p className="text-xl text-blue-100 mb-8 leading-relaxed">
             Our experts will help you choose the perfect virtual assistant solution for your specific needs. 
             Get a free consultation and discover how we can transform your business operations.
@@ -220,7 +220,7 @@ export default function Expertise() {
               href="/connect"
               className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
             >
-              Schedule Free Consultation
+              Get Started Now
             </Link>
             <Link
               href="/guides"

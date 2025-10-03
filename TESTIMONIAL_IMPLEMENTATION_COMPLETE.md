@@ -130,7 +130,7 @@ All testimonial submission access points have been successfully added to the Pin
 │  │  • GVA       • Story    • Contact   │           │
 │  │  • EVA       • Mission  • FAQ       │           │
 │  │  • ISA       • Guides   • 📍 Feedback │ ← LINK  │
-│  │  • VMA                  • Privacy   │           │
+│  │  • MVA                  • Privacy   │           │
 │  │                         • Terms     │           │
 │  └─────────────────────────────────────┘           │
 │                                                      │

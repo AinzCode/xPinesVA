@@ -43,13 +43,13 @@ export default function ISAPage() {
     <div className="min-h-screen bg-gray-50">
       <Navigation />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 lg:pt-32 pb-12">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-10">
+          <h1 className="text-3xl lg:text-6xl font-bold text-gray-900 mb-4">
             Inside Sales Agent (ISA)
           </h1>
-          <p className="text-xl text-justify text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-justify-centered text-gray-600 max-w-3xl mx-auto">
             An Inside Sales Associate at PinesVA is focused on driving growth through client outreach 
             and sales. The role involves making outbound calls, following up with leads, qualifying 
             prospects, and nurturing relationships to generate new business opportunities. With strong 
@@ -58,7 +58,7 @@ export default function ISAPage() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
+        <div className="grid lg:grid-cols-2 gap-12 mb-10">
           {/* Services Overview */}
           <div>
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Key Responsibilities</h2>
@@ -83,9 +83,9 @@ export default function ISAPage() {
         </div>
 
         {/* Benefits */}
-        <div className="mb-16">
-          <h2 className="text-2xl font-bold text-gray-900 text-center mb-12">Why Choose Our ISA Services</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+        <div className="mb-10">
+          <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">Why Choose Our ISA Services</h2>
+          <div className="grid md:grid-cols-3 gap-6">
             {benefits.map((benefit, index) => (
               <div key={index} className="bg-white p-6 rounded-lg shadow-md">
                 <div className="flex items-center mb-4">
@@ -99,7 +99,7 @@ export default function ISAPage() {
         </div>
 
         {/* Process */}
-        <div className="bg-white rounded-lg shadow-md p-8 mb-16">
+        <div className="bg-white rounded-lg shadow-md p-8 mb-10">
           <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">Our Sales Process</h2>
           <div className="grid md:grid-cols-4 gap-6">
             <div className="text-center">
@@ -138,7 +138,7 @@ export default function ISAPage() {
           <h2 className="text-2xl font-bold mb-4">Ready to Boost Your Sales?</h2>
           <p className="text-lg mb-6">Connect with us today and start converting more leads into customers</p>
           <Link 
-            href="/connect" 
+            href="/fill-up/isa" 
             className="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block"
           >
             Get Started Now

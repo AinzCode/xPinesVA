@@ -49,10 +49,10 @@ const industries = [
 
 export default function ClientResults() {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-8 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Client Success Stories</h2>
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">Client Success Stories</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Real results from real businesses. See how our virtual assistants have helped 
             companies across industries achieve their goals and scale efficiently.
@@ -60,9 +60,9 @@ export default function ClientResults() {
         </div>
 
         {/* Success Metrics */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           {successMetrics.map((metric, index) => (
-            <div key={index} className="bg-white rounded-lg p-6 text-center shadow-sm">
+            <div key={index} className="bg-white rounded-lg p-4 text-center shadow-sm">
               <div className="text-3xl font-bold text-green-600 mb-2">
                 {metric.number}
               </div>
@@ -74,9 +74,9 @@ export default function ClientResults() {
         </div>
 
         {/* Case Studies */}
-        <div className="space-y-8 mb-16">
+        <div className="space-y-4 mb-8">
           {results.map((result, index) => (
-            <div key={index} className="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow duration-300">
+            <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow duration-300">
               <div className="flex flex-col lg:flex-row items-start gap-6">
                 <div className="flex-shrink-0">
                   <div className={`${result.color} w-16 h-16 rounded-full flex items-center justify-center text-white`}>

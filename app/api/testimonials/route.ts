@@ -42,7 +42,7 @@ export async function GET(request: NextRequest) {
           client_role: 'Practice Manager',
           testimonial: 'Our virtual medical assistant has streamlined our patient scheduling and billing processes. HIPAA compliance was seamless and professional.',
           rating: 5,
-          service_type: 'VMA',
+          service_type: 'MVA',
           is_featured: true,
           is_approved: true
         },
