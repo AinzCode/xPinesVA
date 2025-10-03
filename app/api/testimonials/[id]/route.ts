@@ -13,13 +13,11 @@ export async function PATCH(
     );
     const { id } = await params;
     const body = await request.json();
+    
+    console.log('Updating testimonial:', { id, body });
 
     // Validate allowed fields
-    const updates: {
-      is_approved?: boolean;
-      is_featured?: boolean;
-      updated_at: string;
-    } = {
+    const updates: Record<string, boolean | string> = {
       updated_at: new Date().toISOString(),
     };
 
@@ -30,9 +28,11 @@ export async function PATCH(
       updates.is_featured = body.is_featured;
     }
 
+    console.log('Updates to apply:', updates);
+
     const { data, error } = await supabase
       .from('testimonials')
-      .update(updates as never)
+      .update(updates)
       .eq('id', id)
       .select()
       .single();
@@ -40,11 +40,12 @@ export async function PATCH(
     if (error) {
       console.error('Error updating testimonial:', error);
       return NextResponse.json(
-        { error: 'Failed to update testimonial' },
+        { error: 'Failed to update testimonial', details: error },
         { status: 500 }
       );
     }
 
+    console.log('Update successful:', data);
     return NextResponse.json({ testimonial: data }, { status: 200 });
   } catch (error) {
     console.error('API error:', error);
