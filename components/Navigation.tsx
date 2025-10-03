@@ -2,8 +2,9 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
-import { Menu, X, ChevronDown } from 'lucide-react'
+import { Menu, X, ChevronDown, Shield } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { createClient } from '@/lib/supabase/client'
 
 const navigation = [
   { name: 'Our Story', href: '/our-story' },
@@ -26,6 +27,7 @@ export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isVisible, setIsVisible] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
+  const [isAdmin, setIsAdmin] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -83,6 +85,39 @@ export default function Navigation() {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside)
     }
+  }, [])
+
+  // Check if user is admin
+  useEffect(() => {
+    const checkAdminStatus = async () => {
+      const supabase = createClient();
+      const { data: { user } } = await supabase.auth.getUser();
+      
+      if (user) {
+        const { data: adminUser } = await supabase
+          .from('admin_users')
+          .select('is_active')
+          .eq('id', user.id)
+          .eq('is_active', true)
+          .single();
+        
+        setIsAdmin(!!adminUser);
+      } else {
+        setIsAdmin(false);
+      }
+    };
+
+    checkAdminStatus();
+
+    // Listen for auth changes
+    const supabase = createClient();
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(() => {
+      checkAdminStatus();
+    });
+
+    return () => {
+      subscription.unsubscribe();
+    };
   }, [])
 
   const dropdownVariants = {
@@ -229,7 +264,22 @@ export default function Navigation() {
           </div>
 
           {/* Let&apos;s Connect button positioned on the right */}
-          <div className="absolute right-0 hidden md:flex items-center">
+          <div className="absolute right-0 hidden md:flex items-center gap-3">
+            {isAdmin && (
+              <motion.div 
+                whileHover={{ scale: 1.05 }} 
+                whileTap={{ scale: 0.95 }}
+              >
+                <Link
+                  href="/admin/dashboard"
+                  className="flex items-center gap-2 bg-[#052814] text-white hover:bg-[#0a3d1f] px-5 py-3 rounded-full text-base font-semibold transition-all duration-300 shadow-md hover:shadow-lg"
+                  onMouseEnter={() => setExpertiseDropdownOpen(false)}
+                >
+                  <Shield className="w-4 h-4" />
+                  Admin
+                </Link>
+              </motion.div>
+            )}
             <motion.div 
               whileHover={{ scale: 1.05 }} 
               whileTap={{ scale: 0.95 }}

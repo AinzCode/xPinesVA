@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
+import { sendTestimonialApprovalEmail } from '../../../../lib/email/send';
 
 export async function PATCH(
   request: NextRequest,
@@ -46,6 +47,20 @@ export async function PATCH(
     }
 
     console.log('Update successful:', data);
+    
+    // If testimonial was approved, send thank you email to client
+    if (updates.is_approved === true && data && 'client_email' in data) {
+      const testimonialData = data as Record<string, string | boolean | number | null>;
+      if (testimonialData.client_email && typeof testimonialData.client_email === 'string') {
+        console.log('Sending approval email to:', testimonialData.client_email);
+        await sendTestimonialApprovalEmail({
+          clientName: String(testimonialData.client_name),
+          clientEmail: testimonialData.client_email,
+          testimonial: String(testimonialData.testimonial),
+        });
+      }
+    }
+    
     return NextResponse.json({ testimonial: data }, { status: 200 });
   } catch (error) {
     console.error('API error:', error);

@@ -1,6 +1,7 @@
 'use client';
 
 import { memo } from 'react';
+import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -11,6 +12,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
+  DropdownMenuSeparator,
 } from '@/components/ui/dropdown-menu';
 import {
   Breadcrumb,
@@ -25,7 +27,10 @@ import {
   Download,
   RefreshCw,
   MoreHorizontal,
+  LogOut,
+  User,
 } from 'lucide-react';
+import { createClient } from '@/lib/supabase/client';
 
 interface DashboardHeaderProps {
   searchQuery: string;
@@ -43,6 +48,15 @@ export const DashboardHeader = memo(
     onExport,
     isRefreshing,
   }: DashboardHeaderProps) => {
+    const router = useRouter();
+
+    const handleLogout = async () => {
+      const supabase = createClient();
+      await supabase.auth.signOut();
+      router.push('/admin/login');
+      router.refresh();
+    };
+
     return (
       <header className="flex h-16 shrink-0 items-center gap-2 border-b bg-background/95 px-4 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">
         <div className="flex items-center gap-2">
@@ -129,6 +143,21 @@ export const DashboardHeader = memo(
             <Button variant="outline" size="sm">
               <Bell className="h-4 w-4" />
             </Button>
+
+            {/* User Menu */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" size="icon">
+                  <User className="h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-48">
+                <DropdownMenuItem onClick={handleLogout}>
+                  <LogOut className="mr-2 h-4 w-4" />
+                  Logout
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </motion.div>
         </div>
       </header>

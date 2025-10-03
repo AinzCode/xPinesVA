@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createServiceClient } from '../../../lib/supabase/server'
+import { sendContactFormEmail } from '../../../lib/email/send'
 
 export async function POST(request: NextRequest) {
   try {
@@ -74,6 +75,17 @@ export async function POST(request: NextRequest) {
       }
 
       console.log('✅ Contact form saved to database:', data)
+      
+      // Send email notification to admin
+      await sendContactFormEmail({
+        name: body.name,
+        email: body.email,
+        phone: body.phone,
+        message: body.message || '',
+        preferredContact: body.expertise,
+        inquiryType: body.company_name ? 'Business' : 'Personal',
+      })
+      
       return NextResponse.json(
         { 
           success: true, 

@@ -1,0 +1,11 @@
+import { Resend } from 'resend';
+
+if (!process.env.RESEND_API_KEY) {
+  throw new Error('RESEND_API_KEY is not set in environment variables');
+}
+
+export const resend = new Resend(process.env.RESEND_API_KEY);
+
+// Email addresses
+export const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'admin@pinesva.com';
+export const FROM_EMAIL = process.env.FROM_EMAIL || 'noreply@pinesva.com';

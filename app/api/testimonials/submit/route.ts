@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
+import { sendTestimonialSubmissionEmail } from '../../../../lib/email/send';
 
 export async function POST(request: Request) {
   try {
@@ -34,13 +35,12 @@ export async function POST(request: Request) {
       client_name,
       client_company: client_company || null,
       client_role: client_role || null,
+      client_email: email, // Store email for approval notifications
       testimonial,
       rating: Number(rating),
       service_type,
       is_approved: false, // Requires admin approval
       is_featured: false,
-      // Note: Email is not stored in testimonials table per schema
-      // You might want to add an email field or store in a separate table
     };
 
     const { data, error } = await supabase
@@ -57,8 +57,16 @@ export async function POST(request: Request) {
       );
     }
 
-    // Optional: Send notification email to admin
-    // TODO: Implement email notification
+    // Send notification email to admin
+    await sendTestimonialSubmissionEmail({
+      clientName: client_name,
+      clientEmail: email,
+      clientCompany: client_company,
+      clientRole: client_role,
+      testimonial,
+      rating: Number(rating),
+      serviceType: service_type,
+    });
 
     return NextResponse.json(
       { 
