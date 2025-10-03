@@ -50,17 +50,34 @@ export default function ActivityClient({ initialData }: ActivityClientProps) {
   const [statusFilter, setStatusFilter] = useState<string>('all');
   const [selectedInquiry, setSelectedInquiry] = useState<ContactInquiry | null>(null);
 
-  const handleRefresh = async () => {
+  const handleRefresh = () => {
     window.location.reload();
   };
 
   const handleStatusChange = async (id: string, newStatus: ContactInquiry['status']) => {
-    // TODO: Implement API call to update status
-    setData(prev => ({
-      inquiries: prev.inquiries.map(inq =>
-        inq.id === id ? { ...inq, status: newStatus, updated_at: new Date().toISOString() } : inq
-      )
-    }));
+    try {
+      const response = await fetch(`/api/admin/inquiries/${id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ status: newStatus }),
+      });
+
+      if (response.ok) {
+        setData(prev => ({
+          inquiries: prev.inquiries.map(inquiry =>
+            inquiry.id === id
+              ? { ...inquiry, status: newStatus, updated_at: new Date().toISOString() }
+              : inquiry
+          )
+        }));
+      } else {
+        console.error('Failed to update inquiry status');
+        alert('Failed to update inquiry status. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error updating inquiry status:', error);
+      alert('Failed to update inquiry status. Please try again.');
+    }
   };
 
   const filteredInquiries = data.inquiries.filter(inquiry => {

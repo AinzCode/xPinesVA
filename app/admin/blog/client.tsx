@@ -39,34 +39,91 @@ export default function BlogClient({ initialData }: BlogClientProps) {
     window.location.reload();
   };
 
-  const handleTogglePublish = (id: string) => {
-    setData(prev => ({
-      blogPosts: prev.blogPosts.map(post =>
-        post.id === id
-          ? {
-              ...post,
-              is_published: !post.is_published,
-              published_at: !post.is_published ? new Date().toISOString() : null,
-              updated_at: new Date().toISOString(),
-            }
-          : post
-      )
-    }));
+  const handleTogglePublish = async (id: string) => {
+    const post = data.blogPosts.find(p => p.id === id);
+    if (!post) return;
+
+    try {
+      const response = await fetch(`/api/admin/blog/${id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          is_published: !post.is_published,
+          published_at: !post.is_published ? new Date().toISOString() : null,
+        }),
+      });
+
+      if (response.ok) {
+        setData(prev => ({
+          blogPosts: prev.blogPosts.map(post =>
+            post.id === id
+              ? {
+                  ...post,
+                  is_published: !post.is_published,
+                  published_at: !post.is_published ? new Date().toISOString() : null,
+                  updated_at: new Date().toISOString(),
+                }
+              : post
+          )
+        }));
+      } else {
+        console.error('Failed to update publish status');
+        alert('Failed to update publish status. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error updating publish status:', error);
+      alert('Failed to update publish status. Please try again.');
+    }
   };
 
-  const handleToggleFeatured = (id: string) => {
-    setData(prev => ({
-      blogPosts: prev.blogPosts.map(post =>
-        post.id === id ? { ...post, is_featured: !post.is_featured, updated_at: new Date().toISOString() } : post
-      )
-    }));
+  const handleToggleFeatured = async (id: string) => {
+    const post = data.blogPosts.find(p => p.id === id);
+    if (!post) return;
+
+    try {
+      const response = await fetch(`/api/admin/blog/${id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ is_featured: !post.is_featured }),
+      });
+
+      if (response.ok) {
+        setData(prev => ({
+          blogPosts: prev.blogPosts.map(post =>
+            post.id === id ? { ...post, is_featured: !post.is_featured, updated_at: new Date().toISOString() } : post
+          )
+        }));
+      } else {
+        console.error('Failed to toggle featured status');
+        alert('Failed to toggle featured status. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error toggling featured status:', error);
+      alert('Failed to toggle featured status. Please try again.');
+    }
   };
 
-  const handleDelete = (id: string) => {
-    if (confirm('Are you sure you want to delete this blog post?')) {
-      setData(prev => ({
-        blogPosts: prev.blogPosts.filter(post => post.id !== id)
-      }));
+  const handleDelete = async (id: string) => {
+    if (!confirm('Are you sure you want to delete this blog post?')) {
+      return;
+    }
+
+    try {
+      const response = await fetch(`/api/admin/blog/${id}`, {
+        method: 'DELETE',
+      });
+
+      if (response.ok) {
+        setData(prev => ({
+          blogPosts: prev.blogPosts.filter(post => post.id !== id)
+        }));
+      } else {
+        console.error('Failed to delete blog post');
+        alert('Failed to delete blog post. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error deleting blog post:', error);
+      alert('Failed to delete blog post. Please try again.');
     }
   };
 
@@ -211,7 +268,7 @@ export default function BlogClient({ initialData }: BlogClientProps) {
                       </div>
                     ) : (
                       <div className="h-48 bg-gradient-to-br from-[#052814] to-[#0a6e33] flex items-center justify-center">
-                        <Image className="h-16 w-16 text-white/30" />
+                        <Image className="h-16 w-16 text-white/30" aria-label="No featured image" />
                       </div>
                     )}
 

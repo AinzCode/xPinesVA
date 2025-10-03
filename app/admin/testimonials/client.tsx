@@ -36,28 +36,79 @@ export default function TestimonialsClient({ initialData }: TestimonialsClientPr
     window.location.reload();
   };
 
-  const handleApprove = (id: string) => {
-    setData(prev => ({
-      testimonials: prev.testimonials.map(t =>
-        t.id === id ? { ...t, is_approved: true, updated_at: new Date().toISOString() } : t
-      )
-    }));
+  const handleApprove = async (id: string) => {
+    try {
+      const response = await fetch(`/api/testimonials/${id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ is_approved: true }),
+      });
+
+      if (response.ok) {
+        setData(prev => ({
+          testimonials: prev.testimonials.map(t =>
+            t.id === id ? { ...t, is_approved: true, updated_at: new Date().toISOString() } : t
+          )
+        }));
+      } else {
+        console.error('Failed to approve testimonial');
+        alert('Failed to approve testimonial. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error approving testimonial:', error);
+      alert('Failed to approve testimonial. Please try again.');
+    }
   };
 
-  const handleReject = (id: string) => {
-    setData(prev => ({
-      testimonials: prev.testimonials.map(t =>
-        t.id === id ? { ...t, is_approved: false, updated_at: new Date().toISOString() } : t
-      )
-    }));
+  const handleReject = async (id: string) => {
+    try {
+      const response = await fetch(`/api/testimonials/${id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ is_approved: false }),
+      });
+
+      if (response.ok) {
+        setData(prev => ({
+          testimonials: prev.testimonials.map(t =>
+            t.id === id ? { ...t, is_approved: false, updated_at: new Date().toISOString() } : t
+          )
+        }));
+      } else {
+        console.error('Failed to reject testimonial');
+        alert('Failed to reject testimonial. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error rejecting testimonial:', error);
+      alert('Failed to reject testimonial. Please try again.');
+    }
   };
 
-  const handleToggleFeatured = (id: string) => {
-    setData(prev => ({
-      testimonials: prev.testimonials.map(t =>
-        t.id === id ? { ...t, is_featured: !t.is_featured, updated_at: new Date().toISOString() } : t
-      )
-    }));
+  const handleToggleFeatured = async (id: string) => {
+    const testimonial = data.testimonials.find(t => t.id === id);
+    if (!testimonial) return;
+
+    try {
+      const response = await fetch(`/api/testimonials/${id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ is_featured: !testimonial.is_featured }),
+      });
+
+      if (response.ok) {
+        setData(prev => ({
+          testimonials: prev.testimonials.map(t =>
+            t.id === id ? { ...t, is_featured: !t.is_featured, updated_at: new Date().toISOString() } : t
+          )
+        }));
+      } else {
+        console.error('Failed to toggle featured status');
+        alert('Failed to toggle featured status. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error toggling featured status:', error);
+      alert('Failed to toggle featured status. Please try again.');
+    }
   };
 
   const filteredTestimonials = data.testimonials.filter(testimonial => {
