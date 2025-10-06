@@ -13,7 +13,7 @@ const ClientResults = dynamic(() => import("../../components/sections/ClientResu
 const SecurityTrust = dynamic(() => import("../../components/sections/SecurityTrust"), {
   ssr: true,
 });
-const Testimonials = dynamic(() => import("../../components/sections/Testimonials"), {
+const TestimonialsMarquee = dynamic(() => import("../../components/sections/TestimonialsMarquee"), {
   ssr: true,
 });
 const FAQ = dynamic(() => import("../../components/sections/FAQ"), {
@@ -35,7 +35,7 @@ export default function HomePage() {
       <WhyChooseUs />
       <ClientResults />
       <SecurityTrust />
-      <Testimonials />
+      <TestimonialsMarquee />
       <FAQ />
       <CTA />
       <Footer />
