@@ -36,12 +36,14 @@ interface UsersClientProps {
     teamMembers: TeamMember[];
     adminUsers: AdminUser[];
   };
+  currentUserRole: string | null;
 }
 
-export default function UsersClient({ initialData }: UsersClientProps) {
+export default function UsersClient({ initialData, currentUserRole }: UsersClientProps) {
   const [data] = useState(initialData);
   const [searchQuery, setSearchQuery] = useState('');
   const [activeTab, setActiveTab] = useState<'team' | 'admins'>('team');
+  const isSuperAdmin = currentUserRole === 'super_admin';
 
   const handleRefresh = async () => {
     window.location.reload();
@@ -81,10 +83,15 @@ export default function UsersClient({ initialData }: UsersClientProps) {
                     Manage team members and admin users
                   </p>
                 </div>
-                <button className="flex items-center gap-2 rounded-lg bg-[#052814] px-4 py-2 text-sm font-medium text-white hover:bg-[#074d24]">
-                  <UserPlus className="h-4 w-4" />
-                  Add User
-                </button>
+                {isSuperAdmin && (
+                  <a
+                    href="/admin/users/create"
+                    className="flex items-center gap-2 rounded-lg bg-[#052814] px-4 py-2 text-sm font-medium text-white hover:bg-[#074d24]"
+                  >
+                    <UserPlus className="h-4 w-4" />
+                    Create Admin
+                  </a>
+                )}
               </div>
 
               {/* Stats */}

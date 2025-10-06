@@ -126,7 +126,7 @@ export const TestimonialSubmissionEmail = ({
       </table>
       <h3 style={{ color: '#052814', marginTop: '30px' }}>Testimonial:</h3>
       <div style={{ backgroundColor: '#ffffff', padding: '20px', borderRadius: '5px', border: '1px solid #ddd' }}>
-        <p style={{ margin: 0, fontStyle: 'italic', whiteSpace: 'pre-wrap' }}>"{testimonial}"</p>
+        <p style={{ margin: 0, fontStyle: 'italic', whiteSpace: 'pre-wrap' }}>&ldquo;{testimonial}&rdquo;</p>
       </div>
       <p style={{ marginTop: '30px', fontSize: '14px', color: '#666' }}>
         This testimonial is pending approval in your admin dashboard.
@@ -162,7 +162,7 @@ export const TestimonialApprovalEmail = ({
         Your testimonial has been approved and is now featured on our website.
       </p>
       <div style={{ backgroundColor: '#ffffff', padding: '20px', borderRadius: '5px', border: '1px solid #ddd', margin: '20px 0' }}>
-        <p style={{ margin: 0, fontStyle: 'italic', color: '#666' }}>"{testimonial}"</p>
+        <p style={{ margin: 0, fontStyle: 'italic', color: '#666' }}>&ldquo;{testimonial}&rdquo;</p>
       </div>
       <p style={{ fontSize: '16px', lineHeight: '1.6', color: '#333' }}>
         Your feedback helps potential clients understand the value we provide and motivates 

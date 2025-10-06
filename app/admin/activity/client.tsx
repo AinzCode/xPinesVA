@@ -4,7 +4,8 @@ import { useState } from 'react';
 import { SidebarProvider, SidebarInset } from '@/components/ui/sidebar';
 import { AdminSidebar } from '@/components/ui/admin-sidebar';
 import { DashboardHeader } from '@/components/ui/dashboard-header';
-import { Activity, Mail, Phone, User, Calendar, MessageSquare, CheckCircle, Clock, Archive } from 'lucide-react';
+import { Activity, Mail, Phone, User, Calendar, MessageSquare, CheckCircle, Clock, Archive, Reply } from 'lucide-react';
+import { ReplyDialog } from '@/components/ui/reply-dialog';
 
 // Utility functions to format dates consistently (avoids hydration mismatch)
 const formatDate = (dateString: string) => {
@@ -305,6 +306,28 @@ export default function ActivityClient({ initialData }: ActivityClientProps) {
                                 {formatDate(selectedInquiry.updated_at)} {formatTime(selectedInquiry.updated_at)}
                               </p>
                             </div>
+                          </div>
+                        </div>
+
+                        <div>
+                          <label className="text-xs font-medium text-muted-foreground uppercase mb-2 block">
+                            Actions
+                          </label>
+                          <div className="space-y-2">
+                            <ReplyDialog
+                              id={selectedInquiry.id}
+                              type="inquiry"
+                              recipientName={selectedInquiry.name}
+                              recipientEmail={selectedInquiry.email}
+                              defaultSubject={`Re: Your inquiry about ${selectedInquiry.expertise || 'our services'}`}
+                              onSuccess={handleRefresh}
+                              trigger={
+                                <button className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-[#052814] text-white rounded-lg text-sm font-medium hover:bg-[#052814]/90 transition-colors">
+                                  <Reply className="h-4 w-4" />
+                                  Send Email Reply
+                                </button>
+                              }
+                            />
                           </div>
                         </div>
 

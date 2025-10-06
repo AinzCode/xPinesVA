@@ -12,7 +12,6 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-  DropdownMenuSeparator,
 } from '@/components/ui/dropdown-menu';
 import {
   Breadcrumb,
@@ -21,7 +20,6 @@ import {
   BreadcrumbList,
 } from '@/components/ui/breadcrumb';
 import {
-  Bell,
   Search,
   Filter,
   Download,
@@ -31,6 +29,7 @@ import {
   User,
 } from 'lucide-react';
 import { createClient } from '@/lib/supabase/client';
+import { NotificationBell } from '@/components/ui/notification-bell';
 
 interface DashboardHeaderProps {
   searchQuery: string;
@@ -140,9 +139,8 @@ export const DashboardHeader = memo(
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Button variant="outline" size="sm">
-              <Bell className="h-4 w-4" />
-            </Button>
+            {/* Notification Bell */}
+            <NotificationBell />
 
             {/* User Menu */}
             <DropdownMenu>

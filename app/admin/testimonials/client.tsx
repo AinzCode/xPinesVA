@@ -4,11 +4,13 @@ import { useState } from 'react';
 import { SidebarProvider, SidebarInset } from '@/components/ui/sidebar';
 import { AdminSidebar } from '@/components/ui/admin-sidebar';
 import { DashboardHeader } from '@/components/ui/dashboard-header';
-import { Award, Star, Check, X, User, Building2, Briefcase, ThumbsUp, Clock } from 'lucide-react';
+import { Award, Star, Check, X, User, Building2, Briefcase, ThumbsUp, Clock, Reply } from 'lucide-react';
+import { ReplyDialog } from '@/components/ui/reply-dialog';
 
 interface Testimonial {
   id: string;
   client_name: string;
+  client_email: string | null;
   client_company: string | null;
   client_role: string | null;
   testimonial: string;
@@ -308,48 +310,68 @@ export default function TestimonialsClient({ initialData }: TestimonialsClientPr
                       <span>Submitted: {testimonial.created_at.split('T')[0]}</span>
                       <span>Updated: {testimonial.updated_at.split('T')[0]}</span>
                     </div>
-
                     {/* Actions */}
-                    <div className="flex gap-2 pt-4 border-t">
-                      {!testimonial.is_approved ? (
-                        <>
-                          <button
-                            onClick={() => handleApprove(testimonial.id)}
-                            className="flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-green-50 hover:bg-green-100 text-green-600 text-sm font-medium transition-colors"
-                          >
-                            <Check className="h-4 w-4" />
-                            Approve
-                          </button>
-                          <button
-                            onClick={() => handleReject(testimonial.id)}
-                            className="flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-red-50 hover:bg-red-100 text-red-600 text-sm font-medium transition-colors"
-                          >
-                            <X className="h-4 w-4" />
-                            Reject
-                          </button>
-                        </>
-                      ) : (
-                        <>
-                          <button
-                            onClick={() => handleToggleFeatured(testimonial.id)}
-                            className={`flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                              testimonial.is_featured
-                                ? 'bg-yellow-50 hover:bg-yellow-100 text-yellow-600'
-                                : 'bg-gray-100 hover:bg-gray-200 text-gray-700'
-                            }`}
-                          >
-                            <ThumbsUp className="h-4 w-4" />
-                            {testimonial.is_featured ? 'Unfeature' : 'Feature'}
-                          </button>
-                          <button
-                            onClick={() => handleReject(testimonial.id)}
-                            className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-red-50 hover:bg-red-100 text-red-600 text-sm font-medium transition-colors"
-                          >
-                            <X className="h-4 w-4" />
-                            Unapprove
-                          </button>
-                        </>
+                    <div className="flex flex-col gap-2 pt-4 border-t">
+                      {/* Reply button - only show if client has email */}
+                      {testimonial.client_email && (
+                        <ReplyDialog
+                          id={testimonial.id}
+                          type="testimonial"
+                          recipientName={testimonial.client_name}
+                          recipientEmail={testimonial.client_email}
+                          defaultSubject={`Thank you for your testimonial - ${testimonial.service_type || 'Pines VA'}`}
+                          onSuccess={handleRefresh}
+                          trigger={
+                            <button className="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-[#052814] hover:bg-[#052814]/90 text-white text-sm font-medium transition-colors">
+                              <Reply className="h-4 w-4" />
+                              Send Email Reply
+                            </button>
+                          }
+                        />
                       )}
+                      
+                      {/* Approval actions */}
+                      <div className="flex gap-2">
+                        {!testimonial.is_approved ? (
+                          <>
+                            <button
+                              onClick={() => handleApprove(testimonial.id)}
+                              className="flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-green-50 hover:bg-green-100 text-green-600 text-sm font-medium transition-colors"
+                            >
+                              <Check className="h-4 w-4" />
+                              Approve
+                            </button>
+                            <button
+                              onClick={() => handleReject(testimonial.id)}
+                              className="flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-red-50 hover:bg-red-100 text-red-600 text-sm font-medium transition-colors"
+                            >
+                              <X className="h-4 w-4" />
+                              Reject
+                            </button>
+                          </>
+                        ) : (
+                          <>
+                            <button
+                              onClick={() => handleToggleFeatured(testimonial.id)}
+                              className={`flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                                testimonial.is_featured
+                                  ? 'bg-yellow-50 hover:bg-yellow-100 text-yellow-600'
+                                  : 'bg-gray-100 hover:bg-gray-200 text-gray-700'
+                              }`}
+                            >
+                              <ThumbsUp className="h-4 w-4" />
+                              {testimonial.is_featured ? 'Unfeature' : 'Feature'}
+                            </button>
+                            <button
+                              onClick={() => handleReject(testimonial.id)}
+                              className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-red-50 hover:bg-red-100 text-red-600 text-sm font-medium transition-colors"
+                            >
+                              <X className="h-4 w-4" />
+                              Unapprove
+                            </button>
+                          </>
+                        )}
+                      </div>
                     </div>
                   </div>
                 ))}

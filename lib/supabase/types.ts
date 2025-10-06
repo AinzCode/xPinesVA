@@ -254,6 +254,44 @@ export interface Database {
           updated_at?: string
         }
       }
+      notifications: {
+        Row: {
+          id: string
+          type: 'contact_form' | 'testimonial' | 'admin_action' | 'system_alert' | 'approval_needed'
+          title: string
+          message: string
+          recipient_id: string | null
+          recipient_role: 'admin' | 'super_admin' | null
+          is_read: boolean
+          metadata: Record<string, unknown>
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          type: 'contact_form' | 'testimonial' | 'admin_action' | 'system_alert' | 'approval_needed'
+          title: string
+          message: string
+          recipient_id?: string | null
+          recipient_role?: 'admin' | 'super_admin' | null
+          is_read?: boolean
+          metadata?: Record<string, unknown>
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          type?: 'contact_form' | 'testimonial' | 'admin_action' | 'system_alert' | 'approval_needed'
+          title?: string
+          message?: string
+          recipient_id?: string | null
+          recipient_role?: 'admin' | 'super_admin' | null
+          is_read?: boolean
+          metadata?: Record<string, unknown>
+          created_at?: string
+          updated_at?: string
+        }
+      }
     }
     Views: {
       [_ in never]: never
@@ -286,3 +324,7 @@ export type BlogPostInsert = Database['public']['Tables']['blog_posts']['Insert'
 
 export type Testimonial = Database['public']['Tables']['testimonials']['Row']
 export type TestimonialInsert = Database['public']['Tables']['testimonials']['Insert']
+
+export type Notification = Database['public']['Tables']['notifications']['Row']
+export type NotificationInsert = Database['public']['Tables']['notifications']['Insert']
+export type NotificationUpdate = Database['public']['Tables']['notifications']['Update']

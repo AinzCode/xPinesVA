@@ -33,24 +33,50 @@ export default function AdminLoginPage() {
       }
 
       if (data.user) {
-        // Check if user is an admin
+        console.log('🔍 Checking admin access for user:', {
+          userId: data.user.id,
+          email: data.user.email
+        });
+
+        // Check if user is an admin (user_id should match auth.users.id)
         const { data: adminUser, error: adminError } = await supabase
           .from('admin_users')
           .select('*')
-          .eq('id', data.user.id)
-          .eq('is_active', true)
-          .single();
+          .eq('user_id', data.user.id)
+          .maybeSingle();
+
+        console.log('📊 Admin query result:', {
+          adminUser,
+          adminError,
+          hasData: !!adminUser,
+          hasError: !!adminError,
+          errorDetails: adminError ? JSON.stringify(adminError) : null
+        });
 
         if (adminError || !adminUser) {
+          console.error('❌ Admin check failed:', { 
+            adminError: adminError ? {
+              message: adminError.message,
+              details: adminError.details,
+              hint: adminError.hint,
+              code: adminError.code
+            } : 'No error',
+            adminUser: adminUser || 'No user found', 
+            userId: data.user.id,
+            email: data.user.email,
+            suggestion: 'Check RLS policies or run: UPDATE admin_users SET user_id = (SELECT id FROM auth.users WHERE email = admin_users.email)'
+          });
           await supabase.auth.signOut();
-          throw new Error('You do not have admin access');
+          throw new Error('You do not have admin access. Check console for details.');
         }
+
+        console.log('✅ Admin access confirmed:', adminUser);
 
         // Update last login
         await supabase
           .from('admin_users')
-          .update({ last_login: new Date().toISOString() } as never)
-          .eq('id', data.user.id);
+          .update({ updated_at: new Date().toISOString() } as never)
+          .eq('user_id', data.user.id);
 
         // Redirect to admin dashboard
         router.push('/admin/dashboard');

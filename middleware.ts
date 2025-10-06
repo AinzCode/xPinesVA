@@ -73,17 +73,26 @@ export async function middleware(request: NextRequest) {
       return NextResponse.redirect(redirectUrl);
     }
 
-    // Check if user is an admin
+    // Check if user is an admin (user_id should match auth.users.id)
     const { data: adminUser, error: adminError } = await supabase
       .from('admin_users')
-      .select('is_active')
-      .eq('id', user.id)
-      .single();
+      .select('role')
+      .eq('user_id', user.id)
+      .maybeSingle();
 
-    if (adminError || !adminUser || !adminUser.is_active) {
-      // User is authenticated but not an admin or inactive
+    if (adminError || !adminUser) {
+      // User is authenticated but not an admin
       const redirectUrl = new URL('/admin/login', request.url);
       redirectUrl.searchParams.set('error', 'unauthorized');
+      return NextResponse.redirect(redirectUrl);
+    }
+
+    // Check if route requires super_admin role
+    const superAdminRoutes = ['/admin/users/create'];
+    if (superAdminRoutes.includes(pathname) && adminUser.role !== 'super_admin') {
+      // User is an admin but not a super_admin
+      const redirectUrl = new URL('/admin/dashboard', request.url);
+      redirectUrl.searchParams.set('error', 'insufficient_permissions');
       return NextResponse.redirect(redirectUrl);
     }
 
