@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
-import { Menu, X, ChevronDown } from 'lucide-react'
+import { Menu, X, ChevronDown, MessageCircle } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const navigation = [
@@ -228,7 +228,7 @@ export default function Navigation() {
             ))}
           </div>
 
-          {/* Let&apos;s Connect button positioned on the right */}
+          {/* Let's Connect button positioned on the right */}
           <div className="absolute right-0 hidden md:flex items-center">
             <motion.div 
               whileHover={{ scale: 1.05 }} 
@@ -236,10 +236,11 @@ export default function Navigation() {
             >
               <Link
                 href="/connect"
-                className="bg-green-700 text-white hover:bg-green-800 px-6 py-3 rounded-full text-base font-semibold transition-all duration-300 shadow-md hover:shadow-lg"
+                className="bg-green-700 text-white hover:bg-green-800 px-6 py-3 rounded-full text-base font-semibold transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2"
                 onMouseEnter={() => setExpertiseDropdownOpen(false)}
               >
-                Let&apos;s Connect
+                <MessageCircle className="w-4 h-4" />
+                Let's Connect
               </Link>
             </motion.div>
           </div>
@@ -322,7 +323,7 @@ export default function Navigation() {
                     className="block w-full text-center bg-green-700 text-white hover:bg-green-800 px-6 py-3 rounded-full text-base font-semibold transition-all duration-200 shadow-md hover:shadow-lg"
                     onClick={() => setIsOpen(false)}
                   >
-                    Let&apos;s Connect
+                    Let's Connect
                   </Link>
                 </div>
               </div>

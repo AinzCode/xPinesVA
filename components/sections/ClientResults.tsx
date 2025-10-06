@@ -17,7 +17,7 @@ const results = [
     description: 'Increase in productivity',
     details: 'Healthcare practices experienced a 40% boost in operational efficiency by delegating appointment scheduling and patient follow-ups.',
     industry: 'Healthcare',
-    color: 'bg-brown-500'
+    color: 'bg-stone-500'
   },
   {
     icon: Target,
@@ -49,9 +49,9 @@ const industries = [
 
 export default function ClientResults() {
   return (
-    <section className="py-8 bg-gray-50">
+    <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-8">
+        <div className="text-center mb-16">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Client Success Stories</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Real results from real businesses. See how our virtual assistants have helped 
@@ -60,9 +60,9 @@ export default function ClientResults() {
         </div>
 
         {/* Success Metrics */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {successMetrics.map((metric, index) => (
-            <div key={index} className="bg-white rounded-lg p-4 text-center shadow-sm">
+            <div key={index} className="bg-gray-50 rounded-lg p-6 text-center shadow-sm hover:shadow-md transition-shadow">
               <div className="text-3xl font-bold text-green-600 mb-2">
                 {metric.number}
               </div>
@@ -74,7 +74,7 @@ export default function ClientResults() {
         </div>
 
         {/* Case Studies */}
-        <div className="space-y-4 mb-8">
+        <div className="space-y-6 mb-16">
           {results.map((result, index) => (
             <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow duration-300">
               <div className="flex flex-col lg:flex-row items-start gap-6">
@@ -121,15 +121,15 @@ export default function ClientResults() {
         </div>
 
         {/* Call to Action */}
-        <div className="mt-12 text-center">
-          <div className="bg-gradient-to-r from-green-600 to-brown-600 rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-4">Ready to See Similar Results?</h3>
-            <p className="text-green-100 mb-6 max-w-2xl mx-auto">
+        <div className="mt-16 text-center">
+          <div className="bg-gradient-to-r from-green-600 to-green-700 rounded-2xl p-8 lg:p-12 text-center shadow-xl">
+            <h3 className="text-3xl font-bold text-white mb-4">Ready to See Similar Results?</h3>
+            <p className="text-green-100 mb-8 max-w-2xl mx-auto">
               Join hundreds of successful businesses that have transformed their operations with Pines VA.
             </p>
             <a
               href="/connect"
-              className="inline-flex items-center gap-2 bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+              className="inline-flex items-center gap-2 bg-white text-green-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105"
             >
               Start Your Success Story
               <ArrowRight className="w-5 h-5" />

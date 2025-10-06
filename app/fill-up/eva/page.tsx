@@ -45,8 +45,20 @@ export default function EVAFillUp() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-purple-50 to-purple-100 pt-24 lg:pt-32 pb-12">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative bg-[#097969]/20 pt-24 lg:pt-32 pb-12 overflow-hidden">
+        {/* Subtle Wavy Background Pattern */}
+        <div className="absolute inset-0 opacity-30">
+          <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="wave-pattern-eva" x="0" y="0" width="100" height="50" patternUnits="userSpaceOnUse">
+                <path d="M0,25 Q25,10 50,25 T100,25" stroke="#059669" strokeWidth="0.5" fill="none" opacity="0.6"/>
+                <path d="M0,35 Q25,20 50,35 T100,35" stroke="#34d399" strokeWidth="0.3" fill="none" opacity="0.4"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#wave-pattern-eva)"/>
+          </svg>
+        </div>
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex items-center justify-center mb-6">
             <div className="bg-purple-600 p-4 rounded-lg text-white mr-4">
               <Building2 className="w-8 h-8" />
@@ -400,12 +412,12 @@ export default function EVAFillUp() {
             <div className="flex flex-col items-center">
               <Mail className="h-8 w-8 text-stone-700 mb-3" />
               <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-              <p className="text-gray-600 text-sm">executive@xpinesva.com</p>
+              <p className="text-gray-600 text-sm">hrteam@pinesva.com</p>
             </div>
             <div className="flex flex-col items-center">
               <Phone className="h-8 w-8 text-stone-700 mb-3" />
               <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
-              <p className="text-gray-600 text-sm">+1 (555) 123-4567</p>
+              <p className="text-gray-600 text-sm">+(074) 661 4195</p>
             </div>
             <div className="flex flex-col items-center">
               <MapPin className="h-8 w-8 text-stone-700 mb-3" />

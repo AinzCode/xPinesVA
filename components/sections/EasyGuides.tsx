@@ -64,7 +64,7 @@ export default function EasyGuides() {
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Easy Guides: How It Works</h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Getting started with PinesVA is simple. Just share your needs, meet your matched Virtual Assistant, 
-              and start delegating tasks. We\'ll handle the details so you can focus on what matters most - 
+              and start delegating tasks. We'll handle the details so you can focus on what matters most - 
               growing your business with ease and confidence.
             </p>
           </div>
@@ -104,7 +104,7 @@ export default function EasyGuides() {
             <div className="bg-gradient-to-r from-green-50 to-brown-50 rounded-2xl p-6 lg:p-8 border border-green-200">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to Get Started?</h3>
               <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-                Take the first step towards a more efficient business. Let&apos;s discuss your needs and find the perfect VA for you.
+                Take the first step towards a more efficient business. Let's discuss your needs and find the perfect VA for you.
               </p>
               <div className="flex justify-center">
                 <Link 

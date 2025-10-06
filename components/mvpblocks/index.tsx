@@ -90,7 +90,7 @@ export default function AdminDashboard() {
                   Welcome Admin
                 </h1>
                 <p className="text-muted-foreground text-sm sm:text-base">
-                  Here&apos;s what&apos;s happening with your platform today.
+                  Here's what happening with your platform today.
                 </p>
               </div>
 

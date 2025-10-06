@@ -280,12 +280,12 @@ export default function GVAFillUp() {
             <div className="flex flex-col items-center">
               <Mail className="h-8 w-8 text-green-600 mb-3" />
               <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-              <p className="text-gray-600 text-sm">hello@xpinesva.com</p>
+              <p className="text-gray-600 text-sm">hrteam@pinesva.com</p>
             </div>
             <div className="flex flex-col items-center">
               <Phone className="h-8 w-8 text-green-600 mb-3" />
               <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
-              <p className="text-gray-600 text-sm">+1 (555) 123-4567</p>
+              <p className="text-gray-600 text-sm">+(074) 661 4195</p>
             </div>
             <div className="flex flex-col items-center">
               <MapPin className="h-8 w-8 text-green-600 mb-3" />

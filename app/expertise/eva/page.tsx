@@ -40,9 +40,38 @@ export default function EVAPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen">
       <Navigation />
 
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-purple-500 to-purple-600 text-white pt-24 lg:pt-32 pb-16 overflow-hidden">
+        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <pattern id="eva-wavy-pattern" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
+              <path
+                d="M0,100 Q50,50 100,100 T200,100 L200,200 L0,200 Z"
+                fill="rgba(255,255,255,0.05)"
+              />
+            </pattern>
+          </defs>
+          <rect x="0" y="0" width="100%" height="100%" fill="url(#eva-wavy-pattern)" />
+        </svg>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-3xl lg:text-6xl font-bold mb-6">
+            Executive Virtual Assistant (EVA)
+          </h1>
+          <p className="text-xl text-purple-100 max-w-3xl mx-auto">
+            Executive Virtual Assistance at PinesVA isn't just about managing tasks, it's about making your life easier. 
+            We take care of the behind-the-scenes details like scheduling, emails, travel plans, and project coordination 
+            so you can focus on leading, creating, and growing your business. Think of us as your right hand, always ready 
+            to step in with reliability, discretion, and a personal touch. Our goal is simple: to free up your time, reduce 
+            your stress, and give you the confidence that everything is being handled with care.
+          </p>
+        </div>
+      </section>
+
+      <div className="bg-gray-50 pt-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 lg:pt-32 pb-12">
         {/* Header */}
         <div className="text-center mb-10">
@@ -50,7 +79,7 @@ export default function EVAPage() {
             Executive Virtual Assistant (EVA)
           </h1>
           <p className="text-xl text-justify text-gray-600 max-w-3xl mx-auto">
-            Executive Virtual Assistance at PinesVA isn’t just about managing tasks, it&apos;s about making your life easier. 
+            Executive Virtual Assistance at PinesVA isn’t just about managing tasks, it's about making your life easier. 
             We take care of the behind-the-scenes details like scheduling, emails, travel plans, and project coordination 
             so you can focus on leading, creating, and growing your business. Think of us as your right hand, always ready 
             to step in with reliability, discretion, and a personal touch. Our goal is simple: to free up your time, reduce 
@@ -106,7 +135,7 @@ export default function EVAPage() {
             <div>
               <h3 className="text-lg font-semibold text-gray-900 mb-4">Qualifications</h3>
               <ul className="space-y-2 text-gray-600">
-                <li>• Bachelor&apos;s degree or higher</li>
+                <li>• Bachelor's degree or higher</li>
                 <li>• 5+ years executive support experience</li>
                 <li>• Advanced English proficiency</li>
                 <li>• Professional certifications</li>
@@ -137,6 +166,7 @@ export default function EVAPage() {
             Get Started Now
           </Link>
         </div>
+      </div>
       </div>
       <Footer />
     </div>

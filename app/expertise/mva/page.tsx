@@ -1,13 +1,10 @@
-import { Metadata } from 'next'
+'use client'
+
 import Link from 'next/link'
 import Navigation from '../../../components/Navigation'
 import Footer from '../../../components/Footer'
 import { CheckCircle, Heart, Clock, Shield } from 'lucide-react'
-
-export const metadata: Metadata = {
-  title: 'Medical Virtual Assistant (MVA) - Pines VA',
-  description: 'Professional Medical Virtual Assistant services for healthcare providers. HIPAA-compliant support for medical practices.',
-}
+import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 
 export default function MVAPage() {
   const features = [
@@ -50,24 +47,41 @@ export default function MVAPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen">
       <Navigation />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 lg:pt-32 pb-12">
-        {/* Header */}
-        <div className="text-center mb-10">
-          <h1 className="text-3xl lg:text-6xl font-bold text-gray-900 mb-4">
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-red-500 to-red-600 text-white pt-24 lg:pt-32 pb-16 overflow-hidden">
+        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <pattern id="mva-wavy-pattern" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
+              <path
+                d="M0,100 Q50,50 100,100 T200,100 L200,200 L0,200 Z"
+                fill="rgba(255,255,255,0.05)"
+              />
+            </pattern>
+          </defs>
+          <rect x="0" y="0" width="100%" height="100%" fill="url(#mva-wavy-pattern)" />
+        </svg>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-3xl lg:text-6xl font-bold mb-6">
             Medical Virtual Assistant (MVA)
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            A Medical Virtual Assistant at PinesVA is like an extra set of hands for doctors, clinics, 
-            and healthcare teams. We take care of the important but time-consuming tasks like managing patient records, 
-            transcribing notes, handling billing and insurance paperwork, coordinating prescriptions, and keeping lab 
-            results organized. Everything is done with accuracy, care, and confidentiality, so providers can focus on 
-            what they do best: taking care of patients.
-
+          <p className="text-xl text-red-100 max-w-3xl mx-auto">
+            Our Medical Virtual Assistants at PinesVA are specialized healthcare professionals who combine 
+            medical knowledge with administrative expertise. From patient records and medical transcription 
+            to insurance coordination and compliance management, our MVAs ensure your healthcare practice 
+            runs smoothly while maintaining the highest standards of patient confidentiality and regulatory 
+            compliance. Trust us to handle the details while you focus on delivering exceptional patient care.
           </p>
         </div>
+      </section>
+
+      <div className="bg-gray-50 pt-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+
+
 
         <div className="grid lg:grid-cols-2 gap-12 mb-10">
           {/* Services Overview */}
@@ -83,10 +97,16 @@ export default function MVAPage() {
             </div>
           </div>
 
-          {/* Image */}
+          {/* Medical Animation */}
           <div className="bg-gradient-to-br from-red-50 to-pink-100 rounded-lg p-8 flex items-center justify-center">
             <div className="text-center">
-              <Heart className="h-24 w-24 text-red-600 mx-auto mb-4" />
+              <div className="w-48 h-48 mx-auto mb-4 flex items-center justify-center">
+                <DotLottieReact
+                  src="https://lottie.host/a3a7696c-5a0a-4e41-ac02-8337d3ba12df/Ut1ibpSog9.lottie"
+                  loop
+                  autoplay
+                />
+              </div>
               <h3 className="text-lg font-semibold text-gray-900">Healthcare Excellence</h3>
               <p className="text-gray-600">Specialized medical support</p>
             </div>
@@ -175,6 +195,7 @@ export default function MVAPage() {
             Get Started Now
           </Link>
         </div>
+      </div>
       </div>
       <Footer />
     </div>

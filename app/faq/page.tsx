@@ -1,8 +1,11 @@
 'use client'
 
+import React from 'react'
 import Navigation from '../../components/Navigation'
 import Footer from '../../components/Footer'
 import FAQ from '../../components/sections/FAQ'
+import { DotLottieReact } from '@lottiefiles/dotlottie-react'
+import { Mail, MessageCircle, BookOpen } from 'lucide-react'
 
 export default function FAQPage() {
   return (
@@ -10,8 +13,20 @@ export default function FAQPage() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-green-50 to-brown-50 pt-24 lg:pt-32 pb-12">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative bg-[#097969]/20 pt-24 lg:pt-32 pb-12 overflow-hidden">
+        {/* Subtle Wavy Background Pattern */}
+        <div className="absolute inset-0 opacity-30">
+          <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="wave-pattern-faq" x="0" y="0" width="100" height="50" patternUnits="userSpaceOnUse">
+                <path d="M0,25 Q25,10 50,25 T100,25" stroke="#059669" strokeWidth="0.5" fill="none" opacity="0.6"/>
+                <path d="M0,35 Q25,20 50,35 T100,35" stroke="#34d399" strokeWidth="0.3" fill="none" opacity="0.4"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#wave-pattern-faq)"/>
+          </svg>
+        </div>
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-3xl lg:text-6xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h1>
           <p className="text-xl text-gray-600 leading-relaxed">
             Find answers to common questions about our virtual assistant services, processes, 
@@ -26,9 +41,20 @@ export default function FAQPage() {
       {/* Additional Help Section */}
       <section className="py-12 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          {/* Lottie Animation */}
+          <div className="flex justify-center mb-8">
+            <div className="w-48 h-48">
+              <DotLottieReact
+                src="https://lottie.host/47315f3f-7918-4675-91ec-44f8b6766360/QFxhtjg3zT.lottie"
+                loop
+                autoplay
+              />
+            </div>
+          </div>
+          
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Need More Information?</h2>
           <p className="text-xl text-gray-600 mb-8">
-            Can&apos;t find what you&apos;re looking for? Our team is here to help answer any specific questions about your needs.
+            Can't find what you're looking for? Our team is here to help answer any specific questions about your needs.
           </p>
           
           <div className="grid md:grid-cols-3 gap-6">
@@ -40,7 +66,8 @@ export default function FAQPage() {
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Email Support</h3>
               <p className="text-gray-600 mb-4">Get detailed answers via email</p>
-              <a href="mailto:hrteam@pinesva.com" className="text-green-600 hover:text-green-700 font-medium">
+              <a href="mailto:hrteam@pinesva.com" className="text-green-600 hover:text-green-700 font-medium flex items-center gap-2 justify-center">
+                <Mail className="w-4 h-4" />
                 hrteam@pinesva.com
               </a>
             </div>
@@ -53,7 +80,8 @@ export default function FAQPage() {
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Live Chat</h3>
               <p className="text-gray-600 mb-4">Quick answers during business hours</p>
-              <a href="/connect" className="text-green-600 hover:text-green-700 font-medium">
+              <a href="/connect" className="text-green-600 hover:text-green-700 font-medium flex items-center gap-2 justify-center">
+                <MessageCircle className="w-4 h-4" />
                 Start Chat
               </a>
             </div>
@@ -66,7 +94,8 @@ export default function FAQPage() {
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Documentation</h3>
               <p className="text-gray-600 mb-4">Detailed guides and processes</p>
-              <a href="/guides" className="text-green-600 hover:text-green-700 font-medium">
+              <a href="/guides" className="text-green-600 hover:text-green-700 font-medium flex items-center gap-2 justify-center">
+                <BookOpen className="w-4 h-4" />
                 View Guides
               </a>
             </div>
