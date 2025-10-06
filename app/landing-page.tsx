@@ -74,8 +74,9 @@ export default function LandingPage() {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="text-xl text-gray-600 mb-8 leading-relaxed max-w-xl"
               >
-                Transform your business with our expert virtual assistants. From real estate to medical support, 
-                we provide specialized professionals who become your trusted partners in growth.
+                At PinesVA, your goals drive everything we do. We’re dedicated to helping you achieve 
+                success by providing seamless support, reliable solutions, and personalized service. 
+                Your success is more than just an outcome—it’s our mission, our purpose, and our commitment.
               </motion.p>
 
               {/* CTA Buttons */}

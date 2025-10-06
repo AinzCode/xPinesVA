@@ -1,6 +1,6 @@
 'use client'
 
-import { ArrowRight, Phone, Mail } from 'lucide-react'
+import { ArrowRight, Phone, Mail, Send, MessageSquare } from 'lucide-react'
 
 import Link from 'next/link'
 
@@ -10,7 +10,7 @@ export default function CTA() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-            Let&apos;s Connect and Transform Your Business
+            Let's Connect and Transform Your Business
           </h2>
           <p className="text-xl text-green-100 max-w-3xl mx-auto leading-relaxed">
             Ready to experience the difference a premium virtual assistant can make? 
@@ -127,22 +127,25 @@ export default function CTA() {
                 type="submit"
                 className="w-full bg-green-600 text-white py-4 rounded-lg font-semibold hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
               >
+                <MessageSquare className="w-5 h-5" />
                 Get Free Consultation
-                <ArrowRight className="w-5 h-5" />
+                <Send className="w-5 h-5" />
               </button>
             </form>
 
             <p className="text-sm text-gray-600 mt-4 text-center">
-              We&apos;ll respond within 2 hours during business hours
+              We'll respond within 2 hours during business hours
             </p>
 
             <div className="mt-6 pt-6 border-t border-gray-200 text-center">
               <p className="text-sm text-gray-600 mb-3">Already a client?</p>
               <Link
                 href="/testimonials/submit"
-                className="text-green-600 font-semibold hover:text-green-700 transition-colors text-sm"
+                className="text-green-600 font-semibold hover:text-green-700 transition-colors text-sm flex items-center justify-center gap-2"
               >
-                Share Your Experience →
+                <MessageSquare className="w-4 h-4" />
+                Share Your Experience
+                <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>

@@ -29,13 +29,19 @@ export default function LandingPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-white/60 via-green-50/40 to-emerald-50/50 pt-24 lg:pt-32 pb-20 overflow-hidden z-10 backdrop-blur-sm">
+      <section className="relative bg-[#097969]/20 pt-24 lg:pt-32 pb-20 overflow-hidden z-10">
         
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-20 h-20 bg-green-500 rounded-full blur-xl"></div>
-          <div className="absolute top-40 right-20 w-32 h-32 bg-emerald-400 rounded-full blur-2xl"></div>
-          <div className="absolute bottom-20 left-1/3 w-28 h-28 bg-green-600 rounded-full blur-xl"></div>
+        {/* Subtle Wavy Background Pattern */}
+        <div className="absolute inset-0 opacity-30">
+          <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="wave-pattern-landing" x="0" y="0" width="100" height="50" patternUnits="userSpaceOnUse">
+                <path d="M0,25 Q25,10 50,25 T100,25" stroke="#059669" strokeWidth="0.5" fill="none" opacity="0.6"/>
+                <path d="M0,35 Q25,20 50,35 T100,35" stroke="#34d399" strokeWidth="0.3" fill="none" opacity="0.4"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#wave-pattern-landing)"/>
+          </svg>
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -74,8 +80,10 @@ export default function LandingPage() {
                 transition={{ duration: 0.8, delay: 0.6 }}
                 className="text-xl text-gray-600 mb-8 leading-relaxed max-w-xl"
               >
-                Transform your business with our expert virtual assistants. From real estate to medical support, 
-                we provide specialized professionals who become your trusted partners in growth.
+                At PinesVA, your goals drive everything we do. We’re dedicated to helping you achieve success 
+                by providing seamless support, reliable solutions, and personalized service. Your success is 
+                more than just an outcome—it’s our mission, our purpose, and our commitment.
+
               </motion.p>
 
               {/* CTA Buttons */}

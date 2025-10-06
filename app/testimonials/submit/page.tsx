@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Award, Star, Send, CheckCircle } from 'lucide-react';
+import { Award, Star, Send, CheckCircle, RotateCcw, Home, ArrowLeft, Mail } from 'lucide-react';
 import Link from 'next/link';
 
 export default function SubmitTestimonialPage() {
@@ -72,14 +72,16 @@ export default function SubmitTestimonialPage() {
           <div className="space-y-3">
             <button
               onClick={() => setSubmitted(false)}
-              className="w-full px-6 py-3 bg-[#052814] text-white rounded-lg font-medium hover:bg-[#074d24] transition-colors"
+              className="w-full px-6 py-3 bg-[#052814] text-white rounded-lg font-medium hover:bg-[#074d24] transition-colors flex items-center justify-center gap-2"
             >
+              <RotateCcw className="w-4 h-4" />
               Submit Another Testimonial
             </button>
             <Link
               href="/"
-              className="block w-full px-6 py-3 bg-gray-100 text-gray-700 rounded-lg font-medium hover:bg-gray-200 transition-colors"
+              className="block w-full px-6 py-3 bg-gray-100 text-gray-700 rounded-lg font-medium hover:bg-gray-200 transition-colors flex items-center justify-center gap-2"
             >
+              <Home className="w-4 h-4" />
               Back to Home
             </Link>
           </div>
@@ -134,7 +136,7 @@ export default function SubmitTestimonialPage() {
                 placeholder="john@example.com"
               />
               <p className="text-xs text-gray-500 mt-1">
-                Your email won&apos;t be displayed publicly
+                Your email won't be displayed publicly
               </p>
             </div>
 
@@ -269,8 +271,9 @@ export default function SubmitTestimonialPage() {
               </button>
               <Link
                 href="/"
-                className="px-6 py-3 bg-gray-100 text-gray-700 rounded-lg font-medium hover:bg-gray-200 transition-colors"
+                className="px-6 py-3 bg-gray-100 text-gray-700 rounded-lg font-medium hover:bg-gray-200 transition-colors flex items-center justify-center gap-2"
               >
+                <ArrowLeft className="w-4 h-4" />
                 Cancel
               </Link>
             </div>
@@ -280,7 +283,8 @@ export default function SubmitTestimonialPage() {
         {/* Footer Note */}
         <p className="text-center text-green-100 text-sm mt-6">
           Questions? Contact us at{' '}
-          <a href="mailto:support@pinesva.com" className="underline hover:text-white">
+          <a href="mailto:support@pinesva.com" className="underline hover:text-white inline-flex items-center gap-1">
+            <Mail className="w-3 h-3" />
             support@pinesva.com
           </a>
         </p>

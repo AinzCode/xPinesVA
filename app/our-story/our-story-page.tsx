@@ -12,7 +12,7 @@ export default function OurStory() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-3xl lg:text-6xl font-bold text-gray-900 mb-6">Our Story</h1>
           <p className="text-xl text-gray-600 leading-relaxed">
-            Discover the journey behind Pines VA and how we&apos;ve grown to become a trusted partner for businesses worldwide. 
+            Discover the journey behind Pines VA and how we've grown to become a trusted partner for businesses worldwide. 
             Learn about our mission, values, and commitment to providing exceptional virtual assistant services.
           </p>
         </div>

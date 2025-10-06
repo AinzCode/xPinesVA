@@ -7,7 +7,7 @@ import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 import SophisticatedBackground from '../components/ui/SophisticatedBackground'
 import ShareAnimation from '../components/ui/ShareAnimation'
-import { ArrowRight, CheckCircle, Star, Users, Award, TrendingUp } from 'lucide-react'
+import { ArrowRight, CheckCircle, Star, Users, Award, PlayCircle, Eye, Sparkles } from 'lucide-react'
 import Link from 'next/link'
 
 // Lazy load SparklesText and SplitText for animations
@@ -47,13 +47,19 @@ export default function LandingPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-white/60 via-green-50/40 to-emerald-50/50 pt-24 lg:pt-32 pb-20 overflow-hidden z-10 backdrop-blur-sm">
+      <section className="relative bg-[#097969]/20 pt-24 lg:pt-32 pb-20 overflow-hidden z-10">
         
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-20 h-20 bg-green-500 rounded-full blur-xl"></div>
-          <div className="absolute top-40 right-20 w-32 h-32 bg-emerald-400 rounded-full blur-2xl"></div>
-          <div className="absolute bottom-20 left-1/3 w-28 h-28 bg-green-600 rounded-full blur-xl"></div>
+        {/* Subtle Wavy Background Pattern */}
+        <div className="absolute inset-0 opacity-30">
+          <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="wave-pattern-main" x="0" y="0" width="100" height="50" patternUnits="userSpaceOnUse">
+                <path d="M0,25 Q25,10 50,25 T100,25" stroke="#059669" strokeWidth="0.5" fill="none" opacity="0.6"/>
+                <path d="M0,35 Q25,20 50,35 T100,35" stroke="#34d399" strokeWidth="0.3" fill="none" opacity="0.4"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#wave-pattern-main)"/>
+          </svg>
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -128,8 +134,9 @@ export default function LandingPage() {
                 transition={{ duration: 0.8, delay: 0.6 }}
                 className="text-xl text-gray-600 mb-8 leading-relaxed max-w-xl"
               >
-                Transform your business with our expert virtual assistants. From real estate to medical support, 
-                we provide specialized professionals who become your trusted partners in growth.
+                At PinesVA, your goals drive everything we do. We’re dedicated to helping you achieve 
+                success by providing seamless support, reliable solutions, and personalized service. 
+                Your success is more than just an outcome—it’s our mission, our purpose, and our commitment.
               </motion.p>
 
               {/* CTA Buttons */}
@@ -150,6 +157,7 @@ export default function LandingPage() {
                   href="/guides"
                   className="bg-white text-green-600 border-2 border-green-600 px-8 py-4 rounded-lg font-semibold hover:bg-green-50 transition-all duration-300 flex items-center justify-center gap-2"
                 >
+                  <PlayCircle className="w-5 h-5" />
                   See How It Works
                 </Link>
               </motion.div>
@@ -253,51 +261,50 @@ export default function LandingPage() {
       <section className="relative py-16 bg-white/80 backdrop-blur-sm z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Specialized Virtual Assistant Services</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Services</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From real estate to medical support, we provide industry-specific virtual assistants who understand your business.
+              From administrative excellence to specialized healthcare and real estate support, we provide comprehensive virtual assistant services tailored to your industry and business needs.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             
-            <Link href="/expertise/gva" className="group">
-              <div className="bg-gray-50 rounded-xl p-6 hover:bg-blue-50 hover:border-blue-300 border-2 border-transparent transition-all duration-300 cursor-pointer">
-                <div className="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors duration-300">
-                  <Users className="w-6 h-6 text-blue-600" />
+            <Link href="/services/real-estate" className="group">
+              <div className="bg-white rounded-xl p-8 hover:bg-blue-50 hover:border-blue-300 border-2 border-transparent shadow-sm transition-all duration-300 cursor-pointer transform hover:scale-105">
+                <div className="flex justify-between items-start mb-6">
+                  <div className="bg-blue-100 w-16 h-16 rounded-lg flex items-center justify-center group-hover:bg-blue-200 transition-colors duration-300">
+                    <Users className="w-8 h-8 text-blue-600" />
+                  </div>
+                  <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors duration-300" />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-700 transition-colors duration-300">General VA</h3>
-                <p className="text-gray-600 text-sm">Administrative support for everyday business operations</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-blue-700 transition-colors duration-300">Real Estate Services</h3>
+                <p className="text-gray-600 leading-relaxed">Success in real estate is all about speed, organization, and relationships. We help you stay ahead of the competition with comprehensive support.</p>
               </div>
             </Link>
 
-            <Link href="/expertise/eva" className="group">
-              <div className="bg-gray-50 rounded-xl p-6 hover:bg-purple-50 hover:border-purple-300 border-2 border-transparent transition-all duration-300 cursor-pointer">
-                <div className="bg-purple-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300">
-                  <Award className="w-6 h-6 text-purple-600" />
+            <Link href="/services/administrative-excellence" className="group">
+              <div className="bg-white rounded-xl p-8 hover:bg-green-50 hover:border-green-300 border-2 border-transparent shadow-sm transition-all duration-300 cursor-pointer transform hover:scale-105">
+                <div className="flex justify-between items-start mb-6">
+                  <div className="bg-green-100 w-16 h-16 rounded-lg flex items-center justify-center group-hover:bg-green-200 transition-colors duration-300">
+                    <Award className="w-8 h-8 text-green-600" />
+                  </div>
+                  <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-green-600 transition-colors duration-300" />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-purple-700 transition-colors duration-300">Executive VA</h3>
-                <p className="text-gray-600 text-sm">High-level support for executives and leadership teams</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-green-700 transition-colors duration-300">Administrative Excellence</h3>
+                <p className="text-gray-600 leading-relaxed">Every successful professional has a strong backbone of support. We streamline your daily operations so you can work smarter, not harder.</p>
               </div>
             </Link>
 
-            <Link href="/expertise/isa" className="group">
-              <div className="bg-gray-50 rounded-xl p-6 hover:bg-emerald-50 hover:border-emerald-300 border-2 border-transparent transition-all duration-300 cursor-pointer">
-                <div className="bg-emerald-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:bg-emerald-200 transition-colors duration-300">
-                  <TrendingUp className="w-6 h-6 text-emerald-600" />
+            <Link href="/services/medical-assistance" className="group">
+              <div className="bg-white rounded-xl p-8 hover:bg-red-50 hover:border-red-300 border-2 border-transparent shadow-sm transition-all duration-300 cursor-pointer transform hover:scale-105">
+                <div className="flex justify-between items-start mb-6">
+                  <div className="bg-red-100 w-16 h-16 rounded-lg flex items-center justify-center group-hover:bg-red-200 transition-colors duration-300">
+                    <CheckCircle className="w-8 h-8 text-red-600" />
+                  </div>
+                  <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-red-600 transition-colors duration-300" />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-emerald-700 transition-colors duration-300">Inside Sales Agent</h3>
-                <p className="text-gray-600 text-sm">Lead generation and sales support for growing businesses</p>
-              </div>
-            </Link>
-
-            <Link href="/expertise/mva" className="group">
-              <div className="bg-gray-50 rounded-xl p-6 hover:bg-red-50 hover:border-red-300 border-2 border-transparent transition-all duration-300 cursor-pointer">
-                <div className="bg-red-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:bg-red-200 transition-colors duration-300">
-                  <CheckCircle className="w-6 h-6 text-red-600" />
-                </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-red-700 transition-colors duration-300">Medical VA</h3>
-                <p className="text-gray-600 text-sm">HIPAA-compliant support for healthcare professionals</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-red-700 transition-colors duration-300">Healthcare Services</h3>
+                <p className="text-gray-600 leading-relaxed">In healthcare, every second matters. We provide reliable, HIPAA-compliant support for healthcare professionals and medical teams.</p>
               </div>
             </Link>
 
@@ -305,11 +312,11 @@ export default function LandingPage() {
 
           <div className="text-center mt-12">
             <Link 
-              href="/services"
-              className="inline-flex items-center gap-2 text-green-600 font-semibold hover:text-green-700 transition-colors duration-300"
+              href="/expertise"
+              className="inline-flex items-center gap-2 bg-green-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700 transition-all duration-300"
             >
-              View All Services
-              <ArrowRight className="w-4 h-4" />
+              View All Expertise
+              <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
         </div>

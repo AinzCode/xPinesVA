@@ -19,9 +19,7 @@ const TestimonialsMarquee = dynamic(() => import("../../components/sections/Test
 const FAQ = dynamic(() => import("../../components/sections/FAQ"), {
   ssr: true,
 });
-const CTA = dynamic(() => import("../../components/sections/CTA"), {
-  ssr: true,
-});
+
 const Footer = dynamic(() => import("../../components/Footer"), {
   ssr: true,
 });
@@ -37,7 +35,6 @@ export default function HomePage() {
       <SecurityTrust />
       <TestimonialsMarquee />
       <FAQ />
-      <CTA />
       <Footer />
     </div>
   );

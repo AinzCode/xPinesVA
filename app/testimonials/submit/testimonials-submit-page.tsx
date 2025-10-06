@@ -134,7 +134,7 @@ export default function SubmitTestimonialPage() {
                 placeholder="john@example.com"
               />
               <p className="text-xs text-gray-500 mt-1">
-                Your email won&apos;t be displayed publicly
+                Your email won't be displayed publicly
               </p>
             </div>
 

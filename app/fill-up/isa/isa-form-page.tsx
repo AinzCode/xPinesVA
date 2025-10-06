@@ -321,7 +321,7 @@ export default function ISAFillUp() {
                     <option value="immediately">Immediately</option>
                     <option value="within-week">Within a week</option>
                     <option value="within-month">Within a month</option>
-                    <option value="flexible">I&apos;m flexible</option>
+                    <option value="flexible">I'm flexible</option>
                   </select>
                 </div>
               </div>
@@ -402,12 +402,12 @@ export default function ISAFillUp() {
             <div className="flex flex-col items-center">
               <Mail className="h-8 w-8 text-green-700 mb-3" />
               <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-              <p className="text-gray-600 text-sm">sales@xpinesva.com</p>
+              <p className="text-gray-600 text-sm">hrteam@pinesva.com</p>
             </div>
             <div className="flex flex-col items-center">
               <Phone className="h-8 w-8 text-green-700 mb-3" />
               <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
-              <p className="text-gray-600 text-sm">+1 (555) 123-4567</p>
+              <p className="text-gray-600 text-sm">+(074) 661 4195</p>
             </div>
             <div className="flex flex-col items-center">
               <MapPin className="h-8 w-8 text-green-700 mb-3" />

@@ -1,6 +1,6 @@
 'use client'
 
-import { Star, Quote } from 'lucide-react'
+import { Star, Quote, Share2 } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
 interface Testimonial {
@@ -125,7 +125,7 @@ export default function Testimonials() {
   }
 
   if (testimonials.length === 0) {
-    return null // don&apos;t render if no testimonials
+    return null // don't render if no testimonials
   }
 
   return (
@@ -134,7 +134,7 @@ export default function Testimonials() {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Don&apos;t just take our word for it. Here&apos;s what our satisfied clients have to say about our services.
+            Don't just take our word for it. Here's what our satisfied clients have to say about our services.
           </p>
         </div>
 
@@ -186,8 +186,9 @@ export default function Testimonials() {
           <p className="text-gray-600 mb-4">Had a great experience with Pines VA?</p>
           <a
             href="/testimonials/submit"
-            className="inline-block bg-green-700 text-white hover:bg-green-800 px-8 py-3 rounded-full text-base font-semibold transition-all duration-300 shadow-md hover:shadow-lg"
+            className="inline-flex items-center gap-2 bg-green-700 text-white hover:bg-green-800 px-8 py-3 rounded-full text-base font-semibold transition-all duration-300 shadow-md hover:shadow-lg"
           >
+            <Share2 className="w-4 h-4" />
             Share Your Experience
           </a>
         </div>

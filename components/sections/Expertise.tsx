@@ -1,6 +1,6 @@
 'use client'
 
-import { Building2, UserCheck, Phone, Stethoscope } from 'lucide-react'
+import { Building2, UserCheck, Phone, Stethoscope, ArrowRight, Eye } from 'lucide-react'
 import Link from 'next/link'
 
 
@@ -8,16 +8,16 @@ import Link from 'next/link'
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   gva: UserCheck,
   eva: Building2,
-  isa: Phone,
-  mva: Stethoscope
+  mva: Stethoscope,
+  isa: Phone
 }
 
 // Color mapping for services - Green and Brown theme
 const colorMap: Record<string, string> = {
   gva: 'bg-green-600',
-  eva: 'bg-stone-700',
-  isa: 'bg-green-700',
-  mva: 'bg-stone-600'
+  eva: 'bg-amber-600',
+  mva: 'bg-green-700',
+  isa: 'bg-amber-700'
 }
 
 interface Service {
@@ -32,45 +32,45 @@ interface Service {
 }
 
 export default function Expertise() {
-  // Static services data
+  // Static services data - 4 main categories
   const services: Service[] = [
     {
       id: '1',
-      name: 'General Virtual Assistant (GVA)',
+      name: 'General Virtual Assistants',
       slug: 'gva',
-      description: 'Professional administrative support to streamline your business operations and increase productivity.',
-      short_description: 'Administrative support and business operations management',
-      features: ['Administrative Support', 'Email Management', 'Calendar Scheduling', 'Data Entry & Research', 'Customer Service', 'Document Preparation'],
+      description: 'Comprehensive administrative support for daily business operations, email management, scheduling, and customer service.',
+      short_description: 'Comprehensive administrative support for daily business operations, email management, scheduling, and customer service.',
+      features: null,
       is_active: true,
       sort_order: 1
     },
     {
       id: '2',
-      name: 'Executive Virtual Assistant (EVA)',
+      name: 'Executive Virtual Assistants',
       slug: 'eva',
-      description: 'High-level executive support for busy professionals and C-suite executives.',
-      short_description: 'Executive-level support for leadership and management',
-      features: ['Executive Calendar Management', 'Meeting Coordination', 'Travel Planning', 'Executive Communications', 'Project Management', 'Strategic Planning Support'],
+      description: 'High-level executive support including strategic planning, meeting coordination, travel arrangements, and confidential tasks.',
+      short_description: 'High-level executive support including strategic planning, meeting coordination, travel arrangements, and confidential tasks.',
+      features: null,
       is_active: true,
       sort_order: 2
     },
     {
       id: '3',
-      name: 'Inside Sales Agent (ISA)',
-      slug: 'isa',
-      description: 'Dedicated sales professionals to help you convert leads into customers and grow your revenue.',
-      short_description: 'Lead generation and sales conversion specialists',
-      features: ['Lead Qualification', 'Cold Calling', 'Follow-up Management', 'CRM Management', 'Sales Reporting', 'Appointment Setting'],
+      name: 'Medical Virtual Assistants',
+      slug: 'mva',
+      description: 'Specialized healthcare support including patient scheduling, medical billing, insurance coordination, and HIPAA-compliant services.',
+      short_description: 'Specialized healthcare support including patient scheduling, medical billing, insurance coordination, and HIPAA-compliant services.',
+      features: null,
       is_active: true,
       sort_order: 3
     },
     {
       id: '4',
-      name: 'Medical Virtual Assistant (MVA)',
-      slug: 'mva',
-      description: 'Specialized healthcare support to manage patient communications and administrative tasks.',
-      short_description: 'Healthcare-focused administrative and patient support',
-      features: ['Patient Scheduling', 'Insurance Verification', 'Medical Records Management', 'Appointment Reminders', 'HIPAA Compliance', 'Provider Communications'],
+      name: 'Industry-Specific Assistants',
+      slug: 'isa',
+      description: 'Tailored support for specialized industries including real estate, legal, e-commerce, and professional services.',
+      short_description: 'Tailored support for specialized industries including real estate, legal, e-commerce, and professional services.',
+      features: null,
       is_active: true,
       sort_order: 4
     }
@@ -121,9 +121,10 @@ export default function Expertise() {
                 
                     <Link
                       href={`/expertise/${service.slug}`}
-                      className="inline-flex items-center text-green-600 font-semibold hover:text-green-700 transition-colors"
+                      className="inline-flex items-center gap-2 text-green-600 font-semibold hover:text-green-700 transition-colors"
                     >
-                      Learn More →
+                      <Eye className="w-4 h-4" />
+                      Learn More
                     </Link>
                   </div>
                 )
@@ -133,9 +134,10 @@ export default function Expertise() {
         <div className="text-center mt-12">
             <Link
               href="/expertise"
-              className="bg-green-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700 transition-colors"
+              className="bg-green-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700 transition-colors inline-flex items-center gap-2"
             >
               View All Services
+              <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
         </div>
