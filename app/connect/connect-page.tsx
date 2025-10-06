@@ -34,7 +34,7 @@ export default function Connect() {
 
       <section className="bg-gradient-to-br from-green-50 to-emerald-100 pt-24 lg:pt-32 pb-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl lg:text-6xl font-bold text-gray-900 mb-6">Let&apos;s Connect</h1>
+          <h1 className="text-3xl lg:text-6xl font-bold text-gray-900 mb-6">Let's Connect</h1>
           <p className="text-xl text-gray-600 leading-relaxed">
             Ready to transform your business with exceptional virtual assistant services? 
             Get in touch with our team today and discover how we can help you achieve your goals.
@@ -52,7 +52,7 @@ export default function Connect() {
                   <Mail className="h-6 w-6 text-green-600 mr-4" />
                   <div>
                     <h3 className="font-semibold text-gray-900">Email</h3>
-                    <p className="text-gray-600">hrteam@xpinesva.com</p>
+                    <p className="text-gray-600">hrteam@pinesva.com</p>
                   </div>
                 </div>
                 <div className="flex items-center">

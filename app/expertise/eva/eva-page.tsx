@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Navigation from '../../../components/Navigation'
 import Footer from '../../../components/Footer'
-import { CheckCircle, Briefcase, Clock, Shield } from 'lucide-react'
+import { CheckCircle, Briefcase, Clock, Shield, Rocket } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Executive Virtual Assistant (EVA) - Pines VA',
@@ -50,7 +50,7 @@ export default function EVAPage() {
             Executive Virtual Assistant (EVA)
           </h1>
           <p className="text-xl text-justify text-gray-600 max-w-3xl mx-auto">
-            Executive Virtual Assistance at PinesVA isn’t just about managing tasks, it&apos;s about making your life easier. 
+            Executive Virtual Assistance at PinesVA isn’t just about managing tasks, it's about making your life easier. 
             We take care of the behind-the-scenes details like scheduling, emails, travel plans, and project coordination 
             so you can focus on leading, creating, and growing your business. Think of us as your right hand, always ready 
             to step in with reliability, discretion, and a personal touch. Our goal is simple: to free up your time, reduce 
@@ -106,7 +106,7 @@ export default function EVAPage() {
             <div>
               <h3 className="text-lg font-semibold text-gray-900 mb-4">Qualifications</h3>
               <ul className="space-y-2 text-gray-600">
-                <li>• Bachelor&apos;s degree or higher</li>
+                <li>• Bachelor's degree or higher</li>
                 <li>• 5+ years executive support experience</li>
                 <li>• Advanced English proficiency</li>
                 <li>• Professional certifications</li>
@@ -132,8 +132,9 @@ export default function EVAPage() {
           <p className="text-lg mb-6">Connect with us today and elevate your business operations</p>
           <Link
             href="/fill-up/eva"
-            className="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block"
+            className="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center gap-2"
           >
+            <Rocket className="w-5 h-5" />
             Get Started Now
           </Link>
         </div>

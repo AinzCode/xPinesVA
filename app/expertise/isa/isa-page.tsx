@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Navigation from '../../../components/Navigation'
 import Footer from '../../../components/Footer'
-import { CheckCircle, Phone, Clock, Target } from 'lucide-react'
+import { CheckCircle, Phone, Clock, Target, Rocket } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Inside Sales Agent (ISA) - Pines VA',
@@ -139,8 +139,9 @@ export default function ISAPage() {
           <p className="text-lg mb-6">Connect with us today and start converting more leads into customers</p>
           <Link 
             href="/fill-up/isa" 
-            className="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block"
+            className="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center gap-2"
           >
+            <Rocket className="w-5 h-5" />
             Get Started Now
           </Link>
         </div>

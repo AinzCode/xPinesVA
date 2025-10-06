@@ -209,7 +209,7 @@ export default function TermsOfService() {
                   and compliance with industry regulations.
                 </p>
                 <p>
-                  Pines VA&apos;s liability is limited to the amount paid for services in the preceding 12 months. We are 
+                  Pines VA's liability is limited to the amount paid for services in the preceding 12 months. We are 
                   not liable for indirect, consequential, or incidental damages arising from service use.
                 </p>
               </div>

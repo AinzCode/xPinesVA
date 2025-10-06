@@ -34,24 +34,24 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#052814] text-white">
+    <footer className="bg-[#2D2D2D] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-12">
           {/* Brand Section */}
           <div>
               <Link href="/" className="text-2xl font-bold text-white mb-4 block">
-                Pines VA
+                PinesVA
               </Link>
               <p className="text-gray-300 mb-6 leading-relaxed">
                 Rooted in Trust. Branching into Success.
               </p>
               
               <div className="space-y-3">
-              <a href="mailto:hrteam@pinesva.com" className="flex items-center text-gray-300 hover:text-green-400 transition-colors duration-300">
+              <a href="mailto:hrteam@pinesva.com" className="flex items-center text-gray-300 hover:text-[#4C8B4A] transition-colors duration-300">
                 <Mail className="w-5 h-5 mr-3" />
                 hrteam@pinesva.com
               </a>
-              <a href="tel:+1234567890" className="flex items-center text-gray-300 hover:text-green-400 transition-colors duration-300">
+              <a href="tel:+1234567890" className="flex items-center text-gray-300 hover:text-[#4C8B4A] transition-colors duration-300">
                 <Phone className="w-5 h-5 mr-3" />
                 +(074) 661 4195
               </a>
@@ -67,7 +67,7 @@ export default function Footer() {
               <ul className="space-y-3">
                 {services.map((service) => (
                   <li key={service.name}>
-                    <Link href={service.href} className="text-gray-300 hover:text-green-400 transition-colors duration-300">
+                    <Link href={service.href} className="text-gray-300 hover:text-[#4C8B4A] transition-colors duration-300">
                       {service.name}
                     </Link>
                   </li>
@@ -80,7 +80,7 @@ export default function Footer() {
               <ul className="space-y-3">
                 {company.map((item) => (
                   <li key={item.name}>
-                    <Link href={item.href} className="text-gray-300 hover:text-green-400 transition-colors duration-300">
+                    <Link href={item.href} className="text-gray-300 hover:text-[#C7A97B] transition-colors duration-300">
                       {item.name}
                     </Link>
                   </li>
@@ -93,7 +93,7 @@ export default function Footer() {
               <ul className="space-y-3">
                 {support.map((item) => (
                   <li key={item.name}>
-                    <Link href={item.href} className="text-gray-300 hover:text-green-400 transition-colors duration-300">
+                    <Link href={item.href} className="text-gray-300 hover:text-[#C7A97B] transition-colors duration-300">
                       {item.name}
                     </Link>
                   </li>
@@ -106,14 +106,14 @@ export default function Footer() {
             <div className="flex flex-col md:flex-row justify-between items-center">
               <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
                 <div className="text-gray-400 text-sm">
-                  © 2025 Pines VA. All rights reserved. | Built with passion for business growth.
+                  © 2025 PinesVA. All rights reserved. | Built with passion for business growth.
                 </div>
                 <div className="flex space-x-4 text-xs">
-                  <Link href="/privacy" className="text-gray-400 hover:text-green-400 transition-colors duration-300">
+                  <Link href="/privacy" className="text-gray-400 hover:text-[#4C8B4A] transition-colors duration-300">
                     Privacy Policy
                   </Link>
                   <span className="text-gray-600">|</span>
-                  <Link href="/terms" className="text-gray-400 hover:text-green-400 transition-colors duration-300">
+                  <Link href="/terms" className="text-gray-400 hover:text-[#4C8B4A] transition-colors duration-300">
                     Terms of Service
                   </Link>
                 </div>
@@ -126,7 +126,7 @@ export default function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-green-400 transition-colors duration-300 transform hover:scale-110"
+                    className="text-gray-400 hover:text-[#C7A97B] transition-colors duration-300 transform hover:scale-110"
                   >
                     <social.icon className="w-6 h-6" />
                     <span className="sr-only">{social.name}</span>

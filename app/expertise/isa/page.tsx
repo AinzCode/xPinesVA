@@ -40,16 +40,28 @@ export default function ISAPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen">
       <Navigation />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 lg:pt-32 pb-12">
-        {/* Header */}
-        <div className="text-center mb-10">
-          <h1 className="text-3xl lg:text-6xl font-bold text-gray-900 mb-4">
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-green-500 to-green-600 text-white pt-24 lg:pt-32 pb-16 overflow-hidden">
+        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <pattern id="isa-wavy-pattern" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
+              <path
+                d="M0,100 Q50,50 100,100 T200,100 L200,200 L0,200 Z"
+                fill="rgba(255,255,255,0.05)"
+              />
+            </pattern>
+          </defs>
+          <rect x="0" y="0" width="100%" height="100%" fill="url(#isa-wavy-pattern)" />
+        </svg>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-3xl lg:text-6xl font-bold mb-6">
             Inside Sales Agent (ISA)
           </h1>
-          <p className="text-xl text-justify-centered text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-green-100 max-w-3xl mx-auto">
             An Inside Sales Associate at PinesVA is focused on driving growth through client outreach 
             and sales. The role involves making outbound calls, following up with leads, qualifying 
             prospects, and nurturing relationships to generate new business opportunities. With strong 
@@ -57,6 +69,10 @@ export default function ISAPage() {
             while keeping the sales pipeline active and thriving.
           </p>
         </div>
+      </section>
+
+      <div className="bg-gray-50 pt-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
 
         <div className="grid lg:grid-cols-2 gap-12 mb-10">
           {/* Services Overview */}
@@ -144,6 +160,7 @@ export default function ISAPage() {
             Get Started Now
           </Link>
         </div>
+      </div>
       </div>
       <Footer />
     </div>

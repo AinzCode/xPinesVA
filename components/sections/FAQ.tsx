@@ -18,8 +18,8 @@ const faqs = [
     answer: "We provide ongoing training, regular performance reviews, and dedicated account management. Each VA has backup support, and we maintain quality standards through continuous monitoring and client feedback."
   },
   {
-    question: "What if my VA isn&apos;t the right fit?",
-    answer: "We offer a satisfaction guarantee. If you're not completely satisfied within the first two weeks, we&apos;ll find you a better match at no additional cost. Your success is our priority."
+    question: "What if my VA isn't the right fit?",
+    answer: "We offer a satisfaction guarantee. If you're not completely satisfied within the first two weeks, we'll find you a better match at no additional cost. Your success is our priority."
   },
   {
     question: "How do you handle confidentiality and data security?",
@@ -53,7 +53,7 @@ export default function FAQ() {
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Get answers to the most common questions about working with Pines VA. 
-              Have a specific question? We&apos;d love to help.
+              Have a specific question? We'd love to help.
             </p>
           </div>
 
@@ -89,7 +89,7 @@ export default function FAQ() {
             <div className="bg-green-50 rounded-lg p-6 border border-green-200">
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Still have questions?</h3>
               <p className="text-gray-600 mb-4">
-                We&apos;re here to help. Schedule a free consultation to discuss your specific needs.
+                We're here to help. Schedule a free consultation to discuss your specific needs.
               </p>
               <a
                 href="/connect"
