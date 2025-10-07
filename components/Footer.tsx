@@ -22,8 +22,6 @@ const support = [
   { name: 'Contact Us', href: '/connect' },
   { name: 'FAQ', href: '/faq' },
   { name: 'Share Your Feedback', href: '/testimonials/submit' },
-  { name: 'Privacy Policy', href: '/privacy' },
-  { name: 'Terms of Service', href: '/terms' },
 ]
 
 const socialLinks = [
@@ -109,13 +107,7 @@ export default function Footer() {
                   © 2025 PinesVA. All rights reserved. | Built with passion for business growth.
                 </div>
                 <div className="flex space-x-4 text-xs">
-                  <Link href="/privacy" className="text-gray-400 hover:text-[#4C8B4A] transition-colors duration-300">
-                    Privacy Policy
-                  </Link>
-                  <span className="text-gray-600">|</span>
-                  <Link href="/terms" className="text-gray-400 hover:text-[#4C8B4A] transition-colors duration-300">
-                    Terms of Service
-                  </Link>
+                  {/* Privacy Policy and Terms of Service links removed */}
                 </div>
               </div>
               
