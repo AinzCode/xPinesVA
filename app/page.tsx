@@ -1,5 +1,4 @@
 'use client'
-/* eslint-disable react/no-unescaped-entities */
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
@@ -7,8 +6,7 @@ import dynamic from 'next/dynamic'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 import SophisticatedBackground from '../components/ui/SophisticatedBackground'
-import ShareAnimation from '../components/ui/ShareAnimation'
-import { ArrowRight, CheckCircle, Star, Users, Award, PlayCircle, Eye, Sparkles } from 'lucide-react'
+import { ArrowRight, CheckCircle, Users, Award, PlayCircle } from 'lucide-react'
 import Link from 'next/link'
 
 // Lazy load SparklesText and SplitText for animations
@@ -73,15 +71,7 @@ export default function LandingPage() {
               transition={{ duration: 0.8 }}
               className="text-center lg:text-left"
             >
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: isLoaded ? 1 : 0, y: isLoaded ? 0 : 20 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="inline-flex items-center bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium mb-6"
-              >
-                <Award className="w-4 h-4 mr-2" />
-                Trusted by 500+ Businesses
-              </motion.div>
+              
 
               <h1 className="text-4xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
                 <div className="flex flex-col">
@@ -194,62 +184,11 @@ export default function LandingPage() {
             >
               <div className="space-y-6">
                 
-                {/* Featured Lottie Animation */}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: isLoaded ? 1 : 0, scale: isLoaded ? 1 : 0.9 }}
-                  transition={{ duration: 0.8, delay: 0.5 }}
-                  className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-500 border border-green-100"
-                >
-                  <div className="flex flex-col items-center text-center">
-                    <ShareAnimation 
-                      width={320}
-                      height={280}
-                      className="mb-4"
-                    />
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">Professional Communication</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      Seamless collaboration and clear communication that keeps your business connected and growing.
-                    </p>
-                  </div>
-                </motion.div>
+                {/* Add Image */}
+                
 
-                {/* Compact Stats Row */}
-                <div className="grid grid-cols-2 gap-4">
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: isLoaded ? 1 : 0, y: isLoaded ? 0 : 20 }}
-                    transition={{ duration: 0.6, delay: 0.7 }}
-                    className="bg-white/70 backdrop-blur-sm rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow duration-300"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="bg-green-100 w-10 h-10 rounded-lg flex items-center justify-center">
-                        <Users className="w-5 h-5 text-green-600" />
-                      </div>
-                      <div>
-                        <h4 className="text-lg font-bold text-gray-900">500+</h4>
-                        <p className="text-xs text-gray-600">Happy Clients</p>
-                      </div>
-                    </div>
-                  </motion.div>
-
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: isLoaded ? 1 : 0, y: isLoaded ? 0 : 20 }}
-                    transition={{ duration: 0.6, delay: 0.9 }}
-                    className="bg-white/70 backdrop-blur-sm rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow duration-300"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="bg-emerald-100 w-10 h-10 rounded-lg flex items-center justify-center">
-                        <Star className="w-5 h-5 text-emerald-600" />
-                      </div>
-                      <div>
-                        <h4 className="text-lg font-bold text-gray-900">4.9/5</h4>
-                        <p className="text-xs text-gray-600">Client Rating</p>
-                      </div>
-                    </div>
-                  </motion.div>
-                </div>
+                
+                
 
               </div>
             </motion.div>
