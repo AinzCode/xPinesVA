@@ -131,8 +131,8 @@ export default function EVAPage() {
           <h2 className="text-2xl font-bold mb-4">Ready for Executive-Level Support?</h2>
           <p className="text-lg mb-6">Connect with us today and elevate your business operations</p>
           <Link
-            href="/fill-up/eva"
-            className="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center gap-2"
+            href="/connect"
+            className="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibled hover:bg-gray-100 transition-colors inline-flex items-center gap-2"
           >
             <Rocket className="w-5 h-5" />
             Get Started Now

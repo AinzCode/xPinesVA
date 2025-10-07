@@ -138,7 +138,7 @@ export default function ISAPage() {
           <h2 className="text-2xl font-bold mb-4">Ready to Boost Your Sales?</h2>
           <p className="text-lg mb-6">Connect with us today and start converting more leads into customers</p>
           <Link 
-            href="/fill-up/isa" 
+            href="/connect" 
             className="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center gap-2"
           >
             <Rocket className="w-5 h-5" />

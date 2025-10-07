@@ -160,7 +160,7 @@ export default function EVAPage() {
           <h2 className="text-2xl font-bold mb-4">Ready for Executive-Level Support?</h2>
           <p className="text-lg mb-6">Connect with us today and elevate your business operations</p>
           <Link
-            href="/fill-up/eva"
+            href="/connect"
             className="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block"
           >
             Get Started Now
