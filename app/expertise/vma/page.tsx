@@ -169,7 +169,7 @@ export default function MVAPage() {
           <h2 className="text-2xl font-bold mb-4">Ready to Enhance Your Healthcare Practice?</h2>
           <p className="text-lg mb-6">Connect with us today and find your HIPAA-compliant Medical Virtual Assistant</p>
           <Link 
-            href="/fill-up/mva" 
+            href="/connect" 
             className="bg-white text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center gap-2"
           >
             <Rocket className="w-5 h-5" />

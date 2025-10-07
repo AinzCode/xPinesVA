@@ -1,6 +1,6 @@
 'use client'
 
-import { Users, Briefcase, Stethoscope, Building2, ArrowRight, Eye, Sparkles } from 'lucide-react'
+import { Briefcase, Stethoscope, Building2, ArrowRight, Eye, Sparkles } from 'lucide-react'
 import Link from 'next/link'
 
 const services = [

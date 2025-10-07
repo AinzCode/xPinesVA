@@ -1,5 +1,4 @@
 'use client'
-/* eslint-disable react/no-unescaped-entities */
 
 import { MessageSquare, UserCheck, Settings, CheckCircle, TrendingUp, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
